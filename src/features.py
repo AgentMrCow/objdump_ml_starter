@@ -57,6 +57,15 @@ def _is_branch(ins):
     return mnem in {"loop", "loope", "loopne", "jecxz", "jrcxz"}
 
 
+def _is_conditional_branch(ins):
+    mnem = ins.get("mnemonic", "")
+    if not mnem:
+        return False
+    if mnem.startswith("j") and not mnem.startswith("jmp"):
+        return True
+    return False
+
+
 def candidate_addresses(data):
     instrs = data["instrs"]
     if not instrs:
@@ -73,6 +82,10 @@ def candidate_addresses(data):
         for t in ins.get("xrefs_out", []):
             if isinstance(t, int):
                 addrs.add(t)
+        if _is_conditional_branch(ins):
+            for t in ins.get("xrefs_out", []):
+                if isinstance(t, int) and t in addr_set:
+                    addrs.add(t)
 
     # address following a 'ret' or branch as candidate when instruction follows
     for i, ins in enumerate(instrs[:-1]):

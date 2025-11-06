@@ -4,9 +4,15 @@ set -eu
 OUT_DIR="out"
 LOG_DIR="$OUT_DIR/logs"
 SUMMARY="$OUT_DIR/summary.tsv"
-MODEL_PATH="models/start_detector.joblib"
+MODEL_PATH=${MODEL_PATH:-models/start_detector.joblib}
 BIN_GLOB="data/build/linux/O3"
 TOL=8
+
+if [ -n "${THRESH+x}" ]; then
+    PRED_THRESH="$THRESH"
+else
+    PRED_THRESH="0.50"
+fi
 
 mkdir -p "$OUT_DIR" "$LOG_DIR"
 LOG_FILE="$LOG_DIR/run_batch_predict.log"
@@ -22,8 +28,8 @@ for bin in "$BIN_GLOB"/*_stripped; do
     stem=${base%_stripped}
     pred_out="$OUT_DIR/${stem}.json"
 
-    echo "Predicting for $bin" >> "$LOG_FILE"
-    python src/predict_starts.py --bin "$bin" --model_path "$MODEL_PATH" --out "$pred_out" >> "$LOG_FILE" 2>&1
+    echo "Predicting for $bin (threshold=$PRED_THRESH)" >> "$LOG_FILE"
+    python src/predict_starts.py --bin "$bin" --model_path "$MODEL_PATH" --out "$pred_out" --threshold "$PRED_THRESH" >> "$LOG_FILE" 2>&1
 
     eval_output=$(python src/eval_starts.py --pred "$pred_out" --truth_glob "data/labels/*/O3/${stem}_sym.functions_truth.json" --tolerance "$TOL")
     echo "$eval_output" >> "$LOG_FILE"

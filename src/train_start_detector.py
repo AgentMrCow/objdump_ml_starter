@@ -5,7 +5,7 @@ from joblib import dump
 import numpy as np
 from sklearn.linear_model import LogisticRegression
 
-from features import candidate_addresses, featurize_point
+from features import candidate_addresses, featurize_point, get_feature_keys
 
 def run_objdump(bin_path, out_json):
     from parse_objdump import run_objdump, parse
@@ -20,9 +20,12 @@ def truth_from_file(path):
     with open(path) as f:
         return json.load(f)
 
-def collect_train_items(train_glob):
-    # Expect train_glob to match *_sym binaries
-    bins = sorted(glob.glob(train_glob))
+def collect_train_items(train_globs):
+    # Expect train_globs to match *_sym binaries
+    bins = []
+    for pattern in train_globs:
+        bins.extend(glob.glob(pattern))
+    bins = sorted(set(bins))
     items = []
     for b in bins:
         # derive label path alongside
@@ -46,10 +49,10 @@ def label_vector(instrs, cand_addrs, truth):
     y = [1 if addr in truth_starts else 0 for addr in cand_addrs]
     return np.array(y, dtype=np.int32)
 
-def train(train_glob, model_path):
-    items = collect_train_items(train_glob)
+def train(train_globs, model_path):
+    items = collect_train_items(train_globs)
     X_all, y_all = [], []
-    feature_keys = None
+    feature_keys = get_feature_keys()
     for b, asm_json, truth_json in items:
         with open(asm_json) as f:
             asm = json.load(f)
@@ -60,11 +63,8 @@ def train(train_glob, model_path):
         X = []
         for idx in cand_idxs:
             feats = featurize_point(instrs, idx)
-            keys = sorted(feats.keys())
-            vec = [feats[k] for k in keys]
+            vec = [feats[k] for k in feature_keys]
             X.append(vec)
-        if feature_keys is None:
-            feature_keys = keys
         cand_addrs = [instrs[i]["addr"] for i in cand_idxs]
         truth = truth_from_file(truth_json)
         y = label_vector(instrs, cand_addrs, truth)
@@ -80,7 +80,8 @@ def train(train_glob, model_path):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--train_glob", required=True, help="e.g., data/build/*/O0/*_sym")
+    ap.add_argument("--train_glob", required=True, action="append", metavar="GLOB",
+                    help="Repeat per glob, e.g., --train_glob data/build/*/O0/*_sym --train_glob data/build/*/O3/*_sym")
     ap.add_argument("--model_path", default="models/start_detector.joblib")
     args = ap.parse_args()
     pathlib.Path(os.path.dirname(args.model_path)).mkdir(parents=True, exist_ok=True)

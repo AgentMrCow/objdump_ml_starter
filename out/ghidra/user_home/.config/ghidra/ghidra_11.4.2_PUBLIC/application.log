@@ -1,0 +1,1888 @@
+2025-11-10 23:31:17 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:31:17 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:31:17 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:31:17 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:31:19 INFO  (ClassSearcher) Class search complete (1421 ms)  
+2025-11-10 23:31:19 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:31:19 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:31:19 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:31:19 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:31:19 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:31:19 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:31:20 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:31:20 INFO  (AnalyzeHeadless) Headless startup complete (4001 ms)  
+2025-11-10 23:31:20 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_hello_stripped/O0_hello_stripped_proj  
+2025-11-10 23:31:20 DEBUG (DefaultProjectManager) No tools found; Installing default tools  
+2025-11-10 23:31:20 DEBUG (DefaultProjectManager) 	no recent project directories found  
+2025-11-10 23:31:20 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_hello_stripped/O0_hello_stripped_proj  
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_hello_stripped/O0_hello_stripped_proj  
+2025-11-10 23:31:20 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped  
+2025-11-10 23:31:22 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:31:22 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:31:22 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:31:23 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:31:23 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:31:23 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_4.2 at 0040200e  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.4 at 0040204c  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 1-byte alignment/filler segment_3.5 at 004011a3  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:31:23 DEBUG (ElfProgramBuilder) Discarding 6-byte alignment/filler segment_2.10 at 00400482  
+2025-11-10 23:31:23 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped?MD5=85b994fa9fe3ece04002caff1f8a0152...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 12 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'hello_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/hello_stripped] - 2 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:31:23 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:31:24 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped  
+2025-11-10 23:31:24 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=35735de042a83d9ded00309ff19b2931ec73225d]  
+2025-11-10 23:31:24 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:31:25 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:31:25 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:31:25 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:31:25 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp97B161C0.pdb.db/db.1.gbf  
+2025-11-10 23:31:26 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:31:26 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.471 secs
+    Apply Data Archives                        0.339 secs
+    Call Convention ID                         0.002 secs
+    Call-Fixup Installer                       0.002 secs
+    Create Address Tables                      0.004 secs
+    Create Function                            0.002 secs
+    DWARF                                      0.011 secs
+    Data Reference                             0.006 secs
+    Decompiler Switch Analysis                 1.073 secs
+    Demangler GNU                              0.018 secs
+    Disassemble Entry Points                   0.056 secs
+    ELF Scalar Operand References              0.006 secs
+    Embedded Media                             0.012 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.055 secs
+    Function Start Search                      0.040 secs
+    Function Start Search After Code           0.005 secs
+    Function Start Search After Data           0.003 secs
+    GCC Exception Handlers                     0.064 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.007 secs
+    Shared Return Calls                        0.007 secs
+    Stack                                      0.030 secs
+    Subroutine References                      0.003 secs
+    Subroutine References - One Time           0.001 secs
+    x86 Constant Reference Analyzer            0.041 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:31:26 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped  
+2025-11-10 23:31:26 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:31:34 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped  
+2025-11-10 23:31:34 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/hello_stripped  
+2025-11-10 23:31:34 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /hello_stripped (O0_hello_stripped_proj:/hello_stripped)  
+2025-11-10 23:31:34 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:31:35 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:31:35 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:31:35 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:31:35 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:31:36 INFO  (ClassSearcher) Class search complete (1218 ms)  
+2025-11-10 23:31:36 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:31:37 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:31:37 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:31:37 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:31:37 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:31:37 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:31:37 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:31:37 INFO  (AnalyzeHeadless) Headless startup complete (2553 ms)  
+2025-11-10 23:31:37 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_mathlib_stripped/O0_mathlib_stripped_proj  
+2025-11-10 23:31:37 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_mathlib_stripped/O0_mathlib_stripped_proj  
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_mathlib_stripped/O0_mathlib_stripped_proj  
+2025-11-10 23:31:37 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped  
+2025-11-10 23:31:39 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:31:39 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:31:39 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:31:39 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:31:39 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.2 at 0010202c  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_1.2 at 00101017  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 8-byte alignment/filler segment_1.5 at 00101038  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_1.7 at 0010117e  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_0.3 at 0010025c  
+2025-11-10 23:31:39 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_0.7 at 0010038d  
+2025-11-10 23:31:40 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped?MD5=34d7b4fa0a0d83203288e67ec158d506...
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+  
+2025-11-10 23:31:40 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:31:40 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped  
+2025-11-10 23:31:40 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=1d3d3b70ff0de787d178dffebb85051ff10f3ff8]  
+2025-11-10 23:31:40 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:31:41 WARN  (DecompileCallback) Decompiling 00101070, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008  
+2025-11-10 23:31:41 WARN  (DecompileCallback) Decompiling 00101040, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010  
+2025-11-10 23:31:42 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:31:42 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:31:42 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:31:42 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmpE47C39B9.pdb.db/db.1.gbf  
+2025-11-10 23:31:42 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:31:42 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.525 secs
+    Apply Data Archives                        0.369 secs
+    Call Convention ID                         0.002 secs
+    Call-Fixup Installer                       0.001 secs
+    Create Address Tables                      0.002 secs
+    Create Function                            0.002 secs
+    DWARF                                      0.011 secs
+    Data Reference                             0.004 secs
+    Decompiler Switch Analysis                 1.025 secs
+    Demangler GNU                              0.025 secs
+    Disassemble Entry Points                   0.115 secs
+    ELF Scalar Operand References              0.012 secs
+    Embedded Media                             0.016 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.060 secs
+    Function Start Search                      0.043 secs
+    Function Start Search After Code           0.004 secs
+    Function Start Search After Data           0.004 secs
+    GCC Exception Handlers                     0.049 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.006 secs
+    Shared Return Calls                        0.005 secs
+    Stack                                      0.041 secs
+    Subroutine References                      0.003 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.035 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:31:43 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped  
+2025-11-10 23:31:43 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:31:48 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped  
+2025-11-10 23:31:48 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/mathlib_stripped  
+2025-11-10 23:31:48 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /mathlib_stripped (O0_mathlib_stripped_proj:/mathlib_stripped)  
+2025-11-10 23:31:48 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:31:49 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:31:49 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:31:49 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:31:49 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:31:51 INFO  (ClassSearcher) Class search complete (1281 ms)  
+2025-11-10 23:31:51 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:31:51 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:31:51 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:31:51 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:31:51 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:31:51 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:31:51 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:31:51 INFO  (AnalyzeHeadless) Headless startup complete (2641 ms)  
+2025-11-10 23:31:51 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:31:51 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:31:51 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:31:51 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_sort_stripped/O0_sort_stripped_proj  
+2025-11-10 23:31:52 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_sort_stripped/O0_sort_stripped_proj  
+2025-11-10 23:31:52 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:31:52 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O0_sort_stripped/O0_sort_stripped_proj  
+2025-11-10 23:31:52 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped  
+2025-11-10 23:31:53 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:31:53 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:31:53 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:31:53 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:31:53 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:31:53 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:31:53 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.3 at 00402044  
+2025-11-10 23:31:53 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:31:53 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_3.5 at 004012b5  
+2025-11-10 23:31:53 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:31:53 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.10 at 004004a4  
+2025-11-10 23:31:54 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped?MD5=566b454db88f67ef834ff586a3b82b72...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 16 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'sort_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/sort_stripped] - 3 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:31:54 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:31:54 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped  
+2025-11-10 23:31:54 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=29c32a1b1cd201dec736d24ed1a081392af905f9]  
+2025-11-10 23:31:54 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:31:56 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:31:56 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:31:56 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:31:56 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp3D26CF62.pdb.db/db.1.gbf  
+2025-11-10 23:31:56 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:31:56 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.318 secs
+    Apply Data Archives                        0.431 secs
+    Call Convention ID                         0.000 secs
+    Call-Fixup Installer                       0.005 secs
+    Create Address Tables                      0.002 secs
+    Create Function                            0.006 secs
+    DWARF                                      0.008 secs
+    Data Reference                             0.003 secs
+    Decompiler Switch Analysis                 1.114 secs
+    Demangler GNU                              0.025 secs
+    Disassemble Entry Points                   0.054 secs
+    ELF Scalar Operand References              0.009 secs
+    Embedded Media                             0.004 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.043 secs
+    Function Start Search                      0.042 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.050 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.008 secs
+    Shared Return Calls                        0.010 secs
+    Stack                                      0.041 secs
+    Subroutine References                      0.016 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.053 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:31:56 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped  
+2025-11-10 23:31:56 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:32:02 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped  
+2025-11-10 23:32:02 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O0/sort_stripped  
+2025-11-10 23:32:02 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /sort_stripped (O0_sort_stripped_proj:/sort_stripped)  
+2025-11-10 23:32:02 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:32:04 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:32:04 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:32:04 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:32:04 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:32:05 INFO  (ClassSearcher) Class search complete (1172 ms)  
+2025-11-10 23:32:05 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:32:05 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:32:05 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:32:05 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:32:05 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:32:05 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:32:05 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:32:05 INFO  (AnalyzeHeadless) Headless startup complete (2521 ms)  
+2025-11-10 23:32:05 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_hello_stripped/O1_hello_stripped_proj  
+2025-11-10 23:32:06 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_hello_stripped/O1_hello_stripped_proj  
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_hello_stripped/O1_hello_stripped_proj  
+2025-11-10 23:32:06 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped  
+2025-11-10 23:32:07 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:32:07 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:32:07 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:32:08 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:32:08 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:32:08 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_4.2 at 0040200e  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.4 at 0040203c  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 1-byte alignment/filler segment_3.5 at 00401147  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:32:08 DEBUG (ElfProgramBuilder) Discarding 6-byte alignment/filler segment_2.10 at 00400482  
+2025-11-10 23:32:09 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped?MD5=b3037f91935ae21e18484ce2aa51f269...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 12 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'hello_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/hello_stripped] - 2 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:32:09 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:32:09 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped  
+2025-11-10 23:32:09 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=30143c1ee186c41d6ee8c13a2cc0fd59cb9420da]  
+2025-11-10 23:32:09 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:32:11 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:32:11 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:32:11 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:32:11 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmpF8F6213E.pdb.db/db.1.gbf  
+2025-11-10 23:32:11 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:32:12 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.495 secs
+    Apply Data Archives                        0.553 secs
+    Call Convention ID                         0.002 secs
+    Call-Fixup Installer                       0.004 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.005 secs
+    DWARF                                      0.009 secs
+    Data Reference                             0.004 secs
+    Decompiler Switch Analysis                 1.209 secs
+    Demangler GNU                              0.022 secs
+    Disassemble Entry Points                   0.043 secs
+    ELF Scalar Operand References              0.006 secs
+    Embedded Media                             0.004 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.039 secs
+    Function Start Search                      0.048 secs
+    Function Start Search After Code           0.003 secs
+    Function Start Search After Data           0.001 secs
+    GCC Exception Handlers                     0.052 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.006 secs
+    Reference                                  0.009 secs
+    Shared Return Calls                        0.007 secs
+    Stack                                      0.015 secs
+    Subroutine References                      0.004 secs
+    Subroutine References - One Time           0.001 secs
+    x86 Constant Reference Analyzer            0.058 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:32:12 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped  
+2025-11-10 23:32:12 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:32:17 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped  
+2025-11-10 23:32:17 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/hello_stripped  
+2025-11-10 23:32:17 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /hello_stripped (O1_hello_stripped_proj:/hello_stripped)  
+2025-11-10 23:32:17 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:32:18 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:32:18 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:32:18 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:32:18 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:32:19 INFO  (ClassSearcher) Class search complete (991 ms)  
+2025-11-10 23:32:19 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:32:19 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:32:19 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:32:19 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:32:19 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:32:19 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:32:20 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:32:20 INFO  (AnalyzeHeadless) Headless startup complete (2241 ms)  
+2025-11-10 23:32:20 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_mathlib_stripped/O1_mathlib_stripped_proj  
+2025-11-10 23:32:20 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_mathlib_stripped/O1_mathlib_stripped_proj  
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_mathlib_stripped/O1_mathlib_stripped_proj  
+2025-11-10 23:32:20 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped  
+2025-11-10 23:32:22 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:32:22 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:32:22 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:32:23 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:32:23 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.2 at 0010202c  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_1.2 at 00101017  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 8-byte alignment/filler segment_1.5 at 00101038  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_1.7 at 0010114e  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_0.3 at 0010025c  
+2025-11-10 23:32:23 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_0.7 at 0010038d  
+2025-11-10 23:32:23 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped?MD5=b3bad464d160be331453881131b92740...
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+  
+2025-11-10 23:32:23 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:32:23 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped  
+2025-11-10 23:32:23 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=4ba68c1e8bf1e9f801666f2e9127490366bcb580]  
+2025-11-10 23:32:23 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:32:24 WARN  (DecompileCallback) Decompiling 00101070, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008  
+2025-11-10 23:32:25 WARN  (DecompileCallback) Decompiling 00101040, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010  
+2025-11-10 23:32:25 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:32:25 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:32:25 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:32:25 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmpE4FD75BD.pdb.db/db.1.gbf  
+2025-11-10 23:32:25 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:32:26 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.451 secs
+    Apply Data Archives                        0.390 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.002 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.002 secs
+    DWARF                                      0.009 secs
+    Data Reference                             0.007 secs
+    Decompiler Switch Analysis                 1.145 secs
+    Demangler GNU                              0.019 secs
+    Disassemble Entry Points                   0.078 secs
+    ELF Scalar Operand References              0.004 secs
+    Embedded Media                             0.014 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.075 secs
+    Function Start Search                      0.028 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.041 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.011 secs
+    Shared Return Calls                        0.008 secs
+    Stack                                      0.014 secs
+    Subroutine References                      0.003 secs
+    Subroutine References - One Time           0.001 secs
+    x86 Constant Reference Analyzer            0.051 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:32:26 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped  
+2025-11-10 23:32:26 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:32:30 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped  
+2025-11-10 23:32:30 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/mathlib_stripped  
+2025-11-10 23:32:30 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /mathlib_stripped (O1_mathlib_stripped_proj:/mathlib_stripped)  
+2025-11-10 23:32:30 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:32:32 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:32:32 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:32:32 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:32:32 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:32:32 INFO  (ClassSearcher) Class search complete (923 ms)  
+2025-11-10 23:32:33 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:32:33 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:32:33 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:32:33 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:32:33 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:32:33 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:32:33 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:32:33 INFO  (AnalyzeHeadless) Headless startup complete (2262 ms)  
+2025-11-10 23:32:33 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:32:33 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:32:33 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:32:33 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_sort_stripped/O1_sort_stripped_proj  
+2025-11-10 23:32:33 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_sort_stripped/O1_sort_stripped_proj  
+2025-11-10 23:32:34 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:32:34 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O1_sort_stripped/O1_sort_stripped_proj  
+2025-11-10 23:32:34 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped  
+2025-11-10 23:32:35 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:32:35 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:32:35 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:32:36 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:32:36 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:32:36 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:32:36 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.3 at 0040203c  
+2025-11-10 23:32:36 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:32:36 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_3.5 at 00401206  
+2025-11-10 23:32:36 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:32:36 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.10 at 004004a4  
+2025-11-10 23:32:36 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped?MD5=cdac1c528b0a9930eb516b4cd42f6da7...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 16 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'sort_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/sort_stripped] - 3 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:32:36 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:32:36 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped  
+2025-11-10 23:32:36 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=73ae6143acb84558b2ef909766ea534addaf64e9]  
+2025-11-10 23:32:36 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:32:38 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:32:38 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:32:38 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:32:38 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp7B851FAA.pdb.db/db.1.gbf  
+2025-11-10 23:32:38 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:32:38 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.344 secs
+    Apply Data Archives                        0.375 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.004 secs
+    Create Address Tables                      0.004 secs
+    Create Function                            0.007 secs
+    DWARF                                      0.009 secs
+    Data Reference                             0.003 secs
+    Decompiler Switch Analysis                 1.074 secs
+    Demangler GNU                              0.018 secs
+    Disassemble Entry Points                   0.057 secs
+    ELF Scalar Operand References              0.006 secs
+    Embedded Media                             0.005 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.038 secs
+    Function Start Search                      0.028 secs
+    Function Start Search After Code           0.004 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.058 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.005 secs
+    Shared Return Calls                        0.008 secs
+    Stack                                      0.021 secs
+    Subroutine References                      0.002 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.044 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:32:38 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped  
+2025-11-10 23:32:38 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:32:43 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped  
+2025-11-10 23:32:43 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O1/sort_stripped  
+2025-11-10 23:32:43 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /sort_stripped (O1_sort_stripped_proj:/sort_stripped)  
+2025-11-10 23:32:43 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:32:45 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:32:45 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:32:45 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:32:45 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:32:46 INFO  (ClassSearcher) Class search complete (1259 ms)  
+2025-11-10 23:32:46 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:32:46 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:32:46 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:32:46 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:32:46 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:32:46 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:32:46 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:32:46 INFO  (AnalyzeHeadless) Headless startup complete (3043 ms)  
+2025-11-10 23:32:46 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_hello_stripped/O2_hello_stripped_proj  
+2025-11-10 23:32:47 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_hello_stripped/O2_hello_stripped_proj  
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_hello_stripped/O2_hello_stripped_proj  
+2025-11-10 23:32:47 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped  
+2025-11-10 23:32:48 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:32:48 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:32:48 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:32:49 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:32:49 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:32:49 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_4.2 at 0040200e  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.4 at 0040203c  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_3.5 at 00401146  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:32:49 DEBUG (ElfProgramBuilder) Discarding 6-byte alignment/filler segment_2.10 at 00400482  
+2025-11-10 23:32:49 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped?MD5=9a9b8d62cdfc664bf62a20f5a9f5bba1...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 12 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'hello_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/hello_stripped] - 2 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:32:49 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:32:50 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped  
+2025-11-10 23:32:50 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=4b712e76e61c6dfe5aabfcfa6d0f3038ca7ba877]  
+2025-11-10 23:32:50 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:32:52 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:32:52 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:32:52 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:32:52 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp2936F2DA.pdb.db/db.1.gbf  
+2025-11-10 23:32:52 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:32:53 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.483 secs
+    Apply Data Archives                        0.473 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.008 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.007 secs
+    DWARF                                      0.013 secs
+    Data Reference                             0.004 secs
+    Decompiler Switch Analysis                 1.283 secs
+    Demangler GNU                              0.028 secs
+    Disassemble Entry Points                   0.049 secs
+    ELF Scalar Operand References              0.030 secs
+    Embedded Media                             0.014 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.071 secs
+    Function Start Search                      0.056 secs
+    Function Start Search After Code           0.003 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.088 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.014 secs
+    Shared Return Calls                        0.013 secs
+    Stack                                      0.026 secs
+    Subroutine References                      0.012 secs
+    Subroutine References - One Time           0.001 secs
+    x86 Constant Reference Analyzer            0.078 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:32:53 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped  
+2025-11-10 23:32:53 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:32:58 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped  
+2025-11-10 23:32:58 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/hello_stripped  
+2025-11-10 23:32:58 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /hello_stripped (O2_hello_stripped_proj:/hello_stripped)  
+2025-11-10 23:32:58 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:33:00 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:33:00 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:33:00 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:33:00 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:33:01 INFO  (ClassSearcher) Class search complete (1131 ms)  
+2025-11-10 23:33:01 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:33:01 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:33:01 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:33:01 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:33:01 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:33:01 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:33:01 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:33:02 INFO  (AnalyzeHeadless) Headless startup complete (2515 ms)  
+2025-11-10 23:33:02 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_mathlib_stripped/O2_mathlib_stripped_proj  
+2025-11-10 23:33:02 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_mathlib_stripped/O2_mathlib_stripped_proj  
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_mathlib_stripped/O2_mathlib_stripped_proj  
+2025-11-10 23:33:02 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped  
+2025-11-10 23:33:04 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:33:04 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:33:04 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:33:04 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:33:04 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.2 at 0010202c  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_1.2 at 00101017  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 8-byte alignment/filler segment_1.5 at 00101038  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_1.7 at 0010115e  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_0.3 at 0010025c  
+2025-11-10 23:33:04 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_0.7 at 0010038d  
+2025-11-10 23:33:05 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped?MD5=57a5cc06093b24508c85c696794080ff...
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+  
+2025-11-10 23:33:05 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:33:05 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped  
+2025-11-10 23:33:05 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=b877fdbb64257e1f7b6451b4dce8e2a0b64ba1a9]  
+2025-11-10 23:33:05 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:33:06 WARN  (DecompileCallback) Decompiling 00101040, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010  
+2025-11-10 23:33:06 WARN  (DecompileCallback) Decompiling 00101070, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008  
+2025-11-10 23:33:06 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:33:06 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:33:06 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:33:06 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmpE523EC14.pdb.db/db.1.gbf  
+2025-11-10 23:33:07 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:33:07 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.347 secs
+    Apply Data Archives                        0.362 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.004 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.002 secs
+    DWARF                                      0.012 secs
+    Data Reference                             0.005 secs
+    Decompiler Switch Analysis                 1.084 secs
+    Demangler GNU                              0.012 secs
+    Disassemble Entry Points                   0.097 secs
+    ELF Scalar Operand References              0.003 secs
+    Embedded Media                             0.011 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.029 secs
+    Function Start Search                      0.022 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.053 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.008 secs
+    Shared Return Calls                        0.008 secs
+    Stack                                      0.012 secs
+    Subroutine References                      0.003 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.029 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:33:07 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped  
+2025-11-10 23:33:07 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:33:13 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped  
+2025-11-10 23:33:13 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/mathlib_stripped  
+2025-11-10 23:33:13 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /mathlib_stripped (O2_mathlib_stripped_proj:/mathlib_stripped)  
+2025-11-10 23:33:13 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:33:16 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:33:16 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:33:16 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:33:16 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:33:18 INFO  (ClassSearcher) Class search complete (2460 ms)  
+2025-11-10 23:33:18 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:33:18 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:33:18 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:33:18 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:33:18 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:33:18 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:33:19 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:33:19 INFO  (AnalyzeHeadless) Headless startup complete (4419 ms)  
+2025-11-10 23:33:19 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_sort_stripped/O2_sort_stripped_proj  
+2025-11-10 23:33:19 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_sort_stripped/O2_sort_stripped_proj  
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O2_sort_stripped/O2_sort_stripped_proj  
+2025-11-10 23:33:19 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped  
+2025-11-10 23:33:20 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:33:20 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:33:20 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:33:21 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:33:21 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:33:21 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.3 at 00402064  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 48-byte alignment/filler segment_3.4 at 00401050  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_3.6 at 00401275  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:33:21 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.10 at 004004a4  
+2025-11-10 23:33:22 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped?MD5=44f76bbfbe1004545f840fe684506eff...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 16 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'sort_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/sort_stripped] - 3 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:33:22 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:33:22 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped  
+2025-11-10 23:33:22 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=eecefc508d60e961c3660feef9c0254454b027b7]  
+2025-11-10 23:33:22 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:33:24 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:33:24 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:33:24 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:33:24 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp135240A9.pdb.db/db.1.gbf  
+2025-11-10 23:33:24 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:33:25 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.434 secs
+    Apply Data Archives                        0.408 secs
+    Call Convention ID                         0.002 secs
+    Call-Fixup Installer                       0.003 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.003 secs
+    DWARF                                      0.009 secs
+    Data Reference                             0.003 secs
+    Decompiler Switch Analysis                 1.293 secs
+    Demangler GNU                              0.031 secs
+    Disassemble Entry Points                   0.059 secs
+    ELF Scalar Operand References              0.004 secs
+    Embedded Media                             0.004 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.028 secs
+    Function Start Search                      0.017 secs
+    Function Start Search After Code           0.002 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.070 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.006 secs
+    Shared Return Calls                        0.008 secs
+    Stack                                      0.021 secs
+    Subroutine References                      0.005 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.044 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:33:25 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped  
+2025-11-10 23:33:25 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:33:29 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped  
+2025-11-10 23:33:29 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O2/sort_stripped  
+2025-11-10 23:33:30 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /sort_stripped (O2_sort_stripped_proj:/sort_stripped)  
+2025-11-10 23:33:30 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:33:31 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:33:31 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:33:31 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:33:31 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:33:33 INFO  (ClassSearcher) Class search complete (1300 ms)  
+2025-11-10 23:33:33 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:33:33 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:33:33 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:33:33 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:33:33 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:33:33 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:33:33 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:33:33 INFO  (AnalyzeHeadless) Headless startup complete (2821 ms)  
+2025-11-10 23:33:33 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_hello_stripped/O3_hello_stripped_proj  
+2025-11-10 23:33:34 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_hello_stripped/O3_hello_stripped_proj  
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_hello_stripped/O3_hello_stripped_proj  
+2025-11-10 23:33:34 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped  
+2025-11-10 23:33:35 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:33:35 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:33:35 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:33:36 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:33:36 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:33:36 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_4.2 at 0040200e  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.4 at 0040203c  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_3.5 at 00401146  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:33:36 DEBUG (ElfProgramBuilder) Discarding 6-byte alignment/filler segment_2.10 at 00400482  
+2025-11-10 23:33:36 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped?MD5=9a9b8d62cdfc664bf62a20f5a9f5bba1...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 12 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'hello_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/hello_stripped] - 2 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:33:36 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:33:37 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped  
+2025-11-10 23:33:37 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=4b712e76e61c6dfe5aabfcfa6d0f3038ca7ba877]  
+2025-11-10 23:33:37 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:33:38 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:33:38 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:33:38 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:33:38 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp29AFED18.pdb.db/db.1.gbf  
+2025-11-10 23:33:38 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:33:39 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.416 secs
+    Apply Data Archives                        0.285 secs
+    Call Convention ID                         0.003 secs
+    Call-Fixup Installer                       0.001 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.003 secs
+    DWARF                                      0.008 secs
+    Data Reference                             0.003 secs
+    Decompiler Switch Analysis                 1.115 secs
+    Demangler GNU                              0.014 secs
+    Disassemble Entry Points                   0.037 secs
+    ELF Scalar Operand References              0.005 secs
+    Embedded Media                             0.011 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.020 secs
+    Function Start Search                      0.032 secs
+    Function Start Search After Code           0.003 secs
+    Function Start Search After Data           0.001 secs
+    GCC Exception Handlers                     0.044 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.007 secs
+    Shared Return Calls                        0.006 secs
+    Stack                                      0.016 secs
+    Subroutine References                      0.004 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.036 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:33:39 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped  
+2025-11-10 23:33:39 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:33:45 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped  
+2025-11-10 23:33:45 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/hello_stripped  
+2025-11-10 23:33:45 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /hello_stripped (O3_hello_stripped_proj:/hello_stripped)  
+2025-11-10 23:33:45 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:33:46 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:33:46 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:33:46 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:33:46 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:33:47 INFO  (ClassSearcher) Class search complete (1098 ms)  
+2025-11-10 23:33:47 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:33:47 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:33:47 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:33:47 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:33:47 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:33:47 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:33:48 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:33:48 INFO  (AnalyzeHeadless) Headless startup complete (2734 ms)  
+2025-11-10 23:33:48 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:33:48 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:33:48 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:33:48 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_mathlib_stripped/O3_mathlib_stripped_proj  
+2025-11-10 23:33:49 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_mathlib_stripped/O3_mathlib_stripped_proj  
+2025-11-10 23:33:49 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:33:49 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_mathlib_stripped/O3_mathlib_stripped_proj  
+2025-11-10 23:33:49 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped  
+2025-11-10 23:33:50 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:33:50 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:33:50 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:33:51 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:33:51 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.2 at 0010202c  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_1.2 at 00101017  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 8-byte alignment/filler segment_1.5 at 00101038  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 2-byte alignment/filler segment_1.7 at 0010115e  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_0.3 at 0010025c  
+2025-11-10 23:33:51 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_0.7 at 0010038d  
+2025-11-10 23:33:51 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped?MD5=57a5cc06093b24508c85c696794080ff...
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+  
+2025-11-10 23:33:51 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:33:51 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped  
+2025-11-10 23:33:51 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=b877fdbb64257e1f7b6451b4dce8e2a0b64ba1a9]  
+2025-11-10 23:33:51 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:33:52 WARN  (DecompileCallback) Decompiling 00101040, pcode error at 00105010: Unable to disassemble EXTERNAL block location: 00105010  
+2025-11-10 23:33:53 WARN  (DecompileCallback) Decompiling 00101070, pcode error at 00105008: Unable to disassemble EXTERNAL block location: 00105008  
+2025-11-10 23:33:53 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:33:53 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:33:53 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:33:53 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp8D9C2AD6.pdb.db/db.1.gbf  
+2025-11-10 23:33:53 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:33:54 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.350 secs
+    Apply Data Archives                        0.291 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.003 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.003 secs
+    DWARF                                      0.011 secs
+    Data Reference                             0.005 secs
+    Decompiler Switch Analysis                 1.125 secs
+    Demangler GNU                              0.009 secs
+    Disassemble Entry Points                   0.115 secs
+    ELF Scalar Operand References              0.004 secs
+    Embedded Media                             0.016 secs
+    External Entry References                  0.001 secs
+    Function ID                                0.022 secs
+    Function Start Search                      0.037 secs
+    Function Start Search After Code           0.003 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.067 secs
+    Non-Returning Functions - Discovered       0.001 secs
+    Non-Returning Functions - Known            0.002 secs
+    Reference                                  0.012 secs
+    Shared Return Calls                        0.013 secs
+    Stack                                      0.012 secs
+    Subroutine References                      0.003 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.037 secs
+-----------------------------------------------------
+     Total Time   2 secs
+-----------------------------------------------------
+  
+2025-11-10 23:33:54 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped  
+2025-11-10 23:33:54 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:33:58 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped  
+2025-11-10 23:33:58 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/mathlib_stripped  
+2025-11-10 23:33:58 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /mathlib_stripped (O3_mathlib_stripped_proj:/mathlib_stripped)  
+2025-11-10 23:33:58 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  
+2025-11-10 23:33:59 INFO  (LoggingInitialization) Using log config file: jar:file:/home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2025-11-10 23:33:59 INFO  (LoggingInitialization) Using log file: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/application.log  
+2025-11-10 23:33:59 INFO  (Preferences) Loading user preferences: /home/nelson/fyp/objdump_ml_starter/out/ghidra/user_home/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2025-11-10 23:33:59 INFO  (ClassSearcher) Searching for classes...  
+2025-11-10 23:34:00 INFO  (ClassSearcher) Class search complete (1159 ms)  
+2025-11-10 23:34:00 INFO  (SSLContextInitializer) Initializing SSL Context  
+2025-11-10 23:34:01 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2025-11-10 23:34:01 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2025-11-10 23:34:01 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2025-11-10 23:34:01 INFO  (FileCacheMaintenanceDaemon) Starting cache cleanup: /var/tmp/nelson-ghidra/fscache2  
+2025-11-10 23:34:01 INFO  (FileCacheMaintenanceDaemon) Finished cache cleanup, estimated storage used: 0  
+2025-11-10 23:34:01 ERROR (FileCacheMaintenanceDaemon) Unable to write file cache maintenance file: /var/tmp/nelson-ghidra/fscache2/.lastmaint java.io.FileNotFoundException: /var/tmp/nelson-ghidra/fscache2/.lastmaint (Permission denied)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
+	at java.base/java.io.FileWriter.<init>(FileWriter.java:98)
+	at utilities.util.FileUtilities.writeStringToFile(FileUtilities.java:821)
+	at ghidra.formats.gfilesystem.FileCache$FileCacheMaintenanceDaemon.run(FileCache.java:342)
+ 
+2025-11-10 23:34:01 INFO  (AnalyzeHeadless) Headless startup complete (2814 ms)  
+2025-11-10 23:34:01 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/tools
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts  
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer) Creating temporary project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_sort_stripped/O3_sort_stripped_proj  
+2025-11-10 23:34:02 INFO  (DefaultProject) Creating project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_sort_stripped/O3_sort_stripped_proj  
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer) REPORT: Processing input files:   
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer)      project: /home/nelson/fyp/objdump_ml_starter/out/ghidra/projects/O3_sort_stripped/O3_sort_stripped_proj  
+2025-11-10 23:34:02 INFO  (HeadlessAnalyzer) IMPORTING: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped  
+2025-11-10 23:34:03 INFO  (AutoImporter) Using Loader: Executable and Linking Format (ELF)  
+2025-11-10 23:34:03 INFO  (AutoImporter) Using Language/Compiler: x86:LE:64:default:gcc  
+2025-11-10 23:34:03 INFO  (AutoImporter) Using Library Search Path: [., /bin, /lib, /lib64, /lib/x86_64-linux-gnu, /lib/aarch64-linux-gnu, /usr/bin, /usr/lib, /usr/X11R6/bin, /usr/X11R6/lib, /usr/java/packages/lib, /usr/lib/x86_64-linux-gnu/jni, /usr/lib/x86_64-linux-gnu, /usr/lib/jni]  
+2025-11-10 23:34:04 DEBUG (ElfHeader) Elf symbol table section .dynsym linked to string table section .dynstr  
+2025-11-10 23:34:04 DEBUG (ElfHeader) Elf relocation table section .rela.dyn linked to symbol table section .dynsym affecting PT_LOAD  
+2025-11-10 23:34:04 DEBUG (ElfHeader) Elf relocation table section .rela.plt linked to symbol table section .dynsym affecting .got.plt  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_4.3 at 00402064  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 9-byte alignment/filler segment_3.2 at 00401017  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 48-byte alignment/filler segment_3.4 at 00401050  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 3-byte alignment/filler segment_3.6 at 00401275  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.6 at 004003cc  
+2025-11-10 23:34:04 DEBUG (ElfProgramBuilder) Discarding 4-byte alignment/filler segment_2.10 at 004004a4  
+2025-11-10 23:34:04 INFO  (AutoImporter) Additional info:
+Loading file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped?MD5=44f76bbfbe1004545f840fe684506eff...
+Failed to properly markup GNU Hash table at 004003b0: Insufficent memory at address 004003cc (length: 16 bytes)
+Setting block .init_array to read-only
+Setting block .fini_array to read-only
+Setting block .dynamic to read-only
+------------------------------------------------
+
+Linking the External Programs of 'sort_stripped' to imported libraries...
+  [libc.so.6] -> not found in project
+------------------------------------------------
+
+Resolving External Symbols of [/sort_stripped] - 3 unresolved symbols, no external libraries configured - skipping
+  
+2025-11-10 23:34:04 INFO  (HeadlessAnalyzer) IMPORTING: Loaded 0 additional files  
+2025-11-10 23:34:05 INFO  (HeadlessAnalyzer) ANALYZING all memory and code: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped  
+2025-11-10 23:34:05 INFO  (ExternalDebugFileSectionProvider) DWARF external debug information found: ExternalDebugInfo [filename=null, crc=0, hash=eecefc508d60e961c3660feef9c0254454b027b7]  
+2025-11-10 23:34:05 INFO  (DWARFAnalyzer) Unable to find DWARF information, skipping DWARF analysis  
+2025-11-10 23:34:06 INFO  (PackedDatabaseCache) Packed database cache: /var/tmp/nelson-ghidra/packed-db-cache  
+2025-11-10 23:34:06 ERROR (LockFile) Unable to write to lock file: /var/tmp/nelson-ghidra/packed-db-cache/cache.ulock java.io.IOException: Permission denied
+	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at ghidra.framework.store.local.LockFile.createLockFileNoWait(LockFile.java:447)
+	at ghidra.framework.store.local.LockFile.createLock(LockFile.java:379)
+	at ghidra.framework.store.db.PackedDatabaseCache.getCachedDB(PackedDatabaseCache.java:329)
+	at ghidra.framework.store.db.PackedDatabase.getPackedDatabase(PackedDatabase.java:283)
+	at ghidra.program.database.data.DataTypeManagerDB.<init>(DataTypeManagerDB.java:292)
+	at ghidra.program.model.data.StandAloneDataTypeManager.<init>(StandAloneDataTypeManager.java:192)
+	at ghidra.program.model.data.FileDataTypeManager.<init>(FileDataTypeManager.java:74)
+	at ghidra.program.model.data.FileDataTypeManager.openFileArchive(FileDataTypeManager.java:219)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openArchive(DefaultDataTypeArchiveService.java:162)
+	at ghidra.app.plugin.core.datamgr.archive.DefaultDataTypeArchiveService.openDataTypeArchive(DefaultDataTypeArchiveService.java:123)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getAutoDTMs(ApplyDataArchiveAnalyzer.java:174)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.getDataTypeArchives(ApplyDataArchiveAnalyzer.java:153)
+	at ghidra.app.plugin.core.analysis.ApplyDataArchiveAnalyzer.added(ApplyDataArchiveAnalyzer.java:99)
+	at ghidra.app.plugin.core.analysis.AnalysisScheduler.runAnalyzer(AnalysisScheduler.java:186)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:37)
+	at ghidra.app.plugin.core.analysis.AnalysisTask.applyTo(AnalysisTask.java:24)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager$AnalysisTaskWrapper.run(AutoAnalysisManager.java:660)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:760)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:639)
+	at ghidra.app.plugin.core.analysis.AutoAnalysisManager.startAnalysis(AutoAnalysisManager.java:604)
+	at ghidra.app.util.headless.HeadlessAnalyzer.analyzeProgram(HeadlessAnalyzer.java:1033)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processFileWithImport(HeadlessAnalyzer.java:1563)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithLoader(HeadlessAnalyzer.java:1745)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1686)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processWithImport(HeadlessAnalyzer.java:1770)
+	at ghidra.app.util.headless.HeadlessAnalyzer.processLocal(HeadlessAnalyzer.java:457)
+	at ghidra.app.util.headless.AnalyzeHeadless.launch(AnalyzeHeadless.java:198)
+	at ghidra.GhidraLauncher.launch(GhidraLauncher.java:81)
+	at ghidra.Ghidra.main(Ghidra.java:54)
+ 
+2025-11-10 23:34:06 WARN  (PackedDatabase) PackedDatabase cache failure for: /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt, Packed database cache timeout  
+2025-11-10 23:34:06 DEBUG (PackedDatabase) Unpacking database /home/nelson/fyp/objdump_ml_starter/third_party/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/data/typeinfo/generic/generic_clib_64.gdt -> /tmp/nelson-ghidra/~tmp8EBB48F7.pdb.db/db.1.gbf  
+2025-11-10 23:34:07 INFO  (ApplyDataArchiveAnalyzer) Applied data type archive: generic_clib_64  
+2025-11-10 23:34:07 INFO  (AutoAnalysisManager) -----------------------------------------------------
+    ASCII Strings                              0.350 secs
+    Apply Data Archives                        0.268 secs
+    Call Convention ID                         0.001 secs
+    Call-Fixup Installer                       0.001 secs
+    Create Address Tables                      0.003 secs
+    Create Function                            0.005 secs
+    DWARF                                      0.008 secs
+    Data Reference                             0.003 secs
+    Decompiler Switch Analysis                 1.061 secs
+    Demangler GNU                              0.022 secs
+    Disassemble Entry Points                   0.066 secs
+    ELF Scalar Operand References              0.005 secs
+    Embedded Media                             0.005 secs
+    External Entry References                  0.000 secs
+    Function ID                                0.015 secs
+    Function Start Search                      0.027 secs
+    Function Start Search After Code           0.003 secs
+    Function Start Search After Data           0.002 secs
+    GCC Exception Handlers                     0.060 secs
+    Non-Returning Functions - Discovered       0.002 secs
+    Non-Returning Functions - Known            0.001 secs
+    Reference                                  0.006 secs
+    Shared Return Calls                        0.007 secs
+    Stack                                      0.020 secs
+    Subroutine References                      0.004 secs
+    Subroutine References - One Time           0.000 secs
+    x86 Constant Reference Analyzer            0.040 secs
+-----------------------------------------------------
+     Total Time   1 secs
+-----------------------------------------------------
+  
+2025-11-10 23:34:07 INFO  (HeadlessAnalyzer) REPORT: Analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped  
+2025-11-10 23:34:07 INFO  (HeadlessAnalyzer) SCRIPT: /home/nelson/fyp/objdump_ml_starter/tools/ghidra_export_functions.py  
+2025-11-10 23:34:13 INFO  (HeadlessAnalyzer) ANALYZING changes made by post scripts: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped  
+2025-11-10 23:34:13 INFO  (HeadlessAnalyzer) REPORT: Post-analysis succeeded for file: file:///home/nelson/fyp/objdump_ml_starter/data/build/linux/O3/sort_stripped  
+2025-11-10 23:34:13 INFO  (HeadlessAnalyzer) REPORT: Save succeeded for: /sort_stripped (O3_sort_stripped_proj:/sort_stripped)  
+2025-11-10 23:34:13 INFO  (HeadlessAnalyzer) REPORT: Import succeeded  

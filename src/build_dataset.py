@@ -26,7 +26,8 @@ def build_one(name, src, has_main, opt, outdir):
 
 def main():
     base = "data/build/linux"
-    for opt in ["O0", "O3"]:
+    opt_levels = ["O0", "O1", "O2", "O3"]
+    for opt in opt_levels:
         for (name, src, has_main) in SAMPLES:
             sym, stripped = build_one(name, src, has_main, opt, f"{base}/{opt}")
             # also prepare labels for the sym build

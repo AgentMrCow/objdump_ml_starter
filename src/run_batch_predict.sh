@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
 
 OUT_DIR="out"
 LOG_DIR="$OUT_DIR/logs"
 SUMMARY="$OUT_DIR/summary.tsv"
 MODEL_PATH=${MODEL_PATH:-models/start_detector.joblib}
-BIN_GLOB="data/build/linux/O3"
+BIN_GLOB=${BIN_GLOB:-data/build/linux/O3/*_stripped}
 TOL=8
 
 if [ -n "${THRESH+x}" ]; then
@@ -22,7 +22,7 @@ LOG_FILE="$LOG_DIR/run_batch_predict.log"
 
 printf 'file\tTP\tFP\tFN\tP\tR\tF1\tmean_err\tmedian_err\n' > "$SUMMARY"
 
-for bin in "$BIN_GLOB"/*_stripped; do
+for bin in $BIN_GLOB; do
     if [ ! -f "$bin" ]; then
         continue
     fi
@@ -33,7 +33,9 @@ for bin in "$BIN_GLOB"/*_stripped; do
     echo "Predicting for $bin (threshold=$PRED_THRESH, post_filter=$POST_FILTER)" >> "$LOG_FILE"
     python src/predict_starts.py --bin "$bin" --model_path "$MODEL_PATH" --out "$pred_out" --threshold "$PRED_THRESH" --post_filter "$POST_FILTER" >> "$LOG_FILE" 2>&1
 
-    eval_output=$(python src/eval_starts.py --pred "$pred_out" --truth_glob "data/labels/*/O3/${stem}_sym.functions_truth.json" --tolerance "$TOL")
+    opt_level=$(basename "$(dirname "$bin")")
+    label_path="data/labels/linux/${opt_level}/${stem}_sym.functions_truth.json"
+    eval_output=$(python src/eval_starts.py --pred "$pred_out" --truth_glob "$label_path" --tolerance "$TOL")
     echo "$eval_output" >> "$LOG_FILE"
 
     # Parse eval_output tokens

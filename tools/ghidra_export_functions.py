@@ -9,11 +9,17 @@ if len(args) < 2:
     raise RuntimeError("Usage: ghidra_export_functions.py <bin_path> <out_dir>")
 
 bin_path = args[0]
-out_dir = args[1]
-if not os.path.isdir(out_dir):
-    os.makedirs(out_dir)
+out_arg = args[1]
 stem = os.path.basename(bin_path)
-out_path = os.path.join(out_dir, stem + ".csv")
+if out_arg.endswith('.csv'):
+    out_path = out_arg
+    out_dir = os.path.dirname(out_path)
+    if out_dir and not os.path.isdir(out_dir):
+        os.makedirs(out_dir)
+else:
+    if not os.path.isdir(out_arg):
+        os.makedirs(out_arg)
+    out_path = os.path.join(out_arg, stem + ".csv")
 
 program = getCurrentProgram()
 fm = program.getFunctionManager()

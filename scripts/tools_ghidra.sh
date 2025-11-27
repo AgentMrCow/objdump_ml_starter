@@ -6,6 +6,7 @@ OUT_DIR=${OUT_DIR:-out/ghidra}
 LOG_DIR=${LOG_DIR:-out/logs}
 PROJECT_ROOT=${PROJECT_ROOT:-out/ghidra/projects}
 BIN_GLOB=${BIN_GLOB:-data/build/linux/O3/*_stripped}
+BIN_LIST=${BIN_LIST:-}
 GHIDRA_USER_HOME=${GHIDRA_USER_HOME:-out/ghidra/user_home}
 
 if [ ! -x "$GHIDRA_HOME/support/analyzeHeadless" ]; then
@@ -18,7 +19,13 @@ OUT_DIR_ABS=$(cd "$OUT_DIR" && pwd)
 PROJECT_ROOT_ABS=$(cd "$PROJECT_ROOT" && pwd)
 USER_HOME_ABS=$(cd "$GHIDRA_USER_HOME" && pwd)
 
-for bin in $BIN_GLOB; do
+if [ -n "$BIN_LIST" ] && [ -f "$BIN_LIST" ]; then
+    BIN_ITER=$(cat "$BIN_LIST")
+else
+    BIN_ITER=$(ls $BIN_GLOB 2>/dev/null)
+fi
+
+for bin in $BIN_ITER; do
     if [ ! -f "$bin" ]; then
         continue
     fi

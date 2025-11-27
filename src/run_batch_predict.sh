@@ -6,6 +6,7 @@ LOG_DIR="$OUT_DIR/logs"
 SUMMARY="$OUT_DIR/summary.tsv"
 MODEL_PATH=${MODEL_PATH:-models/start_detector.joblib}
 BIN_GLOB=${BIN_GLOB:-data/build/linux/O3/*_stripped}
+BIN_LIST=${BIN_LIST:-}
 TOL=8
 
 if [ -n "${THRESH+x}" ]; then
@@ -22,7 +23,13 @@ LOG_FILE="$LOG_DIR/run_batch_predict.log"
 
 printf 'file\tTP\tFP\tFN\tP\tR\tF1\tmean_err\tmedian_err\n' > "$SUMMARY"
 
-for bin in $BIN_GLOB; do
+if [ -n "$BIN_LIST" ] && [ -f "$BIN_LIST" ]; then
+    bin_iter=$(cat "$BIN_LIST")
+else
+    bin_iter=$(ls $BIN_GLOB 2>/dev/null)
+fi
+
+for bin in $bin_iter; do
     if [ ! -f "$bin" ]; then
         continue
     fi

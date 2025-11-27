@@ -1,0 +1,1425 @@
+{
+  "instrs": [
+    {
+      "addr": 4096,
+      "bytes": [
+        72,
+        131,
+        236,
+        8
+      ],
+      "mnemonic": "sub",
+      "ops": "rsp,0x8",
+      "line": "    1000:\t48 83 ec 08          \tsub    rsp,0x8",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4100,
+      "bytes": [
+        72,
+        139,
+        5,
+        197,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "rax,QWORD PTR [rip+0x2fc5]        # 3fd0 <__gmon_start__@Base>",
+      "line": "    1004:\t48 8b 05 c5 2f 00 00 \tmov    rax,QWORD PTR [rip+0x2fc5]        # 3fd0 <__gmon_start__@Base>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4107,
+      "bytes": [
+        72,
+        133,
+        192
+      ],
+      "mnemonic": "test",
+      "ops": "rax,rax",
+      "line": "    100b:\t48 85 c0             \ttest   rax,rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4110,
+      "bytes": [
+        116,
+        2
+      ],
+      "mnemonic": "je",
+      "ops": "1012 <SHA256@plt-0x1e>",
+      "line": "    100e:\t74 02                \tje     1012 <SHA256@plt-0x1e>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4112,
+      "bytes": [
+        255,
+        208
+      ],
+      "mnemonic": "call",
+      "ops": "rax",
+      "line": "    1010:\tff d0                \tcall   rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4114,
+      "bytes": [
+        72,
+        131,
+        196,
+        8
+      ],
+      "mnemonic": "add",
+      "ops": "rsp,0x8",
+      "line": "    1012:\t48 83 c4 08          \tadd    rsp,0x8",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4118,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    1016:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4128,
+      "bytes": [
+        255,
+        53,
+        202,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "push",
+      "ops": "QWORD PTR [rip+0x2fca]        # 3ff0 <main@@Base+0x2f80>",
+      "line": "    1020:\tff 35 ca 2f 00 00    \tpush   QWORD PTR [rip+0x2fca]        # 3ff0 <main@@Base+0x2f80>",
+      "xrefs_out": [],
+      "xrefs_in": 3
+    },
+    {
+      "addr": 4134,
+      "bytes": [
+        255,
+        37,
+        204,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "jmp",
+      "ops": "QWORD PTR [rip+0x2fcc]        # 3ff8 <main@@Base+0x2f88>",
+      "line": "    1026:\tff 25 cc 2f 00 00    \tjmp    QWORD PTR [rip+0x2fcc]        # 3ff8 <main@@Base+0x2f88>",
+      "xrefs_out": [
+        13
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4140,
+      "bytes": [
+        15,
+        31,
+        64,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    102c:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4144,
+      "bytes": [
+        255,
+        37,
+        202,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "jmp",
+      "ops": "QWORD PTR [rip+0x2fca]        # 4000 <SHA256@Base>",
+      "line": "    1030:\tff 25 ca 2f 00 00    \tjmp    QWORD PTR [rip+0x2fca]        # 4000 <SHA256@Base>",
+      "xrefs_out": [
+        13
+      ],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4150,
+      "bytes": [
+        104,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "push",
+      "ops": "0x0",
+      "line": "    1036:\t68 00 00 00 00       \tpush   0x0",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4155,
+      "bytes": [
+        233,
+        224,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "jmp",
+      "ops": "1020 <SHA256@plt-0x10>",
+      "line": "    103b:\te9 e0 ff ff ff       \tjmp    1020 <SHA256@plt-0x10>",
+      "xrefs_out": [
+        4128
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4160,
+      "bytes": [
+        255,
+        37,
+        194,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "jmp",
+      "ops": "QWORD PTR [rip+0x2fc2]        # 4008 <printf@GLIBC_2.2.5>",
+      "line": "    1040:\tff 25 c2 2f 00 00    \tjmp    QWORD PTR [rip+0x2fc2]        # 4008 <printf@GLIBC_2.2.5>",
+      "xrefs_out": [
+        13
+      ],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4166,
+      "bytes": [
+        104,
+        1,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "push",
+      "ops": "0x1",
+      "line": "    1046:\t68 01 00 00 00       \tpush   0x1",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4171,
+      "bytes": [
+        233,
+        208,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "jmp",
+      "ops": "1020 <SHA256@plt-0x10>",
+      "line": "    104b:\te9 d0 ff ff ff       \tjmp    1020 <SHA256@plt-0x10>",
+      "xrefs_out": [
+        4128
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4176,
+      "bytes": [
+        255,
+        37,
+        186,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "jmp",
+      "ops": "QWORD PTR [rip+0x2fba]        # 4010 <putc@GLIBC_2.2.5>",
+      "line": "    1050:\tff 25 ba 2f 00 00    \tjmp    QWORD PTR [rip+0x2fba]        # 4010 <putc@GLIBC_2.2.5>",
+      "xrefs_out": [
+        13
+      ],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4182,
+      "bytes": [
+        104,
+        2,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "push",
+      "ops": "0x2",
+      "line": "    1056:\t68 02 00 00 00       \tpush   0x2",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4187,
+      "bytes": [
+        233,
+        192,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "jmp",
+      "ops": "1020 <SHA256@plt-0x10>",
+      "line": "    105b:\te9 c0 ff ff ff       \tjmp    1020 <SHA256@plt-0x10>",
+      "xrefs_out": [
+        4128
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4192,
+      "bytes": [
+        255,
+        37,
+        122,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "jmp",
+      "ops": "QWORD PTR [rip+0x2f7a]        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>",
+      "line": "    1060:\tff 25 7a 2f 00 00    \tjmp    QWORD PTR [rip+0x2f7a]        # 3fe0 <__cxa_finalize@GLIBC_2.2.5>",
+      "xrefs_out": [
+        13
+      ],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4198,
+      "bytes": [
+        102,
+        144
+      ],
+      "mnemonic": "xchg",
+      "ops": "ax,ax",
+      "line": "    1066:\t66 90                \txchg   ax,ax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4208,
+      "bytes": [
+        85
+      ],
+      "mnemonic": "push",
+      "ops": "rbp",
+      "line": "    1070:\t55                   \tpush   rbp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4209,
+      "bytes": [
+        49,
+        210
+      ],
+      "mnemonic": "xor",
+      "ops": "edx,edx",
+      "line": "    1071:\t31 d2                \txor    edx,edx",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4211,
+      "bytes": [
+        190,
+        12,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "esi,0xc",
+      "line": "    1073:\tbe 0c 00 00 00       \tmov    esi,0xc",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4216,
+      "bytes": [
+        72,
+        141,
+        61,
+        129,
+        15,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rdi,[rip+0xf81]        # 2000 <main@@Base+0xf90>",
+      "line": "    1078:\t48 8d 3d 81 0f 00 00 \tlea    rdi,[rip+0xf81]        # 2000 <main@@Base+0xf90>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4223,
+      "bytes": [
+        72,
+        137,
+        229
+      ],
+      "mnemonic": "mov",
+      "ops": "rbp,rsp",
+      "line": "    107f:\t48 89 e5             \tmov    rbp,rsp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4226,
+      "bytes": [
+        65,
+        84
+      ],
+      "mnemonic": "push",
+      "ops": "r12",
+      "line": "    1082:\t41 54                \tpush   r12",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4228,
+      "bytes": [
+        83
+      ],
+      "mnemonic": "push",
+      "ops": "rbx",
+      "line": "    1084:\t53                   \tpush   rbx",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4229,
+      "bytes": [
+        232,
+        166,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "call",
+      "ops": "1030 <SHA256@plt>",
+      "line": "    1085:\te8 a6 ff ff ff       \tcall   1030 <SHA256@plt>",
+      "xrefs_out": [
+        4144
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4234,
+      "bytes": [
+        72,
+        137,
+        195
+      ],
+      "mnemonic": "mov",
+      "ops": "rbx,rax",
+      "line": "    108a:\t48 89 c3             \tmov    rbx,rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4237,
+      "bytes": [
+        76,
+        141,
+        96,
+        32
+      ],
+      "mnemonic": "lea",
+      "ops": "r12,[rax+0x20]",
+      "line": "    108d:\t4c 8d 60 20          \tlea    r12,[rax+0x20]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4241,
+      "bytes": [
+        15,
+        31,
+        64,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    1091:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4245,
+      "bytes": [
+        102,
+        102,
+        46,
+        15,
+        31,
+        132,
+        0
+      ],
+      "mnemonic": "data16",
+      "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
+      "line": "    1095:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4256,
+      "bytes": [
+        15,
+        182,
+        51
+      ],
+      "mnemonic": "movzx",
+      "ops": "esi,BYTE PTR [rbx]",
+      "line": "    10a0:\t0f b6 33             \tmovzx  esi,BYTE PTR [rbx]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4259,
+      "bytes": [
+        72,
+        141,
+        61,
+        99,
+        15,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rdi,[rip+0xf63]        # 200d <main@@Base+0xf9d>",
+      "line": "    10a3:\t48 8d 3d 63 0f 00 00 \tlea    rdi,[rip+0xf63]        # 200d <main@@Base+0xf9d>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4266,
+      "bytes": [
+        49,
+        192
+      ],
+      "mnemonic": "xor",
+      "ops": "eax,eax",
+      "line": "    10aa:\t31 c0                \txor    eax,eax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4268,
+      "bytes": [
+        72,
+        131,
+        195,
+        1
+      ],
+      "mnemonic": "add",
+      "ops": "rbx,0x1",
+      "line": "    10ac:\t48 83 c3 01          \tadd    rbx,0x1",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4272,
+      "bytes": [
+        232,
+        139,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "call",
+      "ops": "1040 <printf@plt>",
+      "line": "    10b0:\te8 8b ff ff ff       \tcall   1040 <printf@plt>",
+      "xrefs_out": [
+        4160
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4277,
+      "bytes": [
+        76,
+        57,
+        227
+      ],
+      "mnemonic": "cmp",
+      "ops": "rbx,r12",
+      "line": "    10b5:\t4c 39 e3             \tcmp    rbx,r12",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4280,
+      "bytes": [
+        117,
+        230
+      ],
+      "mnemonic": "jne",
+      "ops": "10a0 <main@@Base+0x30>",
+      "line": "    10b8:\t75 e6                \tjne    10a0 <main@@Base+0x30>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4282,
+      "bytes": [
+        72,
+        139,
+        5,
+        7,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "rax,QWORD PTR [rip+0x2f07]        # 3fc8 <main@@Base+0x2f58>",
+      "line": "    10ba:\t48 8b 05 07 2f 00 00 \tmov    rax,QWORD PTR [rip+0x2f07]        # 3fc8 <main@@Base+0x2f58>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4289,
+      "bytes": [
+        191,
+        10,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "edi,0xa",
+      "line": "    10c1:\tbf 0a 00 00 00       \tmov    edi,0xa",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4294,
+      "bytes": [
+        72,
+        139,
+        48
+      ],
+      "mnemonic": "mov",
+      "ops": "rsi,QWORD PTR [rax]",
+      "line": "    10c6:\t48 8b 30             \tmov    rsi,QWORD PTR [rax]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4297,
+      "bytes": [
+        232,
+        130,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "call",
+      "ops": "1050 <putc@plt>",
+      "line": "    10c9:\te8 82 ff ff ff       \tcall   1050 <putc@plt>",
+      "xrefs_out": [
+        4176
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4302,
+      "bytes": [
+        91
+      ],
+      "mnemonic": "pop",
+      "ops": "rbx",
+      "line": "    10ce:\t5b                   \tpop    rbx",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4303,
+      "bytes": [
+        49,
+        192
+      ],
+      "mnemonic": "xor",
+      "ops": "eax,eax",
+      "line": "    10cf:\t31 c0                \txor    eax,eax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4305,
+      "bytes": [
+        65,
+        92
+      ],
+      "mnemonic": "pop",
+      "ops": "r12",
+      "line": "    10d1:\t41 5c                \tpop    r12",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4307,
+      "bytes": [
+        93
+      ],
+      "mnemonic": "pop",
+      "ops": "rbp",
+      "line": "    10d3:\t5d                   \tpop    rbp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4308,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    10d4:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4309,
+      "bytes": [
+        102,
+        46,
+        15,
+        31,
+        132,
+        0,
+        0
+      ],
+      "mnemonic": "cs",
+      "ops": "nop WORD PTR [rax+rax*1+0x0]",
+      "line": "    10d5:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4319,
+      "bytes": [
+        144
+      ],
+      "mnemonic": "nop",
+      "ops": "",
+      "line": "    10df:\t90                   \tnop",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4320,
+      "bytes": [
+        72,
+        141,
+        61,
+        57,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rdi,[rip+0x2f39]        # 4020 <main@@Base+0x2fb0>",
+      "line": "    10e0:\t48 8d 3d 39 2f 00 00 \tlea    rdi,[rip+0x2f39]        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4327,
+      "bytes": [
+        72,
+        141,
+        5,
+        50,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rax,[rip+0x2f32]        # 4020 <main@@Base+0x2fb0>",
+      "line": "    10e7:\t48 8d 05 32 2f 00 00 \tlea    rax,[rip+0x2f32]        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4334,
+      "bytes": [
+        72,
+        57,
+        248
+      ],
+      "mnemonic": "cmp",
+      "ops": "rax,rdi",
+      "line": "    10ee:\t48 39 f8             \tcmp    rax,rdi",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4337,
+      "bytes": [
+        116,
+        21
+      ],
+      "mnemonic": "je",
+      "ops": "1108 <main@@Base+0x98>",
+      "line": "    10f1:\t74 15                \tje     1108 <main@@Base+0x98>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4339,
+      "bytes": [
+        72,
+        139,
+        5,
+        198,
+        46,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "rax,QWORD PTR [rip+0x2ec6]        # 3fc0 <main@@Base+0x2f50>",
+      "line": "    10f3:\t48 8b 05 c6 2e 00 00 \tmov    rax,QWORD PTR [rip+0x2ec6]        # 3fc0 <main@@Base+0x2f50>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4346,
+      "bytes": [
+        72,
+        133,
+        192
+      ],
+      "mnemonic": "test",
+      "ops": "rax,rax",
+      "line": "    10fa:\t48 85 c0             \ttest   rax,rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4349,
+      "bytes": [
+        116,
+        9
+      ],
+      "mnemonic": "je",
+      "ops": "1108 <main@@Base+0x98>",
+      "line": "    10fd:\t74 09                \tje     1108 <main@@Base+0x98>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4351,
+      "bytes": [
+        255,
+        224
+      ],
+      "mnemonic": "jmp",
+      "ops": "rax",
+      "line": "    10ff:\tff e0                \tjmp    rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4353,
+      "bytes": [
+        15,
+        31,
+        128,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    1101:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4360,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    1108:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4361,
+      "bytes": [
+        15,
+        31,
+        128,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    1109:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4368,
+      "bytes": [
+        72,
+        141,
+        61,
+        9,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rdi,[rip+0x2f09]        # 4020 <main@@Base+0x2fb0>",
+      "line": "    1110:\t48 8d 3d 09 2f 00 00 \tlea    rdi,[rip+0x2f09]        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 1
+    },
+    {
+      "addr": 4375,
+      "bytes": [
+        72,
+        141,
+        53,
+        2,
+        47,
+        0,
+        0
+      ],
+      "mnemonic": "lea",
+      "ops": "rsi,[rip+0x2f02]        # 4020 <main@@Base+0x2fb0>",
+      "line": "    1117:\t48 8d 35 02 2f 00 00 \tlea    rsi,[rip+0x2f02]        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4382,
+      "bytes": [
+        72,
+        41,
+        254
+      ],
+      "mnemonic": "sub",
+      "ops": "rsi,rdi",
+      "line": "    111e:\t48 29 fe             \tsub    rsi,rdi",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4385,
+      "bytes": [
+        72,
+        137,
+        240
+      ],
+      "mnemonic": "mov",
+      "ops": "rax,rsi",
+      "line": "    1121:\t48 89 f0             \tmov    rax,rsi",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4388,
+      "bytes": [
+        72,
+        193,
+        238,
+        63
+      ],
+      "mnemonic": "shr",
+      "ops": "rsi,0x3f",
+      "line": "    1124:\t48 c1 ee 3f          \tshr    rsi,0x3f",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4392,
+      "bytes": [
+        72,
+        193,
+        248,
+        3
+      ],
+      "mnemonic": "sar",
+      "ops": "rax,0x3",
+      "line": "    1128:\t48 c1 f8 03          \tsar    rax,0x3",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4396,
+      "bytes": [
+        72,
+        1,
+        198
+      ],
+      "mnemonic": "add",
+      "ops": "rsi,rax",
+      "line": "    112c:\t48 01 c6             \tadd    rsi,rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4399,
+      "bytes": [
+        72,
+        209,
+        254
+      ],
+      "mnemonic": "sar",
+      "ops": "rsi,1",
+      "line": "    112f:\t48 d1 fe             \tsar    rsi,1",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4402,
+      "bytes": [
+        116,
+        20
+      ],
+      "mnemonic": "je",
+      "ops": "1148 <main@@Base+0xd8>",
+      "line": "    1132:\t74 14                \tje     1148 <main@@Base+0xd8>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4404,
+      "bytes": [
+        72,
+        139,
+        5,
+        157,
+        46,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "rax,QWORD PTR [rip+0x2e9d]        # 3fd8 <main@@Base+0x2f68>",
+      "line": "    1134:\t48 8b 05 9d 2e 00 00 \tmov    rax,QWORD PTR [rip+0x2e9d]        # 3fd8 <main@@Base+0x2f68>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4411,
+      "bytes": [
+        72,
+        133,
+        192
+      ],
+      "mnemonic": "test",
+      "ops": "rax,rax",
+      "line": "    113b:\t48 85 c0             \ttest   rax,rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4414,
+      "bytes": [
+        116,
+        8
+      ],
+      "mnemonic": "je",
+      "ops": "1148 <main@@Base+0xd8>",
+      "line": "    113e:\t74 08                \tje     1148 <main@@Base+0xd8>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4416,
+      "bytes": [
+        255,
+        224
+      ],
+      "mnemonic": "jmp",
+      "ops": "rax",
+      "line": "    1140:\tff e0                \tjmp    rax",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4418,
+      "bytes": [
+        102,
+        15,
+        31,
+        68,
+        0,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "WORD PTR [rax+rax*1+0x0]",
+      "line": "    1142:\t66 0f 1f 44 00 00    \tnop    WORD PTR [rax+rax*1+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4424,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    1148:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4425,
+      "bytes": [
+        15,
+        31,
+        128,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    1149:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4432,
+      "bytes": [
+        243,
+        15,
+        30,
+        250
+      ],
+      "mnemonic": "endbr64",
+      "ops": "",
+      "line": "    1150:\tf3 0f 1e fa          \tendbr64",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4436,
+      "bytes": [
+        128,
+        61,
+        197,
+        46,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "cmp",
+      "ops": "BYTE PTR [rip+0x2ec5],0x0        # 4020 <main@@Base+0x2fb0>",
+      "line": "    1154:\t80 3d c5 2e 00 00 00 \tcmp    BYTE PTR [rip+0x2ec5],0x0        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4443,
+      "bytes": [
+        117,
+        43
+      ],
+      "mnemonic": "jne",
+      "ops": "1188 <main@@Base+0x118>",
+      "line": "    115b:\t75 2b                \tjne    1188 <main@@Base+0x118>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4445,
+      "bytes": [
+        85
+      ],
+      "mnemonic": "push",
+      "ops": "rbp",
+      "line": "    115d:\t55                   \tpush   rbp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4446,
+      "bytes": [
+        72,
+        131,
+        61,
+        122,
+        46,
+        0,
+        0
+      ],
+      "mnemonic": "cmp",
+      "ops": "QWORD PTR [rip+0x2e7a],0x0        # 3fe0 <main@@Base+0x2f70>",
+      "line": "    115e:\t48 83 3d 7a 2e 00 00 \tcmp    QWORD PTR [rip+0x2e7a],0x0        # 3fe0 <main@@Base+0x2f70>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4454,
+      "bytes": [
+        72,
+        137,
+        229
+      ],
+      "mnemonic": "mov",
+      "ops": "rbp,rsp",
+      "line": "    1166:\t48 89 e5             \tmov    rbp,rsp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4457,
+      "bytes": [
+        116,
+        12
+      ],
+      "mnemonic": "je",
+      "ops": "1177 <main@@Base+0x107>",
+      "line": "    1169:\t74 0c                \tje     1177 <main@@Base+0x107>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4459,
+      "bytes": [
+        72,
+        139,
+        61,
+        166,
+        46,
+        0,
+        0
+      ],
+      "mnemonic": "mov",
+      "ops": "rdi,QWORD PTR [rip+0x2ea6]        # 4018 <main@@Base+0x2fa8>",
+      "line": "    116b:\t48 8b 3d a6 2e 00 00 \tmov    rdi,QWORD PTR [rip+0x2ea6]        # 4018 <main@@Base+0x2fa8>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4466,
+      "bytes": [
+        232,
+        233,
+        254,
+        255,
+        255
+      ],
+      "mnemonic": "call",
+      "ops": "1060 <__cxa_finalize@plt>",
+      "line": "    1172:\te8 e9 fe ff ff       \tcall   1060 <__cxa_finalize@plt>",
+      "xrefs_out": [
+        4192
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4471,
+      "bytes": [
+        232,
+        100,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "call",
+      "ops": "10e0 <main@@Base+0x70>",
+      "line": "    1177:\te8 64 ff ff ff       \tcall   10e0 <main@@Base+0x70>",
+      "xrefs_out": [
+        4320
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4476,
+      "bytes": [
+        198,
+        5,
+        157,
+        46,
+        0,
+        0,
+        1
+      ],
+      "mnemonic": "mov",
+      "ops": "BYTE PTR [rip+0x2e9d],0x1        # 4020 <main@@Base+0x2fb0>",
+      "line": "    117c:\tc6 05 9d 2e 00 00 01 \tmov    BYTE PTR [rip+0x2e9d],0x1        # 4020 <main@@Base+0x2fb0>",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4483,
+      "bytes": [
+        93
+      ],
+      "mnemonic": "pop",
+      "ops": "rbp",
+      "line": "    1183:\t5d                   \tpop    rbp",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4484,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    1184:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4485,
+      "bytes": [
+        15,
+        31,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax]",
+      "line": "    1185:\t0f 1f 00             \tnop    DWORD PTR [rax]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4488,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    1188:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4489,
+      "bytes": [
+        15,
+        31,
+        128,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mnemonic": "nop",
+      "ops": "DWORD PTR [rax+0x0]",
+      "line": "    1189:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4496,
+      "bytes": [
+        243,
+        15,
+        30,
+        250
+      ],
+      "mnemonic": "endbr64",
+      "ops": "",
+      "line": "    1190:\tf3 0f 1e fa          \tendbr64",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4500,
+      "bytes": [
+        233,
+        119,
+        255,
+        255,
+        255
+      ],
+      "mnemonic": "jmp",
+      "ops": "1110 <main@@Base+0xa0>",
+      "line": "    1194:\te9 77 ff ff ff       \tjmp    1110 <main@@Base+0xa0>",
+      "xrefs_out": [
+        4368
+      ],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4508,
+      "bytes": [
+        72,
+        131,
+        236,
+        8
+      ],
+      "mnemonic": "sub",
+      "ops": "rsp,0x8",
+      "line": "    119c:\t48 83 ec 08          \tsub    rsp,0x8",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4512,
+      "bytes": [
+        72,
+        131,
+        196,
+        8
+      ],
+      "mnemonic": "add",
+      "ops": "rsp,0x8",
+      "line": "    11a0:\t48 83 c4 08          \tadd    rsp,0x8",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    },
+    {
+      "addr": 4516,
+      "bytes": [
+        195
+      ],
+      "mnemonic": "ret",
+      "ops": "",
+      "line": "    11a4:\tc3                   \tret",
+      "xrefs_out": [],
+      "xrefs_in": 0
+    }
+  ],
+  "labels": {
+    "4096": ".init",
+    "4128": "SHA256@plt-0x10",
+    "4144": "SHA256@plt",
+    "4160": "printf@plt",
+    "4176": "putc@plt",
+    "4192": "__cxa_finalize@plt",
+    "4208": "main@@Base",
+    "4508": ".fini"
+  }
+}

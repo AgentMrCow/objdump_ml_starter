@@ -57,6 +57,9 @@ python tools/aggregate_macros_v06.py \
 # Optional: Ghidra headless export + agreement checks (if analyzeHeadless is available)
 scripts/tools_ghidra.sh          # uses bin lists under out/
 python tools/compare_to_ghidra.py --out out/ghidra_compare_v06d_O3.tsv
+
+# Streamlit demo (local)
+streamlit run web/streamlit_app.py  # PYTHONPATH=src, models/ + data/ present
 ```
 
 Key artifacts

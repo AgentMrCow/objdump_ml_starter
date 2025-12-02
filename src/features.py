@@ -34,7 +34,18 @@ BASE_FEATURE_KEYS = [
 MNEMONIC_FEATURE_KEYS = [f"m_{m}" for m in BASE_MNEMONICS]
 NGRAM_FEATURE_KEYS = ["ng_" + "_".join(pat) for pat in NGRAM_PATTERNS]
 
-FEATURE_KEYS = BASE_FEATURE_KEYS + MNEMONIC_FEATURE_KEYS + NGRAM_FEATURE_KEYS
+CFG_FEATURE_KEYS = [
+    "bb_start",
+    "byte_sum",
+    "byte_len",
+    "rsp_touch",
+    "bb_preds",
+    "bb_succs",
+    "bb_len",
+    "byte_entropy",
+]
+
+FEATURE_KEYS = BASE_FEATURE_KEYS + MNEMONIC_FEATURE_KEYS + NGRAM_FEATURE_KEYS + CFG_FEATURE_KEYS
 
 
 def get_feature_keys():
@@ -175,6 +186,20 @@ def featurize_point(instrs, idx):
     for pattern, key in zip(NGRAM_PATTERNS, NGRAM_FEATURE_KEYS):
         if _contains_pattern(mnemonics, pattern):
             features[key] = 1
+
+    # CFG / byte-level helpers (defaults to zero when absent)
+    features["bb_start"] = ins.get("bb_start", 0)
+    features["byte_sum"] = ins.get("byte_sum", sum(ins.get("bytes", [])))
+    features["byte_len"] = ins.get("byte_len", len(ins.get("bytes", [])))
+    features["rsp_touch"] = ins.get("rsp_touch", 0)
+    features["bb_preds"] = ins.get("bb_preds", 0)
+    features["bb_succs"] = ins.get("bb_succs", 0)
+    features["bb_len"] = ins.get("bb_len", 0)
+    if "byte_entropy" in ins:
+        features["byte_entropy"] = ins["byte_entropy"]
+    else:
+        b = ins.get("bytes", [])
+        features["byte_entropy"] = (sum(b) / len(b)) if b else 0
 
     return features
 

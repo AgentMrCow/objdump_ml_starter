@@ -12,7 +12,8 @@
       "ops": "rsp,0x8",
       "line": "  401000:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198404,
@@ -29,7 +30,8 @@
       "ops": "rax,QWORD PTR [rip+0x2fd5]        # 403fe0 <fwrite@plt+0x2f50>",
       "line": "  401004:\t48 8b 05 d5 2f 00 00 \tmov    rax,QWORD PTR [rip+0x2fd5]        # 403fe0 <fwrite@plt+0x2f50>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198411,
@@ -42,7 +44,8 @@
       "ops": "rax,rax",
       "line": "  40100b:\t48 85 c0             \ttest   rax,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198414,
@@ -53,8 +56,11 @@
       "mnemonic": "je",
       "ops": "401012 <free@plt-0x1e>",
       "line": "  40100e:\t74 02                \tje     401012 <free@plt-0x1e>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198418
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198416,
@@ -66,7 +72,8 @@
       "ops": "rax",
       "line": "  401010:\tff d0                \tcall   rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198418,
@@ -80,7 +87,8 @@
       "ops": "rsp,0x8",
       "line": "  401012:\t48 83 c4 08          \tadd    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198422,
@@ -91,7 +99,8 @@
       "ops": "",
       "line": "  401016:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198432,
@@ -107,7 +116,8 @@
       "ops": "QWORD PTR [rip+0x2fca]        # 403ff0 <fwrite@plt+0x2f60>",
       "line": "  401020:\tff 35 ca 2f 00 00    \tpush   QWORD PTR [rip+0x2fca]        # 403ff0 <fwrite@plt+0x2f60>",
       "xrefs_out": [],
-      "xrefs_in": 7
+      "xrefs_in": 7,
+      "reachable": 1
     },
     {
       "addr": 4198438,
@@ -123,9 +133,10 @@
       "ops": "QWORD PTR [rip+0x2fcc]        # 403ff8 <fwrite@plt+0x2f68>",
       "line": "  401026:\tff 25 cc 2f 00 00    \tjmp    QWORD PTR [rip+0x2fcc]        # 403ff8 <fwrite@plt+0x2f68>",
       "xrefs_out": [
-        13
+        12236
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198444,
@@ -139,7 +150,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  40102c:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198448,
@@ -155,9 +167,10 @@
       "ops": "QWORD PTR [rip+0x2fca]        # 404000 <fwrite@plt+0x2f70>",
       "line": "  401030:\tff 25 ca 2f 00 00    \tjmp    QWORD PTR [rip+0x2fca]        # 404000 <fwrite@plt+0x2f70>",
       "xrefs_out": [
-        13
+        12234
       ],
-      "xrefs_in": 3
+      "xrefs_in": 3,
+      "reachable": 1
     },
     {
       "addr": 4198454,
@@ -172,7 +185,8 @@
       "ops": "0x0",
       "line": "  401036:\t68 00 00 00 00       \tpush   0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198459,
@@ -189,7 +203,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198464,
@@ -205,9 +220,10 @@
       "ops": "QWORD PTR [rip+0x2fc2]        # 404008 <fwrite@plt+0x2f78>",
       "line": "  401040:\tff 25 c2 2f 00 00    \tjmp    QWORD PTR [rip+0x2fc2]        # 404008 <fwrite@plt+0x2f78>",
       "xrefs_out": [
-        13
+        12226
       ],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198470,
@@ -222,7 +238,8 @@
       "ops": "0x1",
       "line": "  401046:\t68 01 00 00 00       \tpush   0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198475,
@@ -239,7 +256,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198480,
@@ -255,9 +273,10 @@
       "ops": "QWORD PTR [rip+0x2fba]        # 404010 <fwrite@plt+0x2f80>",
       "line": "  401050:\tff 25 ba 2f 00 00    \tjmp    QWORD PTR [rip+0x2fba]        # 404010 <fwrite@plt+0x2f80>",
       "xrefs_out": [
-        13
+        12218
       ],
-      "xrefs_in": 4
+      "xrefs_in": 4,
+      "reachable": 1
     },
     {
       "addr": 4198486,
@@ -272,7 +291,8 @@
       "ops": "0x2",
       "line": "  401056:\t68 02 00 00 00       \tpush   0x2",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198491,
@@ -289,7 +309,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198496,
@@ -305,9 +326,10 @@
       "ops": "QWORD PTR [rip+0x2fb2]        # 404018 <fwrite@plt+0x2f88>",
       "line": "  401060:\tff 25 b2 2f 00 00    \tjmp    QWORD PTR [rip+0x2fb2]        # 404018 <fwrite@plt+0x2f88>",
       "xrefs_out": [
-        13
+        12210
       ],
-      "xrefs_in": 3
+      "xrefs_in": 3,
+      "reachable": 1
     },
     {
       "addr": 4198502,
@@ -322,7 +344,8 @@
       "ops": "0x3",
       "line": "  401066:\t68 03 00 00 00       \tpush   0x3",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198507,
@@ -339,7 +362,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198512,
@@ -355,9 +379,10 @@
       "ops": "QWORD PTR [rip+0x2faa]        # 404020 <fwrite@plt+0x2f90>",
       "line": "  401070:\tff 25 aa 2f 00 00    \tjmp    QWORD PTR [rip+0x2faa]        # 404020 <fwrite@plt+0x2f90>",
       "xrefs_out": [
-        13
+        12202
       ],
-      "xrefs_in": 2
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198518,
@@ -372,7 +397,8 @@
       "ops": "0x4",
       "line": "  401076:\t68 04 00 00 00       \tpush   0x4",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198523,
@@ -389,7 +415,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198528,
@@ -405,9 +432,10 @@
       "ops": "QWORD PTR [rip+0x2fa2]        # 404028 <fwrite@plt+0x2f98>",
       "line": "  401080:\tff 25 a2 2f 00 00    \tjmp    QWORD PTR [rip+0x2fa2]        # 404028 <fwrite@plt+0x2f98>",
       "xrefs_out": [
-        13
+        12194
       ],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198534,
@@ -422,7 +450,8 @@
       "ops": "0x5",
       "line": "  401086:\t68 05 00 00 00       \tpush   0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198539,
@@ -439,7 +468,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198544,
@@ -455,9 +485,10 @@
       "ops": "QWORD PTR [rip+0x2f9a]        # 404030 <fwrite@plt+0x2fa0>",
       "line": "  401090:\tff 25 9a 2f 00 00    \tjmp    QWORD PTR [rip+0x2f9a]        # 404030 <fwrite@plt+0x2fa0>",
       "xrefs_out": [
-        13
+        12186
       ],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198550,
@@ -472,7 +503,8 @@
       "ops": "0x6",
       "line": "  401096:\t68 06 00 00 00       \tpush   0x6",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198555,
@@ -489,7 +521,8 @@
       "xrefs_out": [
         4198432
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4198592,
@@ -500,7 +533,8 @@
       "ops": "rbp",
       "line": "  4010c0:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 2
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198593,
@@ -517,7 +551,8 @@
       "ops": "rcx,[rip+0x1058]        # 402120 <fwrite@plt+0x1090>",
       "line": "  4010c1:\t48 8d 0d 58 10 00 00 \tlea    rcx,[rip+0x1058]        # 402120 <fwrite@plt+0x1090>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198600,
@@ -532,7 +567,8 @@
       "ops": "edx,0x1c",
       "line": "  4010c8:\tba 1c 00 00 00       \tmov    edx,0x1c",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198605,
@@ -549,7 +585,8 @@
       "ops": "rsi,[rip+0xf34]        # 402008 <fwrite@plt+0xf78>",
       "line": "  4010cd:\t48 8d 35 34 0f 00 00 \tlea    rsi,[rip+0xf34]        # 402008 <fwrite@plt+0xf78>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198612,
@@ -566,7 +603,8 @@
       "ops": "rdi,[rip+0xfd1]        # 4020ac <fwrite@plt+0x101c>",
       "line": "  4010d4:\t48 8d 3d d1 0f 00 00 \tlea    rdi,[rip+0xfd1]        # 4020ac <fwrite@plt+0x101c>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198619,
@@ -579,7 +617,8 @@
       "ops": "rbp,rsp",
       "line": "  4010db:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198622,
@@ -596,7 +635,8 @@
       "xrefs_out": [
         4198496
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198627,
@@ -607,7 +647,8 @@
       "ops": "rbp",
       "line": "  4010e3:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 4
+      "xrefs_in": 4,
+      "reachable": 1
     },
     {
       "addr": 4198628,
@@ -624,7 +665,8 @@
       "ops": "rcx,[rip+0x1025]        # 402110 <fwrite@plt+0x1080>",
       "line": "  4010e4:\t48 8d 0d 25 10 00 00 \tlea    rcx,[rip+0x1025]        # 402110 <fwrite@plt+0x1080>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198635,
@@ -639,7 +681,8 @@
       "ops": "edx,0x26",
       "line": "  4010eb:\tba 26 00 00 00       \tmov    edx,0x26",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198640,
@@ -656,7 +699,8 @@
       "ops": "rsi,[rip+0xf11]        # 402008 <fwrite@plt+0xf78>",
       "line": "  4010f0:\t48 8d 35 11 0f 00 00 \tlea    rsi,[rip+0xf11]        # 402008 <fwrite@plt+0xf78>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198647,
@@ -673,7 +717,8 @@
       "ops": "rdi,[rip+0xfae]        # 4020ac <fwrite@plt+0x101c>",
       "line": "  4010f7:\t48 8d 3d ae 0f 00 00 \tlea    rdi,[rip+0xfae]        # 4020ac <fwrite@plt+0x101c>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198654,
@@ -686,7 +731,8 @@
       "ops": "rbp,rsp",
       "line": "  4010fe:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198657,
@@ -703,7 +749,8 @@
       "xrefs_out": [
         4198496
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198662,
@@ -714,7 +761,8 @@
       "ops": "rbp",
       "line": "  401106:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 2
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198663,
@@ -731,7 +779,8 @@
       "ops": "rcx,[rip+0xff2]        # 402100 <fwrite@plt+0x1070>",
       "line": "  401107:\t48 8d 0d f2 0f 00 00 \tlea    rcx,[rip+0xff2]        # 402100 <fwrite@plt+0x1070>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198670,
@@ -746,7 +795,8 @@
       "ops": "edx,0x44",
       "line": "  40110e:\tba 44 00 00 00       \tmov    edx,0x44",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198675,
@@ -763,7 +813,8 @@
       "ops": "rsi,[rip+0xeee]        # 402008 <fwrite@plt+0xf78>",
       "line": "  401113:\t48 8d 35 ee 0e 00 00 \tlea    rsi,[rip+0xeee]        # 402008 <fwrite@plt+0xf78>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198682,
@@ -780,7 +831,8 @@
       "ops": "rdi,[rip+0xf9b]        # 4020bc <fwrite@plt+0x102c>",
       "line": "  40111a:\t48 8d 3d 9b 0f 00 00 \tlea    rdi,[rip+0xf9b]        # 4020bc <fwrite@plt+0x102c>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198689,
@@ -793,7 +845,8 @@
       "ops": "rbp,rsp",
       "line": "  401121:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198692,
@@ -810,7 +863,8 @@
       "xrefs_out": [
         4198496
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198697,
@@ -821,7 +875,8 @@
       "ops": "rbp",
       "line": "  401129:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198698,
@@ -834,7 +889,8 @@
       "ops": "rbp,rsp",
       "line": "  40112a:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198701,
@@ -851,7 +907,8 @@
       "xrefs_out": [
         4198592
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198706,
@@ -862,7 +919,8 @@
       "ops": "rbp",
       "line": "  401132:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198707,
@@ -875,7 +933,8 @@
       "ops": "rbp,rsp",
       "line": "  401133:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198710,
@@ -892,7 +951,8 @@
       "xrefs_out": [
         4198627
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198715,
@@ -909,7 +969,8 @@
       "xrefs_out": [
         4198592
       ],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198720,
@@ -926,7 +987,8 @@
       "xrefs_out": [
         4198627
       ],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198725,
@@ -943,7 +1005,8 @@
       "xrefs_out": [
         4198627
       ],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198730,
@@ -960,7 +1023,8 @@
       "xrefs_out": [
         4198662
       ],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198735,
@@ -977,7 +1041,8 @@
       "xrefs_out": [
         4198662
       ],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198740,
@@ -994,7 +1059,8 @@
       "xrefs_out": [
         4198627
       ],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198745,
@@ -1011,7 +1077,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  401159:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198752,
@@ -1022,7 +1089,8 @@
       "ops": "rbp",
       "line": "  401160:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198753,
@@ -1039,7 +1107,8 @@
       "ops": "rsi,[rip+0xf70]        # 4020d8 <fwrite@plt+0x1048>",
       "line": "  401161:\t48 8d 35 70 0f 00 00 \tlea    rsi,[rip+0xf70]        # 4020d8 <fwrite@plt+0x1048>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198760,
@@ -1054,7 +1123,8 @@
       "ops": "edi,0x6",
       "line": "  401168:\tbf 06 00 00 00       \tmov    edi,0x6",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198765,
@@ -1067,7 +1137,8 @@
       "ops": "rbp,rsp",
       "line": "  40116d:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198768,
@@ -1079,7 +1150,8 @@
       "ops": "r15",
       "line": "  401170:\t41 57                \tpush   r15",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198770,
@@ -1091,7 +1163,8 @@
       "ops": "r14",
       "line": "  401172:\t41 56                \tpush   r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198772,
@@ -1103,7 +1176,8 @@
       "ops": "r13",
       "line": "  401174:\t41 55                \tpush   r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198774,
@@ -1115,7 +1189,8 @@
       "ops": "r12",
       "line": "  401176:\t41 54                \tpush   r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198776,
@@ -1126,7 +1201,8 @@
       "ops": "rbx",
       "line": "  401178:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198777,
@@ -1140,7 +1216,8 @@
       "ops": "rsp,0x68",
       "line": "  401179:\t48 83 ec 68          \tsub    rsp,0x68",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198781,
@@ -1157,7 +1234,8 @@
       "xrefs_out": [
         4198528
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198786,
@@ -1171,7 +1249,8 @@
       "ops": "rax,[rbp-0x80]",
       "line": "  401182:\t48 8d 45 80          \tlea    rax,[rbp-0x80]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198790,
@@ -1185,7 +1264,8 @@
       "ops": "xmm0,xmm0",
       "line": "  401186:\t66 0f ef c0          \tpxor   xmm0,xmm0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198794,
@@ -1200,7 +1280,8 @@
       "ops": "esi,0x989680",
       "line": "  40118a:\tbe 80 96 98 00       \tmov    esi,0x989680",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198799,
@@ -1213,7 +1294,8 @@
       "ops": "rdi,rax",
       "line": "  40118f:\t48 89 c7             \tmov    rdi,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198802,
@@ -1230,7 +1312,8 @@
       "ops": "QWORD PTR [rbp-0x70],0x0",
       "line": "  401192:\t48 c7 45 90 00 00 00 \tmov    QWORD PTR [rbp-0x70],0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198810,
@@ -1247,7 +1330,8 @@
       "ops": "QWORD PTR [rbp-0x88],rax",
       "line": "  40119a:\t48 89 85 78 ff ff ff \tmov    QWORD PTR [rbp-0x88],rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198817,
@@ -1261,7 +1345,8 @@
       "ops": "XMMWORD PTR [rbp-0x80],xmm0",
       "line": "  4011a1:\t0f 29 45 80          \tmovaps XMMWORD PTR [rbp-0x80],xmm0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198821,
@@ -1278,7 +1363,8 @@
       "xrefs_out": [
         4199712
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198826,
@@ -1290,7 +1376,8 @@
       "ops": "al,al",
       "line": "  4011aa:\t84 c0                \ttest   al,al",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198828,
@@ -1305,8 +1392,11 @@
       "mnemonic": "je",
       "ops": "401303 <fwrite@plt+0x273>",
       "line": "  4011ac:\t0f 84 51 01 00 00    \tje     401303 <fwrite@plt+0x273>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199171
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198834,
@@ -1320,7 +1410,8 @@
       "ops": "r14,QWORD PTR [rbp-0x70]",
       "line": "  4011b2:\t4c 8b 75 90          \tmov    r14,QWORD PTR [rbp-0x70]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198838,
@@ -1333,7 +1424,8 @@
       "ops": "r12d,r12d",
       "line": "  4011b6:\t45 31 e4             \txor    r12d,r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198841,
@@ -1346,7 +1438,8 @@
       "ops": "r15d,r15d",
       "line": "  4011b9:\t45 31 ff             \txor    r15d,r15d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198844,
@@ -1361,7 +1454,8 @@
       "ops": "ebx,0x64",
       "line": "  4011bc:\tbb 64 00 00 00       \tmov    ebx,0x64",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198849,
@@ -1378,7 +1472,8 @@
       "ops": "rdi,[rip+0xf11]        # 4020d9 <fwrite@plt+0x1049>",
       "line": "  4011c1:\t48 8d 3d 11 0f 00 00 \tlea    rdi,[rip+0xf11]        # 4020d9 <fwrite@plt+0x1049>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198856,
@@ -1395,7 +1490,8 @@
       "xrefs_out": [
         4198464
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198861,
@@ -1409,7 +1505,8 @@
       "ops": "rdi,[rbp-0x60]",
       "line": "  4011cd:\t48 8d 7d a0          \tlea    rdi,[rbp-0x60]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198865,
@@ -1424,7 +1521,8 @@
       "ops": "ecx,0xa",
       "line": "  4011d1:\tb9 0a 00 00 00       \tmov    ecx,0xa",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198870,
@@ -1436,7 +1534,8 @@
       "ops": "eax,eax",
       "line": "  4011d6:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198872,
@@ -1453,7 +1552,8 @@
       "ops": "QWORD PTR [rbp-0x90],rdi",
       "line": "  4011d8:\t48 89 bd 70 ff ff ff \tmov    QWORD PTR [rbp-0x90],rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198879,
@@ -1465,7 +1565,8 @@
       "ops": "stos DWORD PTR [rdi],eax",
       "line": "  4011df:\tf3 ab                \trep stos DWORD PTR [rdi],eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198881,
@@ -1479,7 +1580,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  4011e1:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198885,
@@ -1496,7 +1598,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4011e5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198896,
@@ -1513,7 +1616,8 @@
       "ops": "rdi,QWORD PTR [rbp-0x88]",
       "line": "  4011f0:\t48 8b bd 78 ff ff ff \tmov    rdi,QWORD PTR [rbp-0x88]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198903,
@@ -1525,7 +1629,8 @@
       "ops": "esi,ebx",
       "line": "  4011f7:\t89 de                \tmov    esi,ebx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198905,
@@ -1539,7 +1644,8 @@
       "ops": "QWORD PTR [rbp-0x70],r14",
       "line": "  4011f9:\t4c 89 75 90          \tmov    QWORD PTR [rbp-0x70],r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198909,
@@ -1556,7 +1662,8 @@
       "xrefs_out": [
         4200256
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198914,
@@ -1568,7 +1675,8 @@
       "ops": "al,al",
       "line": "  401202:\t84 c0                \ttest   al,al",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198916,
@@ -1579,8 +1687,11 @@
       "mnemonic": "je",
       "ops": "401258 <fwrite@plt+0x1c8>",
       "line": "  401204:\t74 52                \tje     401258 <fwrite@plt+0x1c8>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199000
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198918,
@@ -1594,7 +1705,8 @@
       "ops": "r13d,[r15+0x1]",
       "line": "  401206:\t45 8d 6f 01          \tlea    r13d,[r15+0x1]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198922,
@@ -1608,7 +1720,8 @@
       "ops": "r15d,0x22",
       "line": "  40120a:\t41 83 ff 22          \tcmp    r15d,0x22",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198926,
@@ -1623,8 +1736,11 @@
       "mnemonic": "ja",
       "ops": "4012c8 <fwrite@plt+0x238>",
       "line": "  40120e:\t0f 87 b4 00 00 00    \tja     4012c8 <fwrite@plt+0x238>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199112
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198932,
@@ -1637,7 +1753,8 @@
       "ops": "r15d,r15d",
       "line": "  401214:\t45 85 ff             \ttest   r15d,r15d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198935,
@@ -1652,8 +1769,11 @@
       "mnemonic": "jne",
       "ops": "4012f0 <fwrite@plt+0x260>",
       "line": "  401217:\t0f 85 d3 00 00 00    \tjne    4012f0 <fwrite@plt+0x260>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199152
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198941,
@@ -1665,7 +1785,8 @@
       "ops": "esi,ebx",
       "line": "  40121d:\t89 de                \tmov    esi,ebx",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4198943,
@@ -1682,7 +1803,8 @@
       "ops": "rdi,[rip+0xed4]        # 4020fa <fwrite@plt+0x106a>",
       "line": "  40121f:\t48 8d 3d d4 0e 00 00 \tlea    rdi,[rip+0xed4]        # 4020fa <fwrite@plt+0x106a>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198950,
@@ -1694,7 +1816,8 @@
       "ops": "eax,eax",
       "line": "  401226:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198952,
@@ -1711,7 +1834,8 @@
       "xrefs_out": [
         4198480
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198957,
@@ -1723,7 +1847,8 @@
       "ops": "eax,ebx",
       "line": "  40122d:\t89 d8                \tmov    eax,ebx",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4198959,
@@ -1738,7 +1863,8 @@
       "ops": "ecx,0xcccccccd",
       "line": "  40122f:\tb9 cd cc cc cc       \tmov    ecx,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198964,
@@ -1750,7 +1876,8 @@
       "ops": "esi,ebx",
       "line": "  401234:\t89 de                \tmov    esi,ebx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198966,
@@ -1763,7 +1890,8 @@
       "ops": "r15d,r13d",
       "line": "  401236:\t45 89 ef             \tmov    r15d,r13d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198969,
@@ -1777,7 +1905,8 @@
       "ops": "rax,rcx",
       "line": "  401239:\t48 0f af c1          \timul   rax,rcx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198973,
@@ -1791,7 +1920,8 @@
       "ops": "rax,0x23",
       "line": "  40123d:\t48 c1 e8 23          \tshr    rax,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198977,
@@ -1804,7 +1934,8 @@
       "ops": "eax,[rax+rax*4]",
       "line": "  401241:\t8d 04 80             \tlea    eax,[rax+rax*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198980,
@@ -1816,7 +1947,8 @@
       "ops": "eax,eax",
       "line": "  401244:\t01 c0                \tadd    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198982,
@@ -1828,7 +1960,8 @@
       "ops": "esi,eax",
       "line": "  401246:\t29 c6                \tsub    esi,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198984,
@@ -1842,7 +1975,8 @@
       "ops": "eax,DWORD PTR [rbp+rsi*4-0x60]",
       "line": "  401248:\t8b 44 b5 a0          \tmov    eax,DWORD PTR [rbp+rsi*4-0x60]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198988,
@@ -1854,7 +1988,8 @@
       "ops": "eax,eax",
       "line": "  40124c:\t85 c0                \ttest   eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198990,
@@ -1865,8 +2000,11 @@
       "mnemonic": "jne",
       "ops": "401258 <fwrite@plt+0x1c8>",
       "line": "  40124e:\t75 08                \tjne    401258 <fwrite@plt+0x1c8>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199000
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198992,
@@ -1880,7 +2018,8 @@
       "ops": "DWORD PTR [rbp+rsi*4-0x60],ebx",
       "line": "  401250:\t89 5c b5 a0          \tmov    DWORD PTR [rbp+rsi*4-0x60],ebx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4198996,
@@ -1894,7 +2033,8 @@
       "ops": "r12d,0x1",
       "line": "  401254:\t41 83 c4 01          \tadd    r12d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199000,
@@ -1907,7 +2047,8 @@
       "ops": "ebx,0x1",
       "line": "  401258:\t83 c3 01             \tadd    ebx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4199003,
@@ -1923,7 +2064,8 @@
       "ops": "ebx,0x989680",
       "line": "  40125b:\t81 fb 80 96 98 00    \tcmp    ebx,0x989680",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199009,
@@ -1934,8 +2076,11 @@
       "mnemonic": "je",
       "ops": "401276 <fwrite@plt+0x1e6>",
       "line": "  401261:\t74 13                \tje     401276 <fwrite@plt+0x1e6>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199030
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199011,
@@ -1949,7 +2094,8 @@
       "ops": "r12d,0x9",
       "line": "  401263:\t41 83 fc 09          \tcmp    r12d,0x9",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199015,
@@ -1960,8 +2106,11 @@
       "mnemonic": "jbe",
       "ops": "4011f0 <fwrite@plt+0x160>",
       "line": "  401267:\t76 87                \tjbe    4011f0 <fwrite@plt+0x160>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198896
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199017,
@@ -1978,7 +2127,8 @@
       "ops": "r15d,0x257",
       "line": "  401269:\t41 81 ff 57 02 00 00 \tcmp    r15d,0x257",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199024,
@@ -1993,8 +2143,11 @@
       "mnemonic": "jbe",
       "ops": "4011f0 <fwrite@plt+0x160>",
       "line": "  401270:\t0f 86 7a ff ff ff    \tjbe    4011f0 <fwrite@plt+0x160>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198896
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199030,
@@ -2007,7 +2160,8 @@
       "ops": "rdi,r14",
       "line": "  401276:\t4c 89 f7             \tmov    rdi,r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199033,
@@ -2020,7 +2174,8 @@
       "ops": "r12d,r12d",
       "line": "  401279:\t45 31 e4             \txor    r12d,r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199036,
@@ -2037,7 +2192,8 @@
       "xrefs_out": [
         4198448
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199041,
@@ -2054,7 +2210,8 @@
       "ops": "rbx,QWORD PTR [rbp-0x90]",
       "line": "  401281:\t48 8b 9d 70 ff ff ff \tmov    rbx,QWORD PTR [rbp-0x90]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199048,
@@ -2071,7 +2228,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  401288:\t0f 1f 84 00 00 00 00 \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199056,
@@ -2083,7 +2241,8 @@
       "ops": "edx,DWORD PTR [rbx]",
       "line": "  401290:\t8b 13                \tmov    edx,DWORD PTR [rbx]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199058,
@@ -2096,7 +2255,8 @@
       "ops": "esi,r12d",
       "line": "  401292:\t44 89 e6             \tmov    esi,r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199061,
@@ -2113,7 +2273,8 @@
       "ops": "rdi,[rip+0xde4]        # 402080 <fwrite@plt+0xff0>",
       "line": "  401295:\t48 8d 3d e4 0d 00 00 \tlea    rdi,[rip+0xde4]        # 402080 <fwrite@plt+0xff0>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199068,
@@ -2125,7 +2286,8 @@
       "ops": "eax,eax",
       "line": "  40129c:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199070,
@@ -2139,7 +2301,8 @@
       "ops": "r12d,0x1",
       "line": "  40129e:\t41 83 c4 01          \tadd    r12d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199074,
@@ -2153,7 +2316,8 @@
       "ops": "rbx,0x4",
       "line": "  4012a2:\t48 83 c3 04          \tadd    rbx,0x4",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199078,
@@ -2170,7 +2334,8 @@
       "xrefs_out": [
         4198480
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199083,
@@ -2184,7 +2349,8 @@
       "ops": "r12d,0xa",
       "line": "  4012ab:\t41 83 fc 0a          \tcmp    r12d,0xa",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199087,
@@ -2195,8 +2361,11 @@
       "mnemonic": "jne",
       "ops": "401290 <fwrite@plt+0x200>",
       "line": "  4012af:\t75 df                \tjne    401290 <fwrite@plt+0x200>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199056
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199089,
@@ -2208,7 +2377,8 @@
       "ops": "eax,eax",
       "line": "  4012b1:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199091,
@@ -2222,7 +2392,8 @@
       "ops": "rsp,0x68",
       "line": "  4012b3:\t48 83 c4 68          \tadd    rsp,0x68",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199095,
@@ -2233,7 +2404,8 @@
       "ops": "rbx",
       "line": "  4012b7:\t5b                   \tpop    rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199096,
@@ -2245,7 +2417,8 @@
       "ops": "r12",
       "line": "  4012b8:\t41 5c                \tpop    r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199098,
@@ -2257,7 +2430,8 @@
       "ops": "r13",
       "line": "  4012ba:\t41 5d                \tpop    r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199100,
@@ -2269,7 +2443,8 @@
       "ops": "r14",
       "line": "  4012bc:\t41 5e                \tpop    r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199102,
@@ -2281,7 +2456,8 @@
       "ops": "r15",
       "line": "  4012be:\t41 5f                \tpop    r15",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199104,
@@ -2292,7 +2468,8 @@
       "ops": "rbp",
       "line": "  4012c0:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199105,
@@ -2303,7 +2480,8 @@
       "ops": "",
       "line": "  4012c1:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199106,
@@ -2319,7 +2497,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  4012c2:\t66 0f 1f 44 00 00    \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199112,
@@ -2336,7 +2515,8 @@
       "ops": "r15d,0x257",
       "line": "  4012c8:\t41 81 ff 57 02 00 00 \tcmp    r15d,0x257",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199119,
@@ -2351,8 +2531,11 @@
       "mnemonic": "jne",
       "ops": "40122d <fwrite@plt+0x19d>",
       "line": "  4012cf:\t0f 85 58 ff ff ff    \tjne    40122d <fwrite@plt+0x19d>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198957
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199125,
@@ -2364,7 +2547,8 @@
       "ops": "esi,ebx",
       "line": "  4012d5:\t89 de                \tmov    esi,ebx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199127,
@@ -2381,7 +2565,8 @@
       "ops": "rdi,[rip+0xd82]        # 402060 <fwrite@plt+0xfd0>",
       "line": "  4012d7:\t48 8d 3d 82 0d 00 00 \tlea    rdi,[rip+0xd82]        # 402060 <fwrite@plt+0xfd0>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199134,
@@ -2393,7 +2578,8 @@
       "ops": "eax,eax",
       "line": "  4012de:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199136,
@@ -2410,7 +2596,8 @@
       "xrefs_out": [
         4198480
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199141,
@@ -2427,7 +2614,8 @@
       "xrefs_out": [
         4198957
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199146,
@@ -2443,7 +2631,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  4012ea:\t66 0f 1f 44 00 00    \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199152,
@@ -2460,7 +2649,8 @@
       "ops": "rdi,[rip+0xe00]        # 4020f7 <fwrite@plt+0x1067>",
       "line": "  4012f0:\t48 8d 3d 00 0e 00 00 \tlea    rdi,[rip+0xe00]        # 4020f7 <fwrite@plt+0x1067>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199159,
@@ -2472,7 +2662,8 @@
       "ops": "eax,eax",
       "line": "  4012f7:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199161,
@@ -2489,7 +2680,8 @@
       "xrefs_out": [
         4198480
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199166,
@@ -2506,7 +2698,8 @@
       "xrefs_out": [
         4198941
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199171,
@@ -2523,7 +2716,8 @@
       "ops": "rcx,QWORD PTR [rip+0x2d56]        # 404060 <stderr@GLIBC_2.2.5>",
       "line": "  401303:\t48 8b 0d 56 2d 00 00 \tmov    rcx,QWORD PTR [rip+0x2d56]        # 404060 <stderr@GLIBC_2.2.5>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199178,
@@ -2538,7 +2732,8 @@
       "ops": "edx,0xe",
       "line": "  40130a:\tba 0e 00 00 00       \tmov    edx,0xe",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199183,
@@ -2553,7 +2748,8 @@
       "ops": "esi,0x1",
       "line": "  40130f:\tbe 01 00 00 00       \tmov    esi,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199188,
@@ -2570,7 +2766,8 @@
       "ops": "rdi,[rip+0xdaf]        # 4020ca <fwrite@plt+0x103a>",
       "line": "  401314:\t48 8d 3d af 0d 00 00 \tlea    rdi,[rip+0xdaf]        # 4020ca <fwrite@plt+0x103a>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199195,
@@ -2587,7 +2784,8 @@
       "xrefs_out": [
         4198544
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199200,
@@ -2602,7 +2800,8 @@
       "ops": "eax,0x1",
       "line": "  401320:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199205,
@@ -2616,7 +2815,8 @@
       "xrefs_out": [
         4199091
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199207,
@@ -2633,7 +2833,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  401327:\t66 0f 1f 84 00 00 00 \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199216,
@@ -2645,7 +2846,8 @@
       "ops": "ebp,ebp",
       "line": "  401330:\t31 ed                \txor    ebp,ebp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199218,
@@ -2658,7 +2860,8 @@
       "ops": "r9,rdx",
       "line": "  401332:\t49 89 d1             \tmov    r9,rdx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199221,
@@ -2669,7 +2872,8 @@
       "ops": "rsi",
       "line": "  401335:\t5e                   \tpop    rsi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199222,
@@ -2682,7 +2886,8 @@
       "ops": "rdx,rsp",
       "line": "  401336:\t48 89 e2             \tmov    rdx,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199225,
@@ -2696,7 +2901,8 @@
       "ops": "rsp,0xfffffffffffffff0",
       "line": "  401339:\t48 83 e4 f0          \tand    rsp,0xfffffffffffffff0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199229,
@@ -2707,7 +2913,8 @@
       "ops": "rax",
       "line": "  40133d:\t50                   \tpush   rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199230,
@@ -2718,7 +2925,8 @@
       "ops": "rsp",
       "line": "  40133e:\t54                   \tpush   rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199231,
@@ -2731,7 +2939,8 @@
       "ops": "r8d,r8d",
       "line": "  40133f:\t45 31 c0             \txor    r8d,r8d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199234,
@@ -2743,7 +2952,8 @@
       "ops": "ecx,ecx",
       "line": "  401342:\t31 c9                \txor    ecx,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199236,
@@ -2760,7 +2970,8 @@
       "ops": "rdi,0x401160",
       "line": "  401344:\t48 c7 c7 60 11 40 00 \tmov    rdi,0x401160",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199243,
@@ -2776,9 +2987,10 @@
       "ops": "QWORD PTR [rip+0x2c87]        # 403fd8 <fwrite@plt+0x2f48>",
       "line": "  40134b:\tff 15 87 2c 00 00    \tcall   QWORD PTR [rip+0x2c87]        # 403fd8 <fwrite@plt+0x2f48>",
       "xrefs_out": [
-        13
+        11399
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199249,
@@ -2789,7 +3001,8 @@
       "ops": "",
       "line": "  401351:\tf4                   \thlt",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199250,
@@ -2806,7 +3019,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401352:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199260,
@@ -2820,7 +3034,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  40135c:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199264,
@@ -2831,7 +3046,8 @@
       "ops": "",
       "line": "  401360:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199265,
@@ -2848,7 +3064,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401361:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199275,
@@ -2863,7 +3080,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  40136b:\t0f 1f 44 00 00       \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199280,
@@ -2878,7 +3096,8 @@
       "ops": "eax,0x404048",
       "line": "  401370:\tb8 48 40 40 00       \tmov    eax,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4199285,
@@ -2894,7 +3113,8 @@
       "ops": "rax,0x404048",
       "line": "  401375:\t48 3d 48 40 40 00    \tcmp    rax,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199291,
@@ -2905,8 +3125,11 @@
       "mnemonic": "je",
       "ops": "401390 <fwrite@plt+0x300>",
       "line": "  40137b:\t74 13                \tje     401390 <fwrite@plt+0x300>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199312
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199293,
@@ -2921,7 +3144,8 @@
       "ops": "eax,0x0",
       "line": "  40137d:\tb8 00 00 00 00       \tmov    eax,0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199298,
@@ -2934,7 +3158,8 @@
       "ops": "rax,rax",
       "line": "  401382:\t48 85 c0             \ttest   rax,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199301,
@@ -2945,8 +3170,11 @@
       "mnemonic": "je",
       "ops": "401390 <fwrite@plt+0x300>",
       "line": "  401385:\t74 09                \tje     401390 <fwrite@plt+0x300>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199312
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199303,
@@ -2961,7 +3189,8 @@
       "ops": "edi,0x404048",
       "line": "  401387:\tbf 48 40 40 00       \tmov    edi,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199308,
@@ -2973,7 +3202,8 @@
       "ops": "rax",
       "line": "  40138c:\tff e0                \tjmp    rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199310,
@@ -2985,7 +3215,8 @@
       "ops": "ax,ax",
       "line": "  40138e:\t66 90                \txchg   ax,ax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199312,
@@ -2996,7 +3227,8 @@
       "ops": "",
       "line": "  401390:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 0
     },
     {
       "addr": 4199313,
@@ -3010,7 +3242,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  401391:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199317,
@@ -3027,7 +3260,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401395:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199328,
@@ -3042,7 +3276,8 @@
       "ops": "esi,0x404048",
       "line": "  4013a0:\tbe 48 40 40 00       \tmov    esi,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4199333,
@@ -3059,7 +3294,8 @@
       "ops": "rsi,0x404048",
       "line": "  4013a5:\t48 81 ee 48 40 40 00 \tsub    rsi,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199340,
@@ -3072,7 +3308,8 @@
       "ops": "rax,rsi",
       "line": "  4013ac:\t48 89 f0             \tmov    rax,rsi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199343,
@@ -3086,7 +3323,8 @@
       "ops": "rsi,0x3f",
       "line": "  4013af:\t48 c1 ee 3f          \tshr    rsi,0x3f",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199347,
@@ -3100,7 +3338,8 @@
       "ops": "rax,0x3",
       "line": "  4013b3:\t48 c1 f8 03          \tsar    rax,0x3",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199351,
@@ -3113,7 +3352,8 @@
       "ops": "rsi,rax",
       "line": "  4013b7:\t48 01 c6             \tadd    rsi,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199354,
@@ -3126,7 +3366,8 @@
       "ops": "rsi,1",
       "line": "  4013ba:\t48 d1 fe             \tsar    rsi,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199357,
@@ -3137,8 +3378,11 @@
       "mnemonic": "je",
       "ops": "4013d0 <fwrite@plt+0x340>",
       "line": "  4013bd:\t74 11                \tje     4013d0 <fwrite@plt+0x340>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199376
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199359,
@@ -3153,7 +3397,8 @@
       "ops": "eax,0x0",
       "line": "  4013bf:\tb8 00 00 00 00       \tmov    eax,0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199364,
@@ -3166,7 +3411,8 @@
       "ops": "rax,rax",
       "line": "  4013c4:\t48 85 c0             \ttest   rax,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199367,
@@ -3177,8 +3423,11 @@
       "mnemonic": "je",
       "ops": "4013d0 <fwrite@plt+0x340>",
       "line": "  4013c7:\t74 07                \tje     4013d0 <fwrite@plt+0x340>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199376
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199369,
@@ -3193,7 +3442,8 @@
       "ops": "edi,0x404048",
       "line": "  4013c9:\tbf 48 40 40 00       \tmov    edi,0x404048",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199374,
@@ -3205,7 +3455,8 @@
       "ops": "rax",
       "line": "  4013ce:\tff e0                \tjmp    rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199376,
@@ -3216,7 +3467,8 @@
       "ops": "",
       "line": "  4013d0:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 2,
+      "reachable": 0
     },
     {
       "addr": 4199377,
@@ -3230,7 +3482,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  4013d1:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199381,
@@ -3247,7 +3500,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4013d5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199392,
@@ -3261,7 +3515,8 @@
       "ops": "",
       "line": "  4013e0:\tf3 0f 1e fa          \tendbr64",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199396,
@@ -3278,7 +3533,8 @@
       "ops": "BYTE PTR [rip+0x2c7d],0x0        # 404068 <stderr@GLIBC_2.2.5+0x8>",
       "line": "  4013e4:\t80 3d 7d 2c 00 00 00 \tcmp    BYTE PTR [rip+0x2c7d],0x0        # 404068 <stderr@GLIBC_2.2.5+0x8>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199403,
@@ -3289,8 +3545,11 @@
       "mnemonic": "jne",
       "ops": "401400 <fwrite@plt+0x370>",
       "line": "  4013eb:\t75 13                \tjne    401400 <fwrite@plt+0x370>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199424
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199405,
@@ -3301,7 +3560,8 @@
       "ops": "rbp",
       "line": "  4013ed:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199406,
@@ -3314,7 +3574,8 @@
       "ops": "rbp,rsp",
       "line": "  4013ee:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199409,
@@ -3331,7 +3592,8 @@
       "xrefs_out": [
         4199280
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199414,
@@ -3348,7 +3610,8 @@
       "ops": "BYTE PTR [rip+0x2c6b],0x1        # 404068 <stderr@GLIBC_2.2.5+0x8>",
       "line": "  4013f6:\tc6 05 6b 2c 00 00 01 \tmov    BYTE PTR [rip+0x2c6b],0x1        # 404068 <stderr@GLIBC_2.2.5+0x8>",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199421,
@@ -3359,7 +3622,8 @@
       "ops": "rbp",
       "line": "  4013fd:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199422,
@@ -3370,7 +3634,8 @@
       "ops": "",
       "line": "  4013fe:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199423,
@@ -3381,7 +3646,8 @@
       "ops": "",
       "line": "  4013ff:\t90                   \tnop",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199424,
@@ -3392,7 +3658,8 @@
       "ops": "",
       "line": "  401400:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4199425,
@@ -3406,7 +3673,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  401401:\t0f 1f 40 00          \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199429,
@@ -3423,7 +3691,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401405:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199440,
@@ -3437,7 +3706,8 @@
       "ops": "",
       "line": "  401410:\tf3 0f 1e fa          \tendbr64",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199444,
@@ -3451,7 +3721,8 @@
       "xrefs_out": [
         4199328
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199446,
@@ -3468,7 +3739,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401416:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199456,
@@ -3485,7 +3757,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401420:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199466,
@@ -3502,7 +3775,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  40142a:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199476,
@@ -3519,7 +3793,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401434:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199486,
@@ -3531,7 +3806,8 @@
       "ops": "ax,ax",
       "line": "  40143e:\t66 90                \txchg   ax,ax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199488,
@@ -3542,7 +3818,8 @@
       "ops": "rbp",
       "line": "  401440:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199489,
@@ -3555,7 +3832,8 @@
       "ops": "rbp,rsp",
       "line": "  401441:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199492,
@@ -3567,7 +3845,8 @@
       "ops": "r12",
       "line": "  401444:\t41 54                \tpush   r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199494,
@@ -3580,7 +3859,8 @@
       "ops": "r12,rdi",
       "line": "  401446:\t49 89 fc             \tmov    r12,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199497,
@@ -3593,7 +3873,8 @@
       "ops": "edi,[rsi+0x1f]",
       "line": "  401449:\t8d 7e 1f             \tlea    edi,[rsi+0x1f]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199500,
@@ -3604,7 +3885,8 @@
       "ops": "rbx",
       "line": "  40144c:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199501,
@@ -3617,7 +3899,8 @@
       "ops": "edi,0x5",
       "line": "  40144d:\tc1 ef 05             \tshr    edi,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199504,
@@ -3629,7 +3912,8 @@
       "ops": "ebx,esi",
       "line": "  401450:\t89 f3                \tmov    ebx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199506,
@@ -3644,7 +3928,8 @@
       "ops": "esi,0x4",
       "line": "  401452:\tbe 04 00 00 00       \tmov    esi,0x4",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199511,
@@ -3661,7 +3946,8 @@
       "xrefs_out": [
         4198512
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199516,
@@ -3674,7 +3960,8 @@
       "ops": "rax,rax",
       "line": "  40145c:\t48 85 c0             \ttest   rax,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199519,
@@ -3685,8 +3972,11 @@
       "mnemonic": "je",
       "ops": "401474 <fwrite@plt+0x3e4>",
       "line": "  40145f:\t74 13                \tje     401474 <fwrite@plt+0x3e4>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199540
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199521,
@@ -3700,7 +3990,8 @@
       "ops": "DWORD PTR [r12],ebx",
       "line": "  401461:\t41 89 1c 24          \tmov    DWORD PTR [r12],ebx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199525,
@@ -3715,7 +4006,8 @@
       "ops": "QWORD PTR [r12+0x8],rax",
       "line": "  401465:\t49 89 44 24 08       \tmov    QWORD PTR [r12+0x8],rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199530,
@@ -3730,7 +4022,8 @@
       "ops": "eax,0x1",
       "line": "  40146a:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199535,
@@ -3741,7 +4034,8 @@
       "ops": "rbx",
       "line": "  40146f:\t5b                   \tpop    rbx",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4199536,
@@ -3753,7 +4047,8 @@
       "ops": "r12",
       "line": "  401470:\t41 5c                \tpop    r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199538,
@@ -3764,7 +4059,8 @@
       "ops": "rbp",
       "line": "  401472:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199539,
@@ -3775,7 +4071,8 @@
       "ops": "",
       "line": "  401473:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199540,
@@ -3787,7 +4084,8 @@
       "ops": "eax,eax",
       "line": "  401474:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4199542,
@@ -3801,7 +4099,8 @@
       "xrefs_out": [
         4199535
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199544,
@@ -3818,7 +4117,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  401478:\t0f 1f 84 00 00 00 00 \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199552,
@@ -3829,7 +4129,8 @@
       "ops": "rbp",
       "line": "  401480:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199553,
@@ -3842,7 +4143,8 @@
       "ops": "rbp,rsp",
       "line": "  401481:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199556,
@@ -3853,7 +4155,8 @@
       "ops": "rbx",
       "line": "  401484:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199557,
@@ -3866,7 +4169,8 @@
       "ops": "rbx,rdi",
       "line": "  401485:\t48 89 fb             \tmov    rbx,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199560,
@@ -3880,7 +4184,8 @@
       "ops": "rsp,0x8",
       "line": "  401488:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199564,
@@ -3894,7 +4199,8 @@
       "ops": "rdi,QWORD PTR [rdi+0x8]",
       "line": "  40148c:\t48 8b 7f 08          \tmov    rdi,QWORD PTR [rdi+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199568,
@@ -3911,7 +4217,8 @@
       "xrefs_out": [
         4198448
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199573,
@@ -3928,7 +4235,8 @@
       "ops": "QWORD PTR [rbx+0x8],0x0",
       "line": "  401495:\t48 c7 43 08 00 00 00 \tmov    QWORD PTR [rbx+0x8],0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199581,
@@ -3942,7 +4250,8 @@
       "ops": "rbx,QWORD PTR [rbp-0x8]",
       "line": "  40149d:\t48 8b 5d f8          \tmov    rbx,QWORD PTR [rbp-0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199585,
@@ -3953,7 +4262,8 @@
       "ops": "",
       "line": "  4014a1:\tc9                   \tleave",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199586,
@@ -3964,7 +4274,8 @@
       "ops": "",
       "line": "  4014a2:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199587,
@@ -3976,7 +4287,8 @@
       "ops": "ax,ax",
       "line": "  4014a3:\t66 90                \txchg   ax,ax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199589,
@@ -3993,7 +4305,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4014a5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199600,
@@ -4005,7 +4318,8 @@
       "ops": "esi,DWORD PTR [rdi]",
       "line": "  4014b0:\t3b 37                \tcmp    esi,DWORD PTR [rdi]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199602,
@@ -4020,8 +4334,11 @@
       "mnemonic": "jae",
       "ops": "401129 <fwrite@plt+0x99>",
       "line": "  4014b2:\t0f 83 71 fc ff ff    \tjae    401129 <fwrite@plt+0x99>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198697
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199608,
@@ -4035,7 +4352,8 @@
       "ops": "rax,QWORD PTR [rdi+0x8]",
       "line": "  4014b8:\t48 8b 47 08          \tmov    rax,QWORD PTR [rdi+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199612,
@@ -4048,7 +4366,8 @@
       "ops": "r8d,edx",
       "line": "  4014bc:\t41 89 d0             \tmov    r8d,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199615,
@@ -4060,7 +4379,8 @@
       "ops": "edx,esi",
       "line": "  4014bf:\t89 f2                \tmov    edx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199617,
@@ -4072,7 +4392,8 @@
       "ops": "ecx,esi",
       "line": "  4014c1:\t89 f1                \tmov    ecx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199619,
@@ -4085,7 +4406,8 @@
       "ops": "edx,0x5",
       "line": "  4014c3:\tc1 ea 05             \tshr    edx,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199622,
@@ -4099,7 +4421,8 @@
       "ops": "rdx,[rax+rdx*4]",
       "line": "  4014c6:\t48 8d 14 90          \tlea    rdx,[rax+rdx*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199626,
@@ -4114,7 +4437,8 @@
       "ops": "eax,0x1",
       "line": "  4014ca:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199631,
@@ -4126,7 +4450,8 @@
       "ops": "eax,cl",
       "line": "  4014cf:\td3 e0                \tshl    eax,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199633,
@@ -4138,7 +4463,8 @@
       "ops": "ecx,DWORD PTR [rdx]",
       "line": "  4014d1:\t8b 0a                \tmov    ecx,DWORD PTR [rdx]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199635,
@@ -4150,7 +4476,8 @@
       "ops": "esi,eax",
       "line": "  4014d3:\t89 c6                \tmov    esi,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199637,
@@ -4162,7 +4489,8 @@
       "ops": "eax",
       "line": "  4014d5:\tf7 d0                \tnot    eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199639,
@@ -4174,7 +4502,8 @@
       "ops": "esi,ecx",
       "line": "  4014d7:\t09 ce                \tor     esi,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199641,
@@ -4186,7 +4515,8 @@
       "ops": "eax,ecx",
       "line": "  4014d9:\t21 c8                \tand    eax,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199643,
@@ -4199,7 +4529,8 @@
       "ops": "r8b,r8b",
       "line": "  4014db:\t45 84 c0             \ttest   r8b,r8b",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199646,
@@ -4212,7 +4543,8 @@
       "ops": "eax,esi",
       "line": "  4014de:\t0f 45 c6             \tcmovne eax,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199649,
@@ -4224,7 +4556,8 @@
       "ops": "DWORD PTR [rdx],eax",
       "line": "  4014e1:\t89 02                \tmov    DWORD PTR [rdx],eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199651,
@@ -4235,7 +4568,8 @@
       "ops": "",
       "line": "  4014e3:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199652,
@@ -4246,7 +4580,8 @@
       "ops": "",
       "line": "  4014e4:\t90                   \tnop",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199653,
@@ -4263,7 +4598,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4014e5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199664,
@@ -4275,7 +4611,8 @@
       "ops": "esi,DWORD PTR [rdi]",
       "line": "  4014f0:\t3b 37                \tcmp    esi,DWORD PTR [rdi]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199666,
@@ -4290,8 +4627,11 @@
       "mnemonic": "jae",
       "ops": "401132 <fwrite@plt+0xa2>",
       "line": "  4014f2:\t0f 83 3a fc ff ff    \tjae    401132 <fwrite@plt+0xa2>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198706
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199672,
@@ -4305,7 +4645,8 @@
       "ops": "rdx,QWORD PTR [rdi+0x8]",
       "line": "  4014f8:\t48 8b 57 08          \tmov    rdx,QWORD PTR [rdi+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199676,
@@ -4318,7 +4659,8 @@
       "ops": "r8d,esi",
       "line": "  4014fc:\t41 89 f0             \tmov    r8d,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199679,
@@ -4330,7 +4672,8 @@
       "ops": "ecx,esi",
       "line": "  4014ff:\t89 f1                \tmov    ecx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199681,
@@ -4345,7 +4688,8 @@
       "ops": "eax,0x1",
       "line": "  401501:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199686,
@@ -4359,7 +4703,8 @@
       "ops": "r8d,0x5",
       "line": "  401506:\t41 c1 e8 05          \tshr    r8d,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199690,
@@ -4371,7 +4716,8 @@
       "ops": "eax,cl",
       "line": "  40150a:\td3 e0                \tshl    eax,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199692,
@@ -4385,7 +4731,8 @@
       "ops": "eax,DWORD PTR [rdx+r8*4]",
       "line": "  40150c:\t42 23 04 82          \tand    eax,DWORD PTR [rdx+r8*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199696,
@@ -4398,7 +4745,8 @@
       "ops": "al",
       "line": "  401510:\t0f 95 c0             \tsetne  al",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199699,
@@ -4409,7 +4757,8 @@
       "ops": "",
       "line": "  401513:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199700,
@@ -4420,7 +4769,8 @@
       "ops": "",
       "line": "  401514:\t90                   \tnop",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199701,
@@ -4437,7 +4787,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401515:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199712,
@@ -4448,7 +4799,8 @@
       "ops": "rbp",
       "line": "  401520:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199713,
@@ -4461,7 +4813,8 @@
       "ops": "rbp,rsp",
       "line": "  401521:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199716,
@@ -4473,7 +4826,8 @@
       "ops": "r13",
       "line": "  401524:\t41 55                \tpush   r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199718,
@@ -4486,7 +4840,8 @@
       "ops": "r13,rdi",
       "line": "  401526:\t49 89 fd             \tmov    r13,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199721,
@@ -4498,7 +4853,8 @@
       "ops": "r12",
       "line": "  401529:\t41 54                \tpush   r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199723,
@@ -4511,7 +4867,8 @@
       "ops": "r12d,esi",
       "line": "  40152b:\t41 89 f4             \tmov    r12d,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199726,
@@ -4522,7 +4879,8 @@
       "ops": "rbx",
       "line": "  40152e:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199727,
@@ -4535,7 +4893,8 @@
       "ops": "r12d,1",
       "line": "  40152f:\t41 d1 ec             \tshr    r12d,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199730,
@@ -4547,7 +4906,8 @@
       "ops": "ebx,esi",
       "line": "  401532:\t89 f3                \tmov    ebx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199732,
@@ -4562,7 +4922,8 @@
       "ops": "esi,0x4",
       "line": "  401534:\tbe 04 00 00 00       \tmov    esi,0x4",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199737,
@@ -4577,7 +4938,8 @@
       "ops": "edi,[r12+0x1f]",
       "line": "  401539:\t41 8d 7c 24 1f       \tlea    edi,[r12+0x1f]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199742,
@@ -4590,7 +4952,8 @@
       "ops": "edi,0x5",
       "line": "  40153e:\tc1 ef 05             \tshr    edi,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199745,
@@ -4604,7 +4967,8 @@
       "ops": "rsp,0x8",
       "line": "  401541:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199749,
@@ -4621,7 +4985,8 @@
       "xrefs_out": [
         4198512
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199754,
@@ -4634,7 +4999,8 @@
       "ops": "rax,rax",
       "line": "  40154a:\t48 85 c0             \ttest   rax,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199757,
@@ -4649,8 +5015,11 @@
       "mnemonic": "je",
       "ops": "401604 <fwrite@plt+0x574>",
       "line": "  40154d:\t0f 84 b1 00 00 00    \tje     401604 <fwrite@plt+0x574>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199940
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199763,
@@ -4664,7 +5033,8 @@
       "ops": "QWORD PTR [r13+0x10],rax",
       "line": "  401553:\t49 89 45 10          \tmov    QWORD PTR [r13+0x10],rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199767,
@@ -4677,7 +5047,8 @@
       "ops": "rsi,rax",
       "line": "  401557:\t48 89 c6             \tmov    rsi,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199770,
@@ -4692,7 +5063,8 @@
       "ops": "edi,0x3",
       "line": "  40155a:\tbf 03 00 00 00       \tmov    edi,0x3",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199775,
@@ -4707,7 +5079,8 @@
       "ops": "eax,0x9",
       "line": "  40155f:\tb8 09 00 00 00       \tmov    eax,0x9",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199780,
@@ -4721,7 +5094,8 @@
       "ops": "DWORD PTR [r13+0x8],r12d",
       "line": "  401564:\t45 89 65 08          \tmov    DWORD PTR [r13+0x8],r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199784,
@@ -4737,7 +5111,8 @@
       "ops": "r8d,0x1",
       "line": "  401568:\t41 b8 01 00 00 00    \tmov    r8d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199790,
@@ -4750,7 +5125,8 @@
       "ops": "ebx,0x8",
       "line": "  40156e:\t83 fb 08             \tcmp    ebx,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199793,
@@ -4761,8 +5137,11 @@
       "mnemonic": "ja",
       "ops": "401584 <fwrite@plt+0x4f4>",
       "line": "  401571:\t77 11                \tja     401584 <fwrite@plt+0x4f4>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199812
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199795,
@@ -4776,7 +5155,8 @@
       "xrefs_out": [
         4199920
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199797,
@@ -4789,7 +5169,8 @@
       "ops": "DWORD PTR [rax]",
       "line": "  401575:\t0f 1f 00             \tnop    DWORD PTR [rax]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199800,
@@ -4802,7 +5183,8 @@
       "ops": "edi,0x2",
       "line": "  401578:\t83 c7 02             \tadd    edi,0x2",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 3,
+      "reachable": 1
     },
     {
       "addr": 4199803,
@@ -4814,7 +5196,8 @@
       "ops": "eax,edi",
       "line": "  40157b:\t89 f8                \tmov    eax,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199805,
@@ -4827,7 +5210,8 @@
       "ops": "eax,edi",
       "line": "  40157d:\t0f af c7             \timul   eax,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199808,
@@ -4839,7 +5223,8 @@
       "ops": "ebx,eax",
       "line": "  401580:\t39 c3                \tcmp    ebx,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199810,
@@ -4850,8 +5235,11 @@
       "mnemonic": "jb",
       "ops": "4015f0 <fwrite@plt+0x560>",
       "line": "  401582:\t72 6c                \tjb     4015f0 <fwrite@plt+0x560>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199920
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199812,
@@ -4863,7 +5251,8 @@
       "ops": "ecx,edi",
       "line": "  401584:\t89 f9                \tmov    ecx,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199814,
@@ -4875,7 +5264,8 @@
       "ops": "ecx,1",
       "line": "  401586:\td1 e9                \tshr    ecx,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199816,
@@ -4888,7 +5278,8 @@
       "ops": "ecx,0x1",
       "line": "  401588:\t83 e9 01             \tsub    ecx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199819,
@@ -4901,7 +5292,8 @@
       "ops": "ecx,r12d",
       "line": "  40158b:\t44 39 e1             \tcmp    ecx,r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199822,
@@ -4916,8 +5308,11 @@
       "mnemonic": "jae",
       "ops": "401140 <fwrite@plt+0xb0>",
       "line": "  40158e:\t0f 83 ac fb ff ff    \tjae    401140 <fwrite@plt+0xb0>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198720
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199828,
@@ -4930,7 +5325,8 @@
       "ops": "r9d,ecx",
       "line": "  401594:\t41 89 c9             \tmov    r9d,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199831,
@@ -4943,7 +5339,8 @@
       "ops": "edx,r8d",
       "line": "  401597:\t44 89 c2             \tmov    edx,r8d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199834,
@@ -4957,7 +5354,8 @@
       "ops": "r9d,0x5",
       "line": "  40159a:\t41 c1 e9 05          \tshr    r9d,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199838,
@@ -4969,7 +5367,8 @@
       "ops": "edx,cl",
       "line": "  40159e:\td3 e2                \tshl    edx,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199840,
@@ -4983,7 +5382,8 @@
       "ops": "edx,DWORD PTR [rsi+r9*4]",
       "line": "  4015a0:\t42 23 14 8e          \tand    edx,DWORD PTR [rsi+r9*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199844,
@@ -4994,8 +5394,11 @@
       "mnemonic": "jne",
       "ops": "401578 <fwrite@plt+0x4e8>",
       "line": "  4015a4:\t75 d2                \tjne    401578 <fwrite@plt+0x4e8>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199800
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199846,
@@ -5007,7 +5410,8 @@
       "ops": "ebx,eax",
       "line": "  4015a6:\t39 c3                \tcmp    ebx,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199848,
@@ -5018,8 +5422,11 @@
       "mnemonic": "jb",
       "ops": "401578 <fwrite@plt+0x4e8>",
       "line": "  4015a8:\t72 ce                \tjb     401578 <fwrite@plt+0x4e8>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199800
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199850,
@@ -5033,7 +5440,8 @@
       "ops": "r9d,[rdi+rdi*1]",
       "line": "  4015aa:\t44 8d 0c 3f          \tlea    r9d,[rdi+rdi*1]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199854,
@@ -5047,7 +5455,8 @@
       "xrefs_out": [
         4199894
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199856,
@@ -5062,7 +5471,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  4015b0:\t0f 1f 44 00 00       \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199861,
@@ -5079,7 +5489,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4015b5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199872,
@@ -5091,7 +5502,8 @@
       "ops": "edx,ecx",
       "line": "  4015c0:\t89 ca                \tmov    edx,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199874,
@@ -5104,7 +5516,8 @@
       "ops": "r10d,r8d",
       "line": "  4015c2:\t45 89 c2             \tmov    r10d,r8d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199877,
@@ -5117,7 +5530,8 @@
       "ops": "eax,r9d",
       "line": "  4015c5:\t44 01 c8             \tadd    eax,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199880,
@@ -5130,7 +5544,8 @@
       "ops": "edx,0x5",
       "line": "  4015c8:\tc1 ea 05             \tshr    edx,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199883,
@@ -5143,7 +5558,8 @@
       "ops": "r10d,cl",
       "line": "  4015cb:\t41 d3 e2             \tshl    r10d,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199886,
@@ -5157,7 +5573,8 @@
       "ops": "DWORD PTR [rsi+rdx*4],r10d",
       "line": "  4015ce:\t44 09 14 96          \tor     DWORD PTR [rsi+rdx*4],r10d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199890,
@@ -5169,7 +5586,8 @@
       "ops": "ebx,eax",
       "line": "  4015d2:\t39 c3                \tcmp    ebx,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199892,
@@ -5180,8 +5598,11 @@
       "mnemonic": "jb",
       "ops": "401578 <fwrite@plt+0x4e8>",
       "line": "  4015d4:\t72 a2                \tjb     401578 <fwrite@plt+0x4e8>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199800
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199894,
@@ -5193,7 +5614,8 @@
       "ops": "ecx,eax",
       "line": "  4015d6:\t89 c1                \tmov    ecx,eax",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199896,
@@ -5205,7 +5627,8 @@
       "ops": "ecx,1",
       "line": "  4015d8:\td1 e9                \tshr    ecx,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199898,
@@ -5218,7 +5641,8 @@
       "ops": "ecx,0x1",
       "line": "  4015da:\t83 e9 01             \tsub    ecx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199901,
@@ -5231,7 +5655,8 @@
       "ops": "ecx,r12d",
       "line": "  4015dd:\t44 39 e1             \tcmp    ecx,r12d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199904,
@@ -5242,8 +5667,11 @@
       "mnemonic": "jb",
       "ops": "4015c0 <fwrite@plt+0x530>",
       "line": "  4015e0:\t72 de                \tjb     4015c0 <fwrite@plt+0x530>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4199872
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199906,
@@ -5260,7 +5688,8 @@
       "xrefs_out": [
         4198715
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199911,
@@ -5277,7 +5706,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  4015e7:\t66 0f 1f 84 00 00 00 \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199920,
@@ -5291,7 +5721,8 @@
       "ops": "DWORD PTR [r13+0x0],ebx",
       "line": "  4015f0:\t41 89 5d 00          \tmov    DWORD PTR [r13+0x0],ebx",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4199924,
@@ -5306,7 +5737,8 @@
       "ops": "eax,0x1",
       "line": "  4015f4:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199929,
@@ -5320,7 +5752,8 @@
       "ops": "rsp,0x8",
       "line": "  4015f9:\t48 83 c4 08          \tadd    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199933,
@@ -5331,7 +5764,8 @@
       "ops": "rbx",
       "line": "  4015fd:\t5b                   \tpop    rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199934,
@@ -5343,7 +5777,8 @@
       "ops": "r12",
       "line": "  4015fe:\t41 5c                \tpop    r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199936,
@@ -5355,7 +5790,8 @@
       "ops": "r13",
       "line": "  401600:\t41 5d                \tpop    r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199938,
@@ -5366,7 +5802,8 @@
       "ops": "rbp",
       "line": "  401602:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199939,
@@ -5377,7 +5814,8 @@
       "ops": "",
       "line": "  401603:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199940,
@@ -5389,7 +5827,8 @@
       "ops": "eax,eax",
       "line": "  401604:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4199942,
@@ -5403,7 +5842,8 @@
       "xrefs_out": [
         4199929
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4199944,
@@ -5420,7 +5860,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  401608:\t0f 1f 84 00 00 00 00 \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199952,
@@ -5431,7 +5872,8 @@
       "ops": "rbp",
       "line": "  401610:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199953,
@@ -5444,7 +5886,8 @@
       "ops": "rbp,rsp",
       "line": "  401611:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199956,
@@ -5455,7 +5898,8 @@
       "ops": "rbx",
       "line": "  401614:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199957,
@@ -5468,7 +5912,8 @@
       "ops": "rbx,rdi",
       "line": "  401615:\t48 89 fb             \tmov    rbx,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199960,
@@ -5482,7 +5927,8 @@
       "ops": "rsp,0x8",
       "line": "  401618:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199964,
@@ -5496,7 +5942,8 @@
       "ops": "rdi,QWORD PTR [rdi+0x10]",
       "line": "  40161c:\t48 8b 7f 10          \tmov    rdi,QWORD PTR [rdi+0x10]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199968,
@@ -5513,7 +5960,8 @@
       "xrefs_out": [
         4198448
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199973,
@@ -5530,7 +5978,8 @@
       "ops": "QWORD PTR [rbx+0x10],0x0",
       "line": "  401625:\t48 c7 43 10 00 00 00 \tmov    QWORD PTR [rbx+0x10],0x0",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199981,
@@ -5544,7 +5993,8 @@
       "ops": "rbx,QWORD PTR [rbp-0x8]",
       "line": "  40162d:\t48 8b 5d f8          \tmov    rbx,QWORD PTR [rbp-0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199985,
@@ -5555,7 +6005,8 @@
       "ops": "",
       "line": "  401631:\tc9                   \tleave",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199986,
@@ -5566,7 +6017,8 @@
       "ops": "",
       "line": "  401632:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199987,
@@ -5578,7 +6030,8 @@
       "ops": "ax,ax",
       "line": "  401633:\t66 90                \txchg   ax,ax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4199989,
@@ -5595,7 +6048,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401635:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200000,
@@ -5606,7 +6060,8 @@
       "ops": "rbp",
       "line": "  401640:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200001,
@@ -5619,7 +6074,8 @@
       "ops": "rbp,rsp",
       "line": "  401641:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200004,
@@ -5631,7 +6087,8 @@
       "ops": "DWORD PTR [rdi],esi",
       "line": "  401644:\t39 37                \tcmp    DWORD PTR [rdi],esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200006,
@@ -5646,8 +6103,11 @@
       "mnemonic": "jb",
       "ops": "40114a <fwrite@plt+0xba>",
       "line": "  401646:\t0f 82 fe fa ff ff    \tjb     40114a <fwrite@plt+0xba>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198730
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200012,
@@ -5660,7 +6120,8 @@
       "ops": "esi,0x2",
       "line": "  40164c:\t83 fe 02             \tcmp    esi,0x2",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200015,
@@ -5671,8 +6132,11 @@
       "mnemonic": "je",
       "ops": "401690 <fwrite@plt+0x600>",
       "line": "  40164f:\t74 3f                \tje     401690 <fwrite@plt+0x600>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200080
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200017,
@@ -5684,7 +6148,8 @@
       "ops": "eax,eax",
       "line": "  401651:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200019,
@@ -5697,7 +6162,8 @@
       "ops": "esi,0x1",
       "line": "  401653:\t83 fe 01             \tcmp    esi,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200022,
@@ -5708,8 +6174,11 @@
       "mnemonic": "jbe",
       "ops": "40165e <fwrite@plt+0x5ce>",
       "line": "  401656:\t76 06                \tjbe    40165e <fwrite@plt+0x5ce>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200030
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200024,
@@ -5723,7 +6192,8 @@
       "ops": "sil,0x1",
       "line": "  401658:\t40 f6 c6 01          \ttest   sil,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200028,
@@ -5734,8 +6204,11 @@
       "mnemonic": "jne",
       "ops": "401660 <fwrite@plt+0x5d0>",
       "line": "  40165c:\t75 02                \tjne    401660 <fwrite@plt+0x5d0>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200032
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200030,
@@ -5746,7 +6219,8 @@
       "ops": "rbp",
       "line": "  40165e:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200031,
@@ -5757,7 +6231,8 @@
       "ops": "",
       "line": "  40165f:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200032,
@@ -5769,7 +6244,8 @@
       "ops": "esi,1",
       "line": "  401660:\td1 ee                \tshr    esi,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200034,
@@ -5782,7 +6258,8 @@
       "ops": "ecx,[rsi-0x1]",
       "line": "  401662:\t8d 4e ff             \tlea    ecx,[rsi-0x1]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200037,
@@ -5795,7 +6272,8 @@
       "ops": "ecx,DWORD PTR [rdi+0x8]",
       "line": "  401665:\t3b 4f 08             \tcmp    ecx,DWORD PTR [rdi+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200040,
@@ -5810,8 +6288,11 @@
       "mnemonic": "jae",
       "ops": "401145 <fwrite@plt+0xb5>",
       "line": "  401668:\t0f 83 d7 fa ff ff    \tjae    401145 <fwrite@plt+0xb5>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198725
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200046,
@@ -5825,7 +6306,8 @@
       "ops": "rdx,QWORD PTR [rdi+0x10]",
       "line": "  40166e:\t48 8b 57 10          \tmov    rdx,QWORD PTR [rdi+0x10]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200050,
@@ -5837,7 +6319,8 @@
       "ops": "esi,ecx",
       "line": "  401672:\t89 ce                \tmov    esi,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200052,
@@ -5852,7 +6335,8 @@
       "ops": "eax,0x1",
       "line": "  401674:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200057,
@@ -5863,7 +6347,8 @@
       "ops": "rbp",
       "line": "  401679:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200058,
@@ -5876,7 +6361,8 @@
       "ops": "esi,0x5",
       "line": "  40167a:\tc1 ee 05             \tshr    esi,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200061,
@@ -5888,7 +6374,8 @@
       "ops": "eax,cl",
       "line": "  40167d:\td3 e0                \tshl    eax,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200063,
@@ -5901,7 +6388,8 @@
       "ops": "eax,DWORD PTR [rdx+rsi*4]",
       "line": "  40167f:\t23 04 b2             \tand    eax,DWORD PTR [rdx+rsi*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200066,
@@ -5914,7 +6402,8 @@
       "ops": "al",
       "line": "  401682:\t0f 94 c0             \tsete   al",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200069,
@@ -5925,7 +6414,8 @@
       "ops": "",
       "line": "  401685:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200070,
@@ -5942,7 +6432,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401686:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200080,
@@ -5957,7 +6448,8 @@
       "ops": "eax,0x1",
       "line": "  401690:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200085,
@@ -5968,7 +6460,8 @@
       "ops": "rbp",
       "line": "  401695:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200086,
@@ -5979,7 +6472,8 @@
       "ops": "",
       "line": "  401696:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200087,
@@ -5996,7 +6490,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  401697:\t66 0f 1f 84 00 00 00 \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200096,
@@ -6008,7 +6503,8 @@
       "ops": "edx,edx",
       "line": "  4016a0:\t31 d2                \txor    edx,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200098,
@@ -6020,7 +6516,8 @@
       "ops": "edi,edi",
       "line": "  4016a2:\t85 ff                \ttest   edi,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200100,
@@ -6031,8 +6528,11 @@
       "mnemonic": "je",
       "ops": "4016d5 <fwrite@plt+0x645>",
       "line": "  4016a4:\t74 2f                \tje     4016d5 <fwrite@plt+0x645>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200149
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200102,
@@ -6047,7 +6547,8 @@
       "ops": "ecx,0xcccccccd",
       "line": "  4016a6:\tb9 cd cc cc cc       \tmov    ecx,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200107,
@@ -6064,7 +6565,8 @@
       "ops": "nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4016ab:\t66 2e 0f 1f 84 00 00 \tcs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200117,
@@ -6081,7 +6583,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4016b5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200128,
@@ -6093,7 +6596,8 @@
       "ops": "edi,edi",
       "line": "  4016c0:\t89 ff                \tmov    edi,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200130,
@@ -6106,7 +6610,8 @@
       "ops": "edx,0x1",
       "line": "  4016c2:\t83 c2 01             \tadd    edx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200133,
@@ -6119,7 +6624,8 @@
       "ops": "rax,rdi",
       "line": "  4016c5:\t48 89 f8             \tmov    rax,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200136,
@@ -6133,7 +6639,8 @@
       "ops": "rdi,rcx",
       "line": "  4016c8:\t48 0f af f9          \timul   rdi,rcx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200140,
@@ -6147,7 +6654,8 @@
       "ops": "rdi,0x23",
       "line": "  4016cc:\t48 c1 ef 23          \tshr    rdi,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200144,
@@ -6160,7 +6668,8 @@
       "ops": "eax,0x9",
       "line": "  4016d0:\t83 f8 09             \tcmp    eax,0x9",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200147,
@@ -6171,8 +6680,11 @@
       "mnemonic": "ja",
       "ops": "4016c0 <fwrite@plt+0x630>",
       "line": "  4016d3:\t77 eb                \tja     4016c0 <fwrite@plt+0x630>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200128
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200149,
@@ -6184,7 +6696,8 @@
       "ops": "eax,edx",
       "line": "  4016d5:\t89 d0                \tmov    eax,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200151,
@@ -6195,7 +6708,8 @@
       "ops": "",
       "line": "  4016d7:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200152,
@@ -6212,7 +6726,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  4016d8:\t0f 1f 84 00 00 00 00 \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200160,
@@ -6225,7 +6740,8 @@
       "ops": "r9d,esi",
       "line": "  4016e0:\t41 89 f1             \tmov    r9d,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200163,
@@ -6238,7 +6754,8 @@
       "ops": "r8d,edx",
       "line": "  4016e3:\t41 89 d0             \tmov    r8d,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200166,
@@ -6250,7 +6767,8 @@
       "ops": "esi,esi",
       "line": "  4016e6:\t31 f6                \txor    esi,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200168,
@@ -6265,7 +6783,8 @@
       "ops": "edx,0x1",
       "line": "  4016e8:\tba 01 00 00 00       \tmov    edx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200173,
@@ -6278,7 +6797,8 @@
       "ops": "r9d,r9d",
       "line": "  4016ed:\t45 85 c9             \ttest   r9d,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200176,
@@ -6289,8 +6809,11 @@
       "mnemonic": "je",
       "ops": "401723 <fwrite@plt+0x693>",
       "line": "  4016f0:\t74 31                \tje     401723 <fwrite@plt+0x693>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200227
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200178,
@@ -6306,7 +6829,8 @@
       "ops": "r10d,0xcccccccd",
       "line": "  4016f2:\t41 ba cd cc cc cc    \tmov    r10d,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200184,
@@ -6323,7 +6847,8 @@
       "ops": "DWORD PTR [rax+rax*1+0x0]",
       "line": "  4016f8:\t0f 1f 84 00 00 00 00 \tnop    DWORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200192,
@@ -6335,7 +6860,8 @@
       "ops": "eax,edi",
       "line": "  401700:\t89 f8                \tmov    eax,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200194,
@@ -6349,7 +6875,8 @@
       "ops": "rax,r10",
       "line": "  401702:\t49 0f af c2          \timul   rax,r10",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200198,
@@ -6363,7 +6890,8 @@
       "ops": "rax,0x23",
       "line": "  401706:\t48 c1 e8 23          \tshr    rax,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200202,
@@ -6376,7 +6904,8 @@
       "ops": "ecx,[rax+rax*4]",
       "line": "  40170a:\t8d 0c 80             \tlea    ecx,[rax+rax*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200205,
@@ -6388,7 +6917,8 @@
       "ops": "ecx,ecx",
       "line": "  40170d:\t01 c9                \tadd    ecx,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200207,
@@ -6400,7 +6930,8 @@
       "ops": "edi,ecx",
       "line": "  40170f:\t29 cf                \tsub    edi,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200209,
@@ -6413,7 +6944,8 @@
       "ops": "edi,edx",
       "line": "  401711:\t0f af fa             \timul   edi,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200212,
@@ -6426,7 +6958,8 @@
       "ops": "edx,[rdx+rdx*4]",
       "line": "  401714:\t8d 14 92             \tlea    edx,[rdx+rdx*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200215,
@@ -6438,7 +6971,8 @@
       "ops": "edx,edx",
       "line": "  401717:\t01 d2                \tadd    edx,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200217,
@@ -6450,7 +6984,8 @@
       "ops": "esi,edi",
       "line": "  401719:\t01 fe                \tadd    esi,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200219,
@@ -6462,7 +6997,8 @@
       "ops": "edi,eax",
       "line": "  40171b:\t89 c7                \tmov    edi,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200221,
@@ -6476,7 +7012,8 @@
       "ops": "r9d,0x1",
       "line": "  40171d:\t41 83 e9 01          \tsub    r9d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200225,
@@ -6487,8 +7024,11 @@
       "mnemonic": "jne",
       "ops": "401700 <fwrite@plt+0x670>",
       "line": "  401721:\t75 dd                \tjne    401700 <fwrite@plt+0x670>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200192
+      ],
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200227,
@@ -6503,7 +7043,8 @@
       "ops": "eax,0xcccccccd",
       "line": "  401723:\tb8 cd cc cc cc       \tmov    eax,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 0
     },
     {
       "addr": 4200232,
@@ -6515,7 +7056,8 @@
       "ops": "edi,edi",
       "line": "  401728:\t89 ff                \tmov    edi,edi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200234,
@@ -6529,7 +7071,8 @@
       "ops": "rdi,rax",
       "line": "  40172a:\t48 0f af f8          \timul   rdi,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200238,
@@ -6543,7 +7086,8 @@
       "ops": "rdi,0x23",
       "line": "  40172e:\t48 c1 ef 23          \tshr    rdi,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200242,
@@ -6556,7 +7100,8 @@
       "ops": "eax,[rdi+rdi*4]",
       "line": "  401732:\t8d 04 bf             \tlea    eax,[rdi+rdi*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200245,
@@ -6570,7 +7115,8 @@
       "ops": "eax,[r8+rax*2]",
       "line": "  401735:\t41 8d 04 40          \tlea    eax,[r8+rax*2]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200249,
@@ -6583,7 +7129,8 @@
       "ops": "eax,edx",
       "line": "  401739:\t0f af c2             \timul   eax,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200252,
@@ -6595,7 +7142,8 @@
       "ops": "eax,esi",
       "line": "  40173c:\t01 f0                \tadd    eax,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200254,
@@ -6606,7 +7154,8 @@
       "ops": "",
       "line": "  40173e:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200255,
@@ -6617,7 +7166,8 @@
       "ops": "",
       "line": "  40173f:\t90                   \tnop",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 0
     },
     {
       "addr": 4200256,
@@ -6628,7 +7178,8 @@
       "ops": "rbp",
       "line": "  401740:\t55                   \tpush   rbp",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200257,
@@ -6641,7 +7192,8 @@
       "ops": "rbp,rsp",
       "line": "  401741:\t48 89 e5             \tmov    rbp,rsp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200260,
@@ -6653,7 +7205,8 @@
       "ops": "r15",
       "line": "  401744:\t41 57                \tpush   r15",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200262,
@@ -6665,7 +7218,8 @@
       "ops": "r14",
       "line": "  401746:\t41 56                \tpush   r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200264,
@@ -6677,7 +7231,8 @@
       "ops": "r13",
       "line": "  401748:\t41 55                \tpush   r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200266,
@@ -6689,7 +7244,8 @@
       "ops": "r12",
       "line": "  40174a:\t41 54                \tpush   r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200268,
@@ -6700,7 +7256,8 @@
       "ops": "rbx",
       "line": "  40174c:\t53                   \tpush   rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200269,
@@ -6714,7 +7271,8 @@
       "ops": "rsp,0x8",
       "line": "  40174d:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200273,
@@ -6726,7 +7284,8 @@
       "ops": "ebx,DWORD PTR [rdi]",
       "line": "  401751:\t8b 1f                \tmov    ebx,DWORD PTR [rdi]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200275,
@@ -6738,7 +7297,8 @@
       "ops": "ebx,esi",
       "line": "  401753:\t39 f3                \tcmp    ebx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200277,
@@ -6753,8 +7313,11 @@
       "mnemonic": "jb",
       "ops": "40114f <fwrite@plt+0xbf>",
       "line": "  401755:\t0f 82 f4 f9 ff ff    \tjb     40114f <fwrite@plt+0xbf>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198735
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200283,
@@ -6767,7 +7330,8 @@
       "ops": "r10d,esi",
       "line": "  40175b:\t41 89 f2             \tmov    r10d,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200286,
@@ -6780,7 +7344,8 @@
       "ops": "esi,0x2",
       "line": "  40175e:\t83 fe 02             \tcmp    esi,0x2",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200289,
@@ -6795,8 +7360,11 @@
       "mnemonic": "je",
       "ops": "4018d5 <fwrite@plt+0x845>",
       "line": "  401761:\t0f 84 6e 01 00 00    \tje     4018d5 <fwrite@plt+0x845>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200661
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200295,
@@ -6809,7 +7377,8 @@
       "ops": "r12,rdi",
       "line": "  401767:\t49 89 fc             \tmov    r12,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200298,
@@ -6821,7 +7390,8 @@
       "ops": "eax,esi",
       "line": "  40176a:\t89 f0                \tmov    eax,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200300,
@@ -6834,7 +7404,8 @@
       "ops": "esi,0x1",
       "line": "  40176c:\t83 fe 01             \tcmp    esi,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200303,
@@ -6849,8 +7420,11 @@
       "mnemonic": "jbe",
       "ops": "4018e6 <fwrite@plt+0x856>",
       "line": "  40176f:\t0f 86 71 01 00 00    \tjbe    4018e6 <fwrite@plt+0x856>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200678
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200309,
@@ -6863,7 +7437,8 @@
       "ops": "r11d,esi",
       "line": "  401775:\t41 89 f3             \tmov    r11d,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200312,
@@ -6877,7 +7452,8 @@
       "ops": "r11d,0x1",
       "line": "  401778:\t41 83 e3 01          \tand    r11d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200316,
@@ -6892,8 +7468,11 @@
       "mnemonic": "jne",
       "ops": "4018af <fwrite@plt+0x81f>",
       "line": "  40177c:\t0f 85 2d 01 00 00    \tjne    4018af <fwrite@plt+0x81f>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200623
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200322,
@@ -6908,7 +7487,8 @@
       "ops": "ecx,0xcccccccd",
       "line": "  401782:\tb9 cd cc cc cc       \tmov    ecx,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4200327,
@@ -6921,7 +7501,8 @@
       "ops": "DWORD PTR [rax]",
       "line": "  401787:\t0f 1f 00             \tnop    DWORD PTR [rax]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200330,
@@ -6938,7 +7519,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  40178a:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200341,
@@ -6955,7 +7537,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  401795:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200352,
@@ -6967,7 +7550,8 @@
       "ops": "eax,eax",
       "line": "  4017a0:\t89 c0                \tmov    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200354,
@@ -6981,7 +7565,8 @@
       "ops": "r11d,0x1",
       "line": "  4017a2:\t41 83 c3 01          \tadd    r11d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200358,
@@ -6994,7 +7579,8 @@
       "ops": "rdx,rax",
       "line": "  4017a6:\t48 89 c2             \tmov    rdx,rax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200361,
@@ -7008,7 +7594,8 @@
       "ops": "rax,rcx",
       "line": "  4017a9:\t48 0f af c1          \timul   rax,rcx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200365,
@@ -7022,7 +7609,8 @@
       "ops": "rax,0x23",
       "line": "  4017ad:\t48 c1 e8 23          \tshr    rax,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200369,
@@ -7035,7 +7623,8 @@
       "ops": "edx,0x9",
       "line": "  4017b1:\t83 fa 09             \tcmp    edx,0x9",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200372,
@@ -7046,8 +7635,11 @@
       "mnemonic": "ja",
       "ops": "4017a0 <fwrite@plt+0x710>",
       "line": "  4017b4:\t77 ea                \tja     4017a0 <fwrite@plt+0x710>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200352
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200374,
@@ -7060,7 +7652,8 @@
       "ops": "r11d,r11d",
       "line": "  4017b6:\t45 85 db             \ttest   r11d,r11d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200377,
@@ -7075,8 +7668,11 @@
       "mnemonic": "je",
       "ops": "40189b <fwrite@plt+0x80b>",
       "line": "  4017b9:\t0f 84 dc 00 00 00    \tje     40189b <fwrite@plt+0x80b>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200603
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200383,
@@ -7089,7 +7685,8 @@
       "ops": "r9d,r9d",
       "line": "  4017bf:\t45 31 c9             \txor    r9d,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200386,
@@ -7104,7 +7701,8 @@
       "ops": "edi,0xcccccccd",
       "line": "  4017c2:\tbf cd cc cc cc       \tmov    edi,0xcccccccd",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200391,
@@ -7117,7 +7715,8 @@
       "ops": "r8d,r8d",
       "line": "  4017c7:\t45 31 c0             \txor    r8d,r8d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200394,
@@ -7133,7 +7732,8 @@
       "ops": "WORD PTR [rax+rax*1+0x0]",
       "line": "  4017ca:\t66 0f 1f 44 00 00    \tnop    WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200400,
@@ -7146,7 +7746,8 @@
       "ops": "r14d,r14d",
       "line": "  4017d0:\t45 31 f6             \txor    r14d,r14d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200403,
@@ -7159,7 +7760,8 @@
       "ops": "eax,r10d",
       "line": "  4017d3:\t44 89 d0             \tmov    eax,r10d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200406,
@@ -7174,7 +7776,8 @@
       "ops": "ecx,0x1",
       "line": "  4017d6:\tb9 01 00 00 00       \tmov    ecx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200411,
@@ -7187,7 +7790,8 @@
       "ops": "r9d,r9d",
       "line": "  4017db:\t45 85 c9             \ttest   r9d,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200414,
@@ -7198,8 +7802,11 @@
       "mnemonic": "je",
       "ops": "401826 <fwrite@plt+0x796>",
       "line": "  4017de:\t74 46                \tje     401826 <fwrite@plt+0x796>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200486
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200416,
@@ -7212,7 +7819,8 @@
       "ops": "esi,r9d",
       "line": "  4017e0:\t44 89 ce             \tmov    esi,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200419,
@@ -7225,7 +7833,8 @@
       "ops": "eax,r10d",
       "line": "  4017e3:\t44 89 d0             \tmov    eax,r10d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200422,
@@ -7238,7 +7847,8 @@
       "ops": "r14d,r14d",
       "line": "  4017e6:\t45 31 f6             \txor    r14d,r14d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200425,
@@ -7253,7 +7863,8 @@
       "ops": "ecx,0x1",
       "line": "  4017e9:\tb9 01 00 00 00       \tmov    ecx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200430,
@@ -7270,7 +7881,8 @@
       "ops": "DWORD PTR [rax+0x0]",
       "line": "  4017ee:\t0f 1f 80 00 00 00 00 \tnop    DWORD PTR [rax+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200437,
@@ -7287,7 +7899,8 @@
       "ops": "cs nop WORD PTR [rax+rax*1+0x0]",
       "line": "  4017f5:\t66 66 2e 0f 1f 84 00 \tdata16 cs nop WORD PTR [rax+rax*1+0x0]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200448,
@@ -7299,7 +7912,8 @@
       "ops": "edx,eax",
       "line": "  401800:\t89 c2                \tmov    edx,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200450,
@@ -7313,7 +7927,8 @@
       "ops": "rdx,rdi",
       "line": "  401802:\t48 0f af d7          \timul   rdx,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200454,
@@ -7327,7 +7942,8 @@
       "ops": "rdx,0x23",
       "line": "  401806:\t48 c1 ea 23          \tshr    rdx,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200458,
@@ -7341,7 +7957,8 @@
       "ops": "r15d,[rdx+rdx*4]",
       "line": "  40180a:\t44 8d 3c 92          \tlea    r15d,[rdx+rdx*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200462,
@@ -7354,7 +7971,8 @@
       "ops": "r15d,r15d",
       "line": "  40180e:\t45 01 ff             \tadd    r15d,r15d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200465,
@@ -7367,7 +7985,8 @@
       "ops": "eax,r15d",
       "line": "  401811:\t44 29 f8             \tsub    eax,r15d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200468,
@@ -7380,7 +7999,8 @@
       "ops": "eax,ecx",
       "line": "  401814:\t0f af c1             \timul   eax,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200471,
@@ -7393,7 +8013,8 @@
       "ops": "ecx,[rcx+rcx*4]",
       "line": "  401817:\t8d 0c 89             \tlea    ecx,[rcx+rcx*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200474,
@@ -7405,7 +8026,8 @@
       "ops": "ecx,ecx",
       "line": "  40181a:\t01 c9                \tadd    ecx,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200476,
@@ -7418,7 +8040,8 @@
       "ops": "r14d,eax",
       "line": "  40181c:\t41 01 c6             \tadd    r14d,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200479,
@@ -7430,7 +8053,8 @@
       "ops": "eax,edx",
       "line": "  40181f:\t89 d0                \tmov    eax,edx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200481,
@@ -7443,7 +8067,8 @@
       "ops": "esi,0x1",
       "line": "  401821:\t83 ee 01             \tsub    esi,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200484,
@@ -7454,8 +8079,11 @@
       "mnemonic": "jne",
       "ops": "401800 <fwrite@plt+0x770>",
       "line": "  401824:\t75 da                \tjne    401800 <fwrite@plt+0x770>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200448
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200486,
@@ -7469,7 +8097,8 @@
       "ops": "rax,rdi",
       "line": "  401826:\t48 0f af c7          \timul   rax,rdi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200490,
@@ -7483,7 +8112,8 @@
       "ops": "rax,0x23",
       "line": "  40182a:\t48 c1 e8 23          \tshr    rax,0x23",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200494,
@@ -7496,7 +8126,8 @@
       "ops": "eax,[rax+rax*4]",
       "line": "  40182e:\t8d 04 80             \tlea    eax,[rax+rax*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200497,
@@ -7510,7 +8141,8 @@
       "ops": "eax,[r8+rax*2]",
       "line": "  401831:\t41 8d 04 40          \tlea    eax,[r8+rax*2]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200501,
@@ -7523,7 +8155,8 @@
       "ops": "eax,ecx",
       "line": "  401835:\t0f af c1             \timul   eax,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200504,
@@ -7536,7 +8169,8 @@
       "ops": "eax,r14d",
       "line": "  401838:\t44 01 f0             \tadd    eax,r14d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200507,
@@ -7549,7 +8183,8 @@
       "ops": "r10d,eax",
       "line": "  40183b:\t41 39 c2             \tcmp    r10d,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200510,
@@ -7560,8 +8195,11 @@
       "mnemonic": "je",
       "ops": "401880 <fwrite@plt+0x7f0>",
       "line": "  40183e:\t74 40                \tje     401880 <fwrite@plt+0x7f0>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200576
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200512,
@@ -7573,7 +8211,8 @@
       "ops": "ebx,eax",
       "line": "  401840:\t39 c3                \tcmp    ebx,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200514,
@@ -7588,8 +8227,11 @@
       "mnemonic": "jb",
       "ops": "40114f <fwrite@plt+0xbf>",
       "line": "  401842:\t0f 82 07 f9 ff ff    \tjb     40114f <fwrite@plt+0xbf>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198735
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200520,
@@ -7602,7 +8244,8 @@
       "ops": "eax,0x2",
       "line": "  401848:\t83 f8 02             \tcmp    eax,0x2",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200523,
@@ -7617,8 +8260,11 @@
       "mnemonic": "je",
       "ops": "4018d5 <fwrite@plt+0x845>",
       "line": "  40184b:\t0f 84 84 00 00 00    \tje     4018d5 <fwrite@plt+0x845>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200661
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200529,
@@ -7631,7 +8277,8 @@
       "ops": "eax,0x1",
       "line": "  401851:\t83 f8 01             \tcmp    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200532,
@@ -7642,8 +8289,11 @@
       "mnemonic": "jbe",
       "ops": "401880 <fwrite@plt+0x7f0>",
       "line": "  401854:\t76 2a                \tjbe    401880 <fwrite@plt+0x7f0>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200576
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200534,
@@ -7655,7 +8305,8 @@
       "ops": "al,0x1",
       "line": "  401856:\ta8 01                \ttest   al,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200536,
@@ -7666,8 +8317,11 @@
       "mnemonic": "je",
       "ops": "401880 <fwrite@plt+0x7f0>",
       "line": "  401858:\t74 26                \tje     401880 <fwrite@plt+0x7f0>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200576
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200538,
@@ -7679,7 +8333,8 @@
       "ops": "eax,1",
       "line": "  40185a:\td1 e8                \tshr    eax,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200540,
@@ -7692,7 +8347,8 @@
       "ops": "ecx,[rax-0x1]",
       "line": "  40185c:\t8d 48 ff             \tlea    ecx,[rax-0x1]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200543,
@@ -7707,7 +8363,8 @@
       "ops": "ecx,DWORD PTR [r12+0x8]",
       "line": "  40185f:\t41 3b 4c 24 08       \tcmp    ecx,DWORD PTR [r12+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200548,
@@ -7722,8 +8379,11 @@
       "mnemonic": "jae",
       "ops": "401154 <fwrite@plt+0xc4>",
       "line": "  401864:\t0f 83 ea f8 ff ff    \tjae    401154 <fwrite@plt+0xc4>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198740
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200554,
@@ -7738,7 +8398,8 @@
       "ops": "rdx,QWORD PTR [r12+0x10]",
       "line": "  40186a:\t49 8b 54 24 10       \tmov    rdx,QWORD PTR [r12+0x10]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200559,
@@ -7750,7 +8411,8 @@
       "ops": "esi,ecx",
       "line": "  40186f:\t89 ce                \tmov    esi,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200561,
@@ -7765,7 +8427,8 @@
       "ops": "eax,0x1",
       "line": "  401871:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200566,
@@ -7778,7 +8441,8 @@
       "ops": "esi,0x5",
       "line": "  401876:\tc1 ee 05             \tshr    esi,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200569,
@@ -7790,7 +8454,8 @@
       "ops": "eax,cl",
       "line": "  401879:\td3 e0                \tshl    eax,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200571,
@@ -7803,7 +8468,8 @@
       "ops": "eax,DWORD PTR [rdx+rsi*4]",
       "line": "  40187b:\t23 04 b2             \tand    eax,DWORD PTR [rdx+rsi*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200574,
@@ -7814,8 +8480,11 @@
       "mnemonic": "je",
       "ops": "4018d5 <fwrite@plt+0x845>",
       "line": "  40187e:\t74 55                \tje     4018d5 <fwrite@plt+0x845>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200661
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200576,
@@ -7829,7 +8498,8 @@
       "ops": "r8d,0x1",
       "line": "  401880:\t41 83 c0 01          \tadd    r8d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 3,
+      "reachable": 1
     },
     {
       "addr": 4200580,
@@ -7843,7 +8513,8 @@
       "ops": "r8d,0xa",
       "line": "  401884:\t41 83 f8 0a          \tcmp    r8d,0xa",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200584,
@@ -7858,8 +8529,11 @@
       "mnemonic": "jne",
       "ops": "4017d0 <fwrite@plt+0x740>",
       "line": "  401888:\t0f 85 42 ff ff ff    \tjne    4017d0 <fwrite@plt+0x740>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200400
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200590,
@@ -7873,7 +8547,8 @@
       "ops": "r9d,0x1",
       "line": "  40188e:\t41 83 c1 01          \tadd    r9d,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200594,
@@ -7886,7 +8561,8 @@
       "ops": "r11d,r9d",
       "line": "  401892:\t45 39 cb             \tcmp    r11d,r9d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200597,
@@ -7901,8 +8577,11 @@
       "mnemonic": "jne",
       "ops": "4017c7 <fwrite@plt+0x737>",
       "line": "  401895:\t0f 85 2c ff ff ff    \tjne    4017c7 <fwrite@plt+0x737>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200391
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200603,
@@ -7916,7 +8595,8 @@
       "ops": "rsp,0x8",
       "line": "  40189b:\t48 83 c4 08          \tadd    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 1
+      "xrefs_in": 2,
+      "reachable": 1
     },
     {
       "addr": 4200607,
@@ -7931,7 +8611,8 @@
       "ops": "eax,0x1",
       "line": "  40189f:\tb8 01 00 00 00       \tmov    eax,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200612,
@@ -7942,7 +8623,8 @@
       "ops": "rbx",
       "line": "  4018a4:\t5b                   \tpop    rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200613,
@@ -7954,7 +8636,8 @@
       "ops": "r12",
       "line": "  4018a5:\t41 5c                \tpop    r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200615,
@@ -7966,7 +8649,8 @@
       "ops": "r13",
       "line": "  4018a7:\t41 5d                \tpop    r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200617,
@@ -7978,7 +8662,8 @@
       "ops": "r14",
       "line": "  4018a9:\t41 5e                \tpop    r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200619,
@@ -7990,7 +8675,8 @@
       "ops": "r15",
       "line": "  4018ab:\t41 5f                \tpop    r15",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200621,
@@ -8001,7 +8687,8 @@
       "ops": "rbp",
       "line": "  4018ad:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200622,
@@ -8012,7 +8699,8 @@
       "ops": "",
       "line": "  4018ae:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200623,
@@ -8024,7 +8712,8 @@
       "ops": "ecx,esi",
       "line": "  4018af:\t89 f1                \tmov    ecx,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200625,
@@ -8036,7 +8725,8 @@
       "ops": "ecx,1",
       "line": "  4018b1:\td1 e9                \tshr    ecx,1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200627,
@@ -8049,7 +8739,8 @@
       "ops": "ecx,0x1",
       "line": "  4018b3:\t83 e9 01             \tsub    ecx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200630,
@@ -8062,7 +8753,8 @@
       "ops": "ecx,DWORD PTR [rdi+0x8]",
       "line": "  4018b6:\t3b 4f 08             \tcmp    ecx,DWORD PTR [rdi+0x8]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200633,
@@ -8077,8 +8769,11 @@
       "mnemonic": "jae",
       "ops": "401154 <fwrite@plt+0xc4>",
       "line": "  4018b9:\t0f 83 95 f8 ff ff    \tjae    401154 <fwrite@plt+0xc4>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4198740
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200639,
@@ -8093,7 +8788,8 @@
       "ops": "rsi,QWORD PTR [r12+0x10]",
       "line": "  4018bf:\t49 8b 74 24 10       \tmov    rsi,QWORD PTR [r12+0x10]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200644,
@@ -8105,7 +8801,8 @@
       "ops": "edi,ecx",
       "line": "  4018c4:\t89 cf                \tmov    edi,ecx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200646,
@@ -8120,7 +8817,8 @@
       "ops": "edx,0x1",
       "line": "  4018c6:\tba 01 00 00 00       \tmov    edx,0x1",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200651,
@@ -8133,7 +8831,8 @@
       "ops": "edi,0x5",
       "line": "  4018cb:\tc1 ef 05             \tshr    edi,0x5",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200654,
@@ -8145,7 +8844,8 @@
       "ops": "edx,cl",
       "line": "  4018ce:\td3 e2                \tshl    edx,cl",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200656,
@@ -8158,7 +8858,8 @@
       "ops": "edx,DWORD PTR [rsi+rdi*4]",
       "line": "  4018d0:\t23 14 be             \tand    edx,DWORD PTR [rsi+rdi*4]",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200659,
@@ -8169,8 +8870,11 @@
       "mnemonic": "jne",
       "ops": "4018f3 <fwrite@plt+0x863>",
       "line": "  4018d3:\t75 1e                \tjne    4018f3 <fwrite@plt+0x863>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200691
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200661,
@@ -8184,7 +8888,8 @@
       "ops": "rsp,0x8",
       "line": "  4018d5:\t48 83 c4 08          \tadd    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 3,
+      "reachable": 1
     },
     {
       "addr": 4200665,
@@ -8196,7 +8901,8 @@
       "ops": "eax,eax",
       "line": "  4018d9:\t31 c0                \txor    eax,eax",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200667,
@@ -8207,7 +8913,8 @@
       "ops": "rbx",
       "line": "  4018db:\t5b                   \tpop    rbx",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200668,
@@ -8219,7 +8926,8 @@
       "ops": "r12",
       "line": "  4018dc:\t41 5c                \tpop    r12",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200670,
@@ -8231,7 +8939,8 @@
       "ops": "r13",
       "line": "  4018de:\t41 5d                \tpop    r13",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200672,
@@ -8243,7 +8952,8 @@
       "ops": "r14",
       "line": "  4018e0:\t41 5e                \tpop    r14",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200674,
@@ -8255,7 +8965,8 @@
       "ops": "r15",
       "line": "  4018e2:\t41 5f                \tpop    r15",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200676,
@@ -8266,7 +8977,8 @@
       "ops": "rbp",
       "line": "  4018e4:\t5d                   \tpop    rbp",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200677,
@@ -8277,7 +8989,8 @@
       "ops": "",
       "line": "  4018e5:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200678,
@@ -8290,7 +9003,8 @@
       "ops": "r11d,r11d",
       "line": "  4018e6:\t45 31 db             \txor    r11d,r11d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200681,
@@ -8302,7 +9016,8 @@
       "ops": "esi,esi",
       "line": "  4018e9:\t85 f6                \ttest   esi,esi",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200683,
@@ -8317,8 +9032,11 @@
       "mnemonic": "jne",
       "ops": "401782 <fwrite@plt+0x6f2>",
       "line": "  4018eb:\t0f 85 91 fe ff ff    \tjne    401782 <fwrite@plt+0x6f2>",
-      "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_out": [
+        4200322
+      ],
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200689,
@@ -8332,7 +9050,8 @@
       "xrefs_out": [
         4200603
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200691,
@@ -8345,7 +9064,8 @@
       "ops": "r11d,r11d",
       "line": "  4018f3:\t45 31 db             \txor    r11d,r11d",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 1,
+      "reachable": 1
     },
     {
       "addr": 4200694,
@@ -8362,7 +9082,8 @@
       "xrefs_out": [
         4200322
       ],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200700,
@@ -8376,7 +9097,8 @@
       "ops": "rsp,0x8",
       "line": "  4018fc:\t48 83 ec 08          \tsub    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200704,
@@ -8390,7 +9112,8 @@
       "ops": "rsp,0x8",
       "line": "  401900:\t48 83 c4 08          \tadd    rsp,0x8",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     },
     {
       "addr": 4200708,
@@ -8401,7 +9124,8 @@
       "ops": "",
       "line": "  401904:\tc3                   \tret",
       "xrefs_out": [],
-      "xrefs_in": 0
+      "xrefs_in": 0,
+      "reachable": 1
     }
   ],
   "labels": {
@@ -8416,5 +9140,19 @@
     "4198544": "fwrite@plt",
     "4198592": ".text",
     "4200700": ".fini"
-  }
+  },
+  "reachable_addrs": [
+    4199216,
+    4199218,
+    4199221,
+    4199222,
+    4199225,
+    4199229,
+    4199230,
+    4199231,
+    4199234,
+    4199236,
+    4199243,
+    4199249
+  ]
 }

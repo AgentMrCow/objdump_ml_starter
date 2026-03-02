@@ -25,6 +25,7 @@ def collect_candidates(bin_path):
     with open(asm_path) as f:
         asm = json.load(f)
     instrs = asm['instrs']
+    reachable_set = set(asm.get("reachable_addrs", []))
     addr_to_idx = {ins['addr']: i for i, ins in enumerate(instrs)}
     cands = candidate_addresses(asm)
     feats = []
@@ -33,7 +34,7 @@ def collect_candidates(bin_path):
         idx = addr_to_idx.get(addr)
         if idx is None:
             continue
-        fvec = featurize_point(instrs, idx)
+        fvec = featurize_point(instrs, idx, reachable_set=reachable_set)
         feats.append(fvec)
         addrs.append(addr)
     return addrs, feats

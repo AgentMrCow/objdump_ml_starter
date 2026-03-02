@@ -78,6 +78,7 @@ def main():
         asm = json.load(f)
 
     instrs = asm["instrs"]
+    reachable_set = set(asm.get("reachable_addrs", []))
     addr_to_idx = {ins["addr"]: i for i, ins in enumerate(instrs)}
     cands = candidate_addresses(asm)
     cand_idxs = [addr_to_idx[a] for a in cands if a in addr_to_idx]
@@ -90,7 +91,7 @@ def main():
     addrs = []
     feats_list = []
     for idx in cand_idxs:
-        feats = featurize_point(instrs, idx)
+        feats = featurize_point(instrs, idx, reachable_set=reachable_set)
         vec = [feats[k] if k in feats else 0 for k in keys]
         X.append(vec)
         addrs.append(instrs[idx]["addr"])

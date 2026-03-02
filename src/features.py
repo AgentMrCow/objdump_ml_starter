@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
-import json, argparse, pathlib
+import json, argparse, pathlib, math
 
 CONTEXT_RADIUS = 6
 SHORT_WINDOW_RADII = (2, 6)
 NGRAM_RADIUS = 3
 PADDING_LOOKAHEAD = 8
+BYTE_NGRAM_WINDOW = 3
+BYTE_NGRAM_MINLEN = 2
+BYTE_NGRAM_MAXLEN = 3
+BYTE_NGRAM_BUCKETS = 64
 
 BASE_MNEMONICS = ["push", "mov", "sub", "add", "call", "jmp", "lea", "xor", "nop"]
 NGRAM_PATTERNS = [
@@ -20,6 +24,7 @@ BASE_FEATURE_KEYS = [
     "align16",
     "align32",
     "align64",
+    "reachable",
     "xrefs_in",
     "xrefs_out_count",
     "prev_is_ret",
@@ -33,6 +38,7 @@ BASE_FEATURE_KEYS = [
 
 MNEMONIC_FEATURE_KEYS = [f"m_{m}" for m in BASE_MNEMONICS]
 NGRAM_FEATURE_KEYS = ["ng_" + "_".join(pat) for pat in NGRAM_PATTERNS]
+BYTE_NGRAM_FEATURE_KEYS = [f"bng_{i}" for i in range(BYTE_NGRAM_BUCKETS)]
 
 CFG_FEATURE_KEYS = [
     "bb_start",
@@ -45,7 +51,7 @@ CFG_FEATURE_KEYS = [
     "byte_entropy",
 ]
 
-FEATURE_KEYS = BASE_FEATURE_KEYS + MNEMONIC_FEATURE_KEYS + NGRAM_FEATURE_KEYS + CFG_FEATURE_KEYS
+FEATURE_KEYS = BASE_FEATURE_KEYS + MNEMONIC_FEATURE_KEYS + NGRAM_FEATURE_KEYS + BYTE_NGRAM_FEATURE_KEYS + CFG_FEATURE_KEYS
 
 
 def get_feature_keys():
@@ -75,6 +81,55 @@ def _is_conditional_branch(ins):
     if mnem.startswith("j") and not mnem.startswith("jmp"):
         return True
     return False
+
+
+def compute_reachable_addrs(instrs, labels=None):
+    if not instrs:
+        return set()
+    addr_to_idx = {ins["addr"]: i for i, ins in enumerate(instrs)}
+
+    seeds = {instrs[0]["addr"]}
+    if labels:
+        for key in labels:
+            try:
+                addr = int(key)
+            except Exception:
+                try:
+                    addr = int(str(key), 16)
+                except Exception:
+                    continue
+            if addr in addr_to_idx:
+                seeds.add(addr)
+
+    reachable = set()
+    stack = list(seeds)
+    while stack:
+        addr = stack.pop()
+        idx = addr_to_idx.get(addr)
+        if idx is None or idx in reachable:
+            continue
+        reachable.add(idx)
+        ins = instrs[idx]
+        mnem = ins.get("mnemonic", "")
+        ops = ins.get("ops", "")
+        targets = [t for t in ins.get("xrefs_out", []) if isinstance(t, int)]
+
+        # terminators: ret or unconditional jmp (incl. indirect)
+        if mnem.startswith("ret"):
+            continue
+        if mnem.startswith("jmp") and not _is_conditional_branch(ins):
+            stack.extend(targets)
+            continue
+        if mnem in {"hlt", "ud2"}:
+            continue
+
+        # fallthrough
+        if idx + 1 < len(instrs):
+            stack.append(instrs[idx + 1]["addr"])
+        # branch/call targets
+        stack.extend(targets)
+
+    return {instrs[i]["addr"] for i in reachable}
 
 
 def candidate_addresses(data):
@@ -138,7 +193,30 @@ def _contains_pattern(mnemonics, pattern):
     return False
 
 
-def featurize_point(instrs, idx):
+def _hash_ngram(bs):
+    h = 2166136261
+    for b in bs:
+        h = (h ^ b) * 16777619
+        h &= 0xFFFFFFFF
+    return h % BYTE_NGRAM_BUCKETS
+
+
+def _byte_entropy(bs):
+    if not bs:
+        return 0.0
+    counts = [0] * 256
+    for b in bs:
+        counts[b] += 1
+    total = len(bs)
+    ent = 0.0
+    for c in counts:
+        if c:
+            p = c / total
+            ent -= p * math.log2(p)
+    return ent
+
+
+def featurize_point(instrs, idx, reachable_set=None):
     ins = instrs[idx]
     features = {key: 0 for key in FEATURE_KEYS}
 
@@ -146,6 +224,12 @@ def featurize_point(instrs, idx):
     features["align16"] = 1 if addr % 16 == 0 else 0
     features["align32"] = 1 if addr % 32 == 0 else 0
     features["align64"] = 1 if addr % 64 == 0 else 0
+
+    if reachable_set is None:
+        reachable_flag = ins.get("reachable", 0)
+    else:
+        reachable_flag = 1 if ins["addr"] in reachable_set else 0
+    features["reachable"] = reachable_flag
 
     features["xrefs_in"] = ins.get("xrefs_in", 0)
     features["xrefs_out_count"] = len(ins.get("xrefs_out", []))
@@ -187,6 +271,18 @@ def featurize_point(instrs, idx):
         if _contains_pattern(mnemonics, pattern):
             features[key] = 1
 
+    # byte n-gram hashing over nearby bytes (ByteWeight-style signal)
+    bng_window, _ = window(instrs, idx, BYTE_NGRAM_WINDOW)
+    byte_seq = []
+    for item in bng_window:
+        byte_seq.extend(item.get("bytes", []))
+    for n in range(BYTE_NGRAM_MINLEN, BYTE_NGRAM_MAXLEN + 1):
+        for i in range(0, len(byte_seq) - n + 1):
+            bucket = _hash_ngram(byte_seq[i:i + n])
+            key = f"bng_{bucket}"
+            if features[key] < 3:
+                features[key] += 1
+
     # CFG / byte-level helpers (defaults to zero when absent)
     features["bb_start"] = ins.get("bb_start", 0)
     features["byte_sum"] = ins.get("byte_sum", sum(ins.get("bytes", [])))
@@ -199,19 +295,19 @@ def featurize_point(instrs, idx):
         features["byte_entropy"] = ins["byte_entropy"]
     else:
         b = ins.get("bytes", [])
-        features["byte_entropy"] = (sum(b) / len(b)) if b else 0
+        features["byte_entropy"] = _byte_entropy(b)
 
     return features
 
 def to_vector(feature_dict):
     return [feature_dict[k] for k in FEATURE_KEYS], FEATURE_KEYS
 
-def build_matrix(instrs, cand_idxs):
+def build_matrix(instrs, cand_idxs, reachable_set=None):
     X = []
     meta = []
     last_keys = None
     for idx in cand_idxs:
-        f = featurize_point(instrs, idx)
+        f = featurize_point(instrs, idx, reachable_set=reachable_set)
         vec, keys = to_vector(f)
         last_keys = keys
         X.append(vec)
@@ -228,7 +324,8 @@ def main():
     addr_to_idx = {ins["addr"]: i for i, ins in enumerate(instrs)}
     cands = candidate_addresses(data)
     cand_idxs = [addr_to_idx[a] for a in cands if a in addr_to_idx]
-    X, meta, keys = build_matrix(instrs, cand_idxs)
+    reachable_set = set(data.get("reachable_addrs", []))
+    X, meta, keys = build_matrix(instrs, cand_idxs, reachable_set=reachable_set)
     out = {
         "X": X,
         "keys": keys,

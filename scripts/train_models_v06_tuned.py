@@ -28,13 +28,14 @@ def build_dataset(file_pairs, feature_keys):
             truth = json.load(f)
         truth_starts = {entry['start'] for entry in truth}
         instrs = asm['instrs']
+        reachable_set = set(asm.get("reachable_addrs", []))
         addr_to_idx = {ins['addr']: i for i, ins in enumerate(instrs)}
         cands = candidate_addresses(asm)
         for addr in cands:
             idx = addr_to_idx.get(addr)
             if idx is None:
                 continue
-            feats = featurize_point(instrs, idx)
+            feats = featurize_point(instrs, idx, reachable_set=reachable_set)
             vec = tuple(feats[k] for k in feature_keys)
             label = 1 if addr in truth_starts else 0
             if label == 1 or vec not in samples:

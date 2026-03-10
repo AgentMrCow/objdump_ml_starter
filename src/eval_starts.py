@@ -41,7 +41,7 @@ def main():
         return
     # Use the first match
     truth = load_json(truth_files[0])
-    truth_starts = [int(x["start"]) for x in truth]
+    truth_starts = [int(x["start"]) for x in truth if int(x["start"]) > 0]
 
     tp, fp, fn, offsets = match_with_tolerance(truth_starts, pred_starts, args.tolerance)
     prec = tp / (tp + fp) if (tp+fp) else 0.0

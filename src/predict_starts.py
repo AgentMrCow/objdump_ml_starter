@@ -8,6 +8,7 @@ from features import candidate_addresses, featurize_point
 JUMP_TABLE_BYTE_TARGET = 48
 JUMP_TABLE_INSTR_TARGET = 12
 LARGE_IMM_THRESHOLD = 0x1000
+RESCUE_SCORE_FLOOR = 0.15
 IMM_RE = re.compile(r"0x([0-9a-fA-F]+)")
 
 
@@ -60,6 +61,25 @@ def _has_large_immediate(ops):
         return False
     return val >= LARGE_IMM_THRESHOLD
 
+
+def _prev_ret_near(instrs, start_idx, back=3):
+    lo = max(0, start_idx - back)
+    for idx in range(lo, start_idx):
+        if instrs[idx].get("mnemonic", "").startswith("ret"):
+            return True
+    return False
+
+
+def _is_short_leaf_candidate(instrs, start_idx, max_ins=5):
+    hi = min(len(instrs), start_idx + max_ins)
+    for idx in range(start_idx, hi):
+        mnem = instrs[idx].get("mnemonic", "")
+        if mnem.startswith("call") or mnem.startswith("jmp"):
+            return False
+        if mnem.startswith("ret"):
+            return True
+    return False
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--bin", required=True)
@@ -67,6 +87,7 @@ def main():
     ap.add_argument("--out", default="functions_pred.json")
     ap.add_argument("--threshold", type=float, default=0.5)
     ap.add_argument("--post_filter", choices=["on", "off"], default="on")
+    ap.add_argument("--merge_window", type=int, default=4)
     args = ap.parse_args()
 
     # Ensure asm json exists
@@ -107,9 +128,23 @@ def main():
     probs = clf.predict_proba(X)[:,1] if hasattr(clf, "predict_proba") else clf.decision_function(X)
 
     pred = []
+    rescued = 0
     for addr, p, (feats, idx) in zip(addrs, probs, feats_list):
         if p >= args.threshold:
             pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            continue
+        if p < RESCUE_SCORE_FLOOR:
+            continue
+        if feats.get("xrefs_in", 0) != 0:
+            continue
+        if not feats.get("align16", 0):
+            continue
+        if not _prev_ret_near(instrs, idx, back=3):
+            continue
+        if not _is_short_leaf_candidate(instrs, idx, max_ins=5):
+            continue
+        pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+        rescued += 1
 
     removed_padding = 0
     removed_jt = 0
@@ -141,8 +176,9 @@ def main():
     else:
         print("Post-filter disabled (0 candidates removed).")
         print("jt-filter skipped (post_filter=off).")
+    print(f"leaf-rescue added {rescued} candidate(s).")
 
-    def merge_nearby(preds, window=8):
+    def merge_nearby(preds, window):
         if not preds:
             return []
         preds = sorted(preds, key=lambda x: x["start"])
@@ -155,7 +191,7 @@ def main():
                 merged.append(item)
         return merged
 
-    pred = merge_nearby(pred)
+    pred = merge_nearby(pred, args.merge_window)
     # naive end stitching: next predicted start or end of list
     pred_sorted = sorted(pred, key=lambda x: x["start"])
     for i in range(len(pred_sorted)):

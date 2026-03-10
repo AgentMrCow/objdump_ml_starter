@@ -2,22 +2,53 @@
 import argparse, json, pathlib
 from elftools.elf.elffile import ELFFile
 from elftools.elf.enums import ENUM_ST_INFO_TYPE
+from elftools.elf.constants import SH_FLAGS
 
-def collect_symtab_funcs(elffile):
+
+def collect_exec_ranges(elffile):
+    ranges = []
+    for sec in elffile.iter_sections():
+        flags = sec.header.get("sh_flags", 0)
+        if not (flags & SH_FLAGS.SHF_ALLOC):
+            continue
+        if not (flags & SH_FLAGS.SHF_EXECINSTR):
+            continue
+        start = int(sec["sh_addr"])
+        size = int(sec.data_size)
+        if size <= 0:
+            continue
+        ranges.append((start, start + size))
+    return ranges
+
+
+def in_exec(start, exec_ranges):
+    if start <= 0:
+        return False
+    if not exec_ranges:
+        return True
+    return any(lo <= start < hi for lo, hi in exec_ranges)
+
+
+def collect_symtab_funcs(elffile, exec_ranges):
     out = []
     for sec in elffile.iter_sections():
         if sec.header['sh_type'] == 'SHT_SYMTAB':
             for sym in sec.iter_symbols():
                 t = sym['st_info']['type']
                 if t == 'STT_FUNC' or t == ENUM_ST_INFO_TYPE['STT_FUNC']:
+                    if sym.entry.get('st_shndx') == 'SHN_UNDEF':
+                        continue
                     start = int(sym['st_value'])
+                    if not in_exec(start, exec_ranges):
+                        continue
                     size = int(sym['st_size'])
                     end = start + size if size else None
                     name = sym.name
                     out.append({"start": start, "end": end, "name": name})
     return out
 
-def collect_dwarf_funcs(elffile):
+
+def collect_dwarf_funcs(elffile, exec_ranges):
     out = []
     if not elffile.has_dwarf_info():
         return out
@@ -30,6 +61,8 @@ def collect_dwarf_funcs(elffile):
                 if not lowpc:
                     continue
                 start = int(lowpc.value)
+                if not in_exec(start, exec_ranges):
+                    continue
                 end = None
                 if highpc:
                     # class may be 'address' or 'constant'
@@ -69,7 +102,8 @@ def main():
     args = ap.parse_args()
     with open(args.bin, "rb") as f:
         ef = ELFFile(f)
-        funcs = collect_symtab_funcs(ef) + collect_dwarf_funcs(ef)
+        exec_ranges = collect_exec_ranges(ef)
+        funcs = collect_symtab_funcs(ef, exec_ranges) + collect_dwarf_funcs(ef, exec_ranges)
         uni = unify(funcs)
         pathlib.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         with open(args.out, "w") as w:

@@ -16,6 +16,7 @@ else
 fi
 
 POST_FILTER=${POST_FILTER:-on}
+MERGE_WINDOW=${MERGE_WINDOW:-4}
 
 mkdir -p "$OUT_DIR" "$LOG_DIR"
 LOG_FILE="$LOG_DIR/run_batch_predict.log"
@@ -37,8 +38,8 @@ for bin in $bin_iter; do
     stem=${base%_stripped}
     pred_out="$OUT_DIR/${stem}.json"
 
-    echo "Predicting for $bin (threshold=$PRED_THRESH, post_filter=$POST_FILTER)" >> "$LOG_FILE"
-    python src/predict_starts.py --bin "$bin" --model_path "$MODEL_PATH" --out "$pred_out" --threshold "$PRED_THRESH" --post_filter "$POST_FILTER" >> "$LOG_FILE" 2>&1
+    echo "Predicting for $bin (threshold=$PRED_THRESH, post_filter=$POST_FILTER, merge_window=$MERGE_WINDOW)" >> "$LOG_FILE"
+    python src/predict_starts.py --bin "$bin" --model_path "$MODEL_PATH" --out "$pred_out" --threshold "$PRED_THRESH" --post_filter "$POST_FILTER" --merge_window "$MERGE_WINDOW" >> "$LOG_FILE" 2>&1
 
     opt_level=$(basename "$(dirname "$bin")")
     label_path="data/labels/linux/${opt_level}/${stem}_sym.functions_truth.json"

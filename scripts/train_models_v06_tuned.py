@@ -26,7 +26,7 @@ def build_dataset(file_pairs, feature_keys):
             asm = json.load(f)
         with open(label_path) as f:
             truth = json.load(f)
-        truth_starts = {entry['start'] for entry in truth}
+        truth_starts = {entry['start'] for entry in truth if int(entry['start']) > 0}
         instrs = asm['instrs']
         reachable_set = set(asm.get("reachable_addrs", []))
         addr_to_idx = {ins['addr']: i for i, ins in enumerate(instrs)}
@@ -52,16 +52,26 @@ def main():
     ap.add_argument('--train_opts', default='O0,O1,O2')
     ap.add_argument('--out_dir', default='models')
     ap.add_argument('--tag', default='v06b', help="suffix tag for model filenames")
+    ap.add_argument('--drop_features', action='append', default=[],
+                    help="Feature key to exclude from training. Repeatable or comma-separated.")
     args = ap.parse_args()
 
     split = json.load(open(args.split))
     train_programs = split['train_programs']
     opts = [o.strip() for o in args.train_opts.split(',') if o.strip()]
-    feature_keys = get_feature_keys()
+    drop_features = set()
+    for item in args.drop_features:
+        for key in item.split(','):
+            key = key.strip()
+            if key:
+                drop_features.add(key)
+    feature_keys = [k for k in get_feature_keys() if k not in drop_features]
     files = collect_files(train_programs, opts)
     X, y, pos, neg = build_dataset(files, feature_keys)
     pathlib.Path(args.out_dir).mkdir(parents=True, exist_ok=True)
     print(f"Train set: total={len(y)} pos={pos} neg={neg}")
+    if drop_features:
+        print("Dropped features:", ", ".join(sorted(drop_features)))
 
     # Logistic Regression baseline
     lr = LogisticRegression(max_iter=2000, class_weight='balanced')

@@ -77,7 +77,7 @@ Key artifacts
 - Data: `data/build/linux/O*/...`, `data/labels/linux/O*/...`, `data/program_manifest_v06.json`
 - Splits: `splits/v06.json` (train/val/test by program)
 - Models: `models/start_detector*.joblib` (`v06h_xgb` is the current best O3 model; `v06i_*` is the no-`reachable` ablation)
-- Results: sweep TSVs under `out/*sweep*.tsv`, macro tables such as `out/macro_v06_compare.tsv` and `out/macro_v06j_thresholds.tsv`, batch summaries like `out/summary_v06_best_O3.tsv`, plots under `out/plots_v06/`, Ghidra exports under `out/ghidra/`
+- Results: sweep TSVs under `out/*sweep*.tsv`, macro tables such as `out/macro_v06_compare.tsv` and `out/macro_v06_current_thresholds.tsv`, batch summaries like `out/summary_v06_best_O3.tsv`, plots under `out/plots_v06/`, Ghidra exports under `out/ghidra/`
 
 ## Project layout
 ```

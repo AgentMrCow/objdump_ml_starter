@@ -29,7 +29,7 @@ python src/eval_starts.py --pred functions_pred.json --truth_glob "data/labels/*
 
 - Corpus: ~1.6k real C programs (RosettaCode) built at O0–O3, with DWARF truth, asm JSON, and program-level splits (no cross-program leakage). See `data/program_manifest_v06.json`, `splits/v06.json`, inventory `out/dataset_inventory_v06.tsv`.
 - Models: Logistic Regression, Random Forest, XGBoost; post-filters for padding/jump-table artifacts; threshold sweeps and macro aggregation; optional Ghidra headless exports for agreement checks.
-- Current best validated O3 setup: `models/start_detector_v06h_xgb.joblib` with `THRESH=0.75`, `POST_FILTER=on`, `MERGE_WINDOW=4`, giving macro `P=0.9867 / R=0.9565 / F1=0.9701` on the 149-binary O3 test split.
+- Current best validated O3 setup: `models/start_detector_v06h_xgb.joblib` with `THRESH=0.75`, `POST_FILTER=on`, `MERGE_WINDOW=4`, giving macro `P=0.9878 / R=0.9627 / F1=0.9740` on the 149-binary O3 test split.
 
 Common commands (after `source .venv/bin/activate` and `export PYTHONPATH=src`):
 
@@ -91,7 +91,7 @@ src/
   train_start_detector.py
 scripts/
   train_models_v06_*.py # model training variants
-  evaluate_model_thresholds_v06.py # threshold sweeps using current rescue/filter path
+  evaluate_model_thresholds_v06.py # threshold sweeps aligned with the current rescue/filter path
   tools_ghidra.sh, etc.
 samples/
   hello.c, mathlib.c, sort.c, real_v06/... (RosettaCode corpus)

@@ -15,6 +15,12 @@ WRAPPER_SCAN_INSTRS = 6
 RET_STUB_SCAN_INSTRS = 5
 REACHABLE_LEAF_RESCUE_FLOOR = 0.05
 RET_STUB_STRONG_SUCCESSOR_SCORE = 0.75
+ENTRY_GUARD_MAX_BACK = 6
+ENTRY_GUARD_MAX_BLOCK = 8
+CLEAN_RET_RESCUE_FLOOR = 0.03
+CLEAN_RET_LOOKBACK = 4
+CLEAN_RET_SCAN_INSTRS = 6
+CLEAN_RET_MAX_GAP_BYTES = 24
 IMM_RE = re.compile(r"0x([0-9a-fA-F]+)")
 
 
@@ -235,6 +241,116 @@ def _is_reachable_leaf_candidate(score, feats, instrs, start_idx, max_ins=8):
             return True
     return False
 
+
+def _is_pltish_target(ops):
+    return "plt" in (ops or "").lower()
+
+
+def _clean_boundary_ins(instrs, start_idx, max_back=CLEAN_RET_LOOKBACK):
+    idx = start_idx - 1
+    steps = 0
+    while idx >= 0 and steps < max_back:
+        mnem = instrs[idx].get("mnemonic", "").lower()
+        if "nop" in mnem or mnem == "xchg":
+            idx -= 1
+            steps += 1
+            continue
+        return instrs[idx]
+    return None
+
+
+def _is_clean_ret_rescue_candidate(score, feats, instrs, start_idx):
+    if score < CLEAN_RET_RESCUE_FLOOR:
+        return False
+    if feats.get("xrefs_in", 0) != 0:
+        return False
+    if not feats.get("align16", 0):
+        return False
+
+    ins = instrs[start_idx]
+    mnem = ins.get("mnemonic", "")
+    if mnem.startswith(("jmp", "ret")) or "nop" in mnem.lower():
+        return False
+
+    boundary = _clean_boundary_ins(instrs, start_idx, max_back=CLEAN_RET_LOOKBACK)
+    if boundary is None or not boundary.get("mnemonic", "").startswith("ret"):
+        return False
+    if ins["addr"] - boundary["addr"] > CLEAN_RET_MAX_GAP_BYTES:
+        return False
+    if _looks_like_jump_table(instrs, start_idx, feats):
+        return False
+
+    body = instrs[start_idx:min(len(instrs), start_idx + CLEAN_RET_SCAN_INSTRS)]
+    if any(item.get("mnemonic", "").startswith("jmp") for item in body):
+        return False
+    if any(item.get("mnemonic", "").startswith("leave") for item in body):
+        return False
+    return True
+
+
+def _maybe_shift_entry_guard(item, info, instrs, threshold):
+    feats = item["features"]
+    idx = item["idx"]
+    if float(item["score"]) < threshold:
+        return item, False
+    if feats.get("xrefs_in", 0) <= 0:
+        return item, False
+    if not instrs[idx].get("mnemonic", "").startswith("push"):
+        return item, False
+
+    for back in range(1, ENTRY_GUARD_MAX_BACK + 1):
+        cand_idx = idx - back
+        if cand_idx < 0:
+            break
+        cand = instrs[cand_idx]
+        if cand["addr"] % 16 != 0:
+            continue
+        cand_info = info.get(cand["addr"])
+        if cand_info is None:
+            continue
+        cand_score, cand_feats, _ = cand_info
+        if cand_feats.get("xrefs_in", 0) != 0:
+            continue
+
+        block = instrs[cand_idx:idx]
+        if not block or len(block) > ENTRY_GUARD_MAX_BLOCK:
+            continue
+
+        saw_cond = False
+        saw_plt_jump = False
+        ok = True
+        for ins in block:
+            mnem = ins.get("mnemonic", "")
+            if mnem.startswith("call"):
+                if not _is_pltish_target(ins.get("ops", "")):
+                    ok = False
+                    break
+            elif mnem.startswith("jmp"):
+                if _is_pltish_target(ins.get("ops", "")):
+                    saw_plt_jump = True
+                else:
+                    ok = False
+                    break
+            elif mnem.startswith("j"):
+                saw_cond = True
+            elif mnem.startswith(("cmp", "test", "mov", "lea", "xor", "nop")):
+                pass
+            else:
+                ok = False
+                break
+
+        if not (ok and saw_cond and saw_plt_jump):
+            continue
+
+        shifted = dict(item)
+        shifted["start"] = cand["addr"]
+        shifted["score"] = max(float(item["score"]), float(cand_score) + 1e-6)
+        shifted["features"] = cand_feats
+        shifted["idx"] = cand_idx
+        return shifted, True
+
+    return item, False
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--bin", required=True)
@@ -286,9 +402,14 @@ def main():
     rescued = 0
     aligned_rescued = 0
     reachable_rescued = 0
+    clean_ret_rescued = 0
     for addr, p, (feats, idx) in zip(addrs, probs, feats_list):
         if p >= args.threshold:
             pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            continue
+        if _is_clean_ret_rescue_candidate(float(p), feats, instrs, idx):
+            pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            clean_ret_rescued += 1
             continue
         if p < RESCUE_SCORE_FLOOR:
             if _is_reachable_leaf_candidate(float(p), feats, instrs, idx):
@@ -344,15 +465,20 @@ def main():
     print(f"leaf-rescue added {rescued} candidate(s).")
     print(f"aligned-rescue added {aligned_rescued} candidate(s).")
     print(f"reachable-leaf-rescue added {reachable_rescued} candidate(s).")
+    print(f"clean-ret-rescue added {clean_ret_rescued} candidate(s).")
 
     info = {addr: (float(p), feats, idx) for addr, p, (feats, idx) in zip(addrs, probs, feats_list)}
     wrapper_shifted = 0
+    entry_guard_shifted = 0
     shifted_pred = []
     for item in pred:
         shifted_item, changed = _maybe_shift_wrapper(item, info, instrs)
+        shifted_item, changed_guard = _maybe_shift_entry_guard(shifted_item, info, instrs, args.threshold)
         shifted_pred.append(shifted_item)
         if changed:
             wrapper_shifted += 1
+        if changed_guard:
+            entry_guard_shifted += 1
     pred = shifted_pred
 
     ret_stub_adjusted = 0
@@ -365,6 +491,7 @@ def main():
             adjusted_pred.append(shifted_item)
     pred = adjusted_pred
     print(f"wrapper-shift adjusted {wrapper_shifted} candidate(s).")
+    print(f"entry-guard adjusted {entry_guard_shifted} candidate(s).")
     print(f"ret-stub adjusted {ret_stub_adjusted} candidate(s).")
 
     def merge_nearby(preds, window):

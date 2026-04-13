@@ -7,9 +7,15 @@ from joblib import load
 
 from features import candidate_addresses, featurize_point
 from predict_starts import (
+    BORDERLINE_ALIGN_RESCUE_SCORE,
     RESCUE_SCORE_FLOOR,
+    _is_clean_ret_rescue_candidate,
+    _is_reachable_leaf_candidate,
     _is_short_leaf_candidate,
     _looks_like_jump_table,
+    _maybe_retarget_ret_stub,
+    _maybe_shift_entry_guard,
+    _maybe_shift_wrapper,
     _prev_ret_near,
 )
 
@@ -60,20 +66,44 @@ def score_model(bundle, feature_keys, feats):
 
 def apply_prediction_pipeline(instrs, addrs, feats, idxs, probs, threshold, merge_window, post_filter):
     pred = []
+    info = {addr: (float(prob), feat, idx) for addr, prob, feat, idx in zip(addrs, probs, feats, idxs)}
     for addr, prob, feat, idx in zip(addrs, probs, feats, idxs):
-        keep = False
         if prob >= threshold:
-            keep = True
-        elif (
-            prob >= RESCUE_SCORE_FLOOR and
-            feat.get('xrefs_in', 0) == 0 and
-            feat.get('align16', 0) and
-            _prev_ret_near(instrs, idx, back=3) and
-            _is_short_leaf_candidate(instrs, idx, max_ins=5)
-        ):
-            keep = True
-        if keep:
             pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if _is_clean_ret_rescue_candidate(float(prob), feat, instrs, idx):
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if prob < RESCUE_SCORE_FLOOR:
+            if _is_reachable_leaf_candidate(float(prob), feat, instrs, idx):
+                pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if feat.get('xrefs_in', 0) != 0:
+            continue
+        if not feat.get('align16', 0):
+            continue
+        if _prev_ret_near(instrs, idx, back=3) and _is_short_leaf_candidate(instrs, idx, max_ins=5):
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if float(prob) >= BORDERLINE_ALIGN_RESCUE_SCORE and not _looks_like_jump_table(instrs, idx, feat):
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if _is_reachable_leaf_candidate(float(prob), feat, instrs, idx):
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+
+    shifted = []
+    for item in pred:
+        shifted_item, _ = _maybe_shift_wrapper(item, info, instrs)
+        shifted_item, _ = _maybe_shift_entry_guard(shifted_item, info, instrs, threshold)
+        shifted.append(shifted_item)
+    pred = shifted
+
+    adjusted = []
+    for item in pred:
+        shifted_item, _ = _maybe_retarget_ret_stub(item, info, instrs)
+        if shifted_item is not None:
+            adjusted.append(shifted_item)
+    pred = adjusted
 
     if post_filter:
         filtered = []

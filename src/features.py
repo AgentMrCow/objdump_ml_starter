@@ -34,6 +34,21 @@ BASE_FEATURE_KEYS = [
     "window6_xrefs_in",
     "window6_xrefs_out",
     "padding_nop_run",
+    "prev_pad_run",
+    "boundary_ret",
+    "boundary_call",
+    "boundary_callplt",
+    "boundary_jmp",
+    "boundary_jmpplt",
+    "early_cond_branch",
+    "early_uncond_jmp",
+    "early_call",
+    "early_push",
+    "early_ret",
+    "early_pop",
+    "early_add_rsp",
+    "first_is_cmp_test",
+    "first_is_mov_like",
 ]
 
 MNEMONIC_FEATURE_KEYS = [f"m_{m}" for m in BASE_MNEMONICS]
@@ -81,6 +96,41 @@ def _is_conditional_branch(ins):
     if mnem.startswith("j") and not mnem.startswith("jmp"):
         return True
     return False
+
+
+def _is_padding_ins(ins):
+    mnem = (ins.get("mnemonic", "") or "").lower()
+    ops = (ins.get("ops", "") or "").lower()
+    if "nop" in mnem or "nop" in ops:
+        return True
+    return mnem in {"xchg", "data16", "cs", "ds", "es", "ss"}
+
+
+def _boundary_ins(instrs, idx, max_back=8):
+    j = idx - 1
+    steps = 0
+    while j >= 0 and steps < max_back:
+        ins = instrs[j]
+        if _is_padding_ins(ins):
+            j -= 1
+            steps += 1
+            continue
+        return ins, steps
+    return None, steps
+
+
+def _boundary_kind(ins):
+    if not ins:
+        return ""
+    mnem = ins.get("mnemonic", "")
+    ops = (ins.get("ops", "") or "").lower()
+    if mnem.startswith("ret"):
+        return "ret"
+    if mnem.startswith("jmp"):
+        return "jmpplt" if "plt" in ops else "jmp"
+    if mnem.startswith("call"):
+        return "callplt" if "plt" in ops else "call"
+    return ""
 
 
 def compute_reachable_addrs(instrs, labels=None):
@@ -261,7 +311,45 @@ def featurize_point(instrs, idx, reachable_set=None):
             break
     features["padding_nop_run"] = padding_run
 
+    prev_pad_run = 0
+    j = idx - 1
+    while j >= 0 and prev_pad_run < PADDING_LOOKAHEAD:
+        if _is_padding_ins(instrs[j]):
+            prev_pad_run += 1
+            j -= 1
+            continue
+        break
+    features["prev_pad_run"] = prev_pad_run
+
+    boundary_ins, _ = _boundary_ins(instrs, idx, max_back=8)
+    boundary_kind = _boundary_kind(boundary_ins)
+    if boundary_kind:
+        features[f"boundary_{boundary_kind}"] = 1
+
     m = ins["mnemonic"]
+    early_instrs = instrs[idx:min(len(instrs), idx + 6)]
+    if m.startswith(("cmp", "test")):
+        features["first_is_cmp_test"] = 1
+    if m.startswith(("mov", "lea", "xor")):
+        features["first_is_mov_like"] = 1
+    for early_ins in early_instrs:
+        early_mnem = early_ins.get("mnemonic", "")
+        early_ops = early_ins.get("ops", "").replace(" ", "")
+        if early_mnem.startswith("j") and not early_mnem.startswith("jmp"):
+            features["early_cond_branch"] = 1
+        if early_mnem.startswith("jmp"):
+            features["early_uncond_jmp"] = 1
+        if early_mnem.startswith("call"):
+            features["early_call"] = 1
+        if early_mnem.startswith("push"):
+            features["early_push"] = 1
+        if early_mnem.startswith("ret"):
+            features["early_ret"] = 1
+        if early_mnem.startswith("pop"):
+            features["early_pop"] = 1
+        if early_mnem.startswith("add") and "rsp" in early_ops:
+            features["early_add_rsp"] = 1
+
     for key in BASE_MNEMONICS:
         features[f"m_{key}"] = 1 if m.startswith(key) else 0
 

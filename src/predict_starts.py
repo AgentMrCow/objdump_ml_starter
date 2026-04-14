@@ -18,10 +18,38 @@ RET_STUB_STRONG_SUCCESSOR_SCORE = 0.75
 ENTRY_GUARD_MAX_BACK = 6
 ENTRY_GUARD_MAX_BLOCK = 8
 CLEAN_RET_RESCUE_FLOOR = 0.03
-CLEAN_RET_LOOKBACK = 4
+CLEAN_RET_LOOKBACK = 8
 CLEAN_RET_SCAN_INSTRS = 6
 CLEAN_RET_MAX_GAP_BYTES = 24
+CLEAN_JMP_RESCUE_FLOOR = 0.01
+CLEAN_JMP_LOOKBACK = 8
+CLEAN_JMP_SCAN_INSTRS = 8
+CLEAN_JMP_MAX_GAP_BYTES = 24
+CLEAN_CALL_RESCUE_FLOOR = 0.01
+CLEAN_CALL_LOOKBACK = 8
+CLEAN_CALL_SCAN_INSTRS = 8
+CLEAN_CALL_MAX_GAP_BYTES = 24
 IMM_RE = re.compile(r"0x([0-9a-fA-F]+)")
+
+
+def _build_inbound_kind_counts(instrs):
+    inbound = {}
+    for ins in instrs:
+        mnem = ins.get("mnemonic", "")
+        if mnem.startswith("call"):
+            kind = "call"
+        elif mnem.startswith("jmp"):
+            kind = "jmp"
+        elif mnem.startswith("j"):
+            kind = "jcc"
+        else:
+            kind = "other"
+        for target in ins.get("xrefs_out", []):
+            if not isinstance(target, int):
+                continue
+            counts = inbound.setdefault(target, {"call": 0, "jmp": 0, "jcc": 0, "other": 0})
+            counts[kind] += 1
+    return inbound
 
 
 def _looks_like_jump_table(instrs, start_idx, feats):
@@ -246,12 +274,40 @@ def _is_pltish_target(ops):
     return "plt" in (ops or "").lower()
 
 
+def _call_looks_noreturnish(ins):
+    ops = (ins.get("ops", "") or "").lower()
+    tokens = ("abort", "exit", "assert", "longjmp", "stack_chk_fail", "fatal", "panic", "die")
+    return any(tok in ops for tok in tokens)
+
+
+def _is_padding_ins(ins):
+    mnem = (ins.get("mnemonic", "") or "").lower()
+    ops = (ins.get("ops", "") or "").lower()
+    if "nop" in mnem or "nop" in ops:
+        return True
+    return mnem in {"xchg", "data16", "cs", "ds", "es", "ss"}
+
+
+def _looks_like_tiny_leave_stub(instrs, item):
+    feats = item["features"]
+    if feats.get("xrefs_in", 0) != 0:
+        return False
+    if feats.get("window2_xrefs_in", 0) != 0:
+        return False
+    if feats.get("early_push", 0) or feats.get("early_call", 0) or feats.get("early_cond_branch", 0):
+        return False
+
+    body = instrs[item["idx"]:min(len(instrs), item["idx"] + 6)]
+    has_leave = any(ins.get("mnemonic", "").startswith("leave") for ins in body)
+    has_ret = any(ins.get("mnemonic", "").startswith("ret") for ins in body)
+    return has_leave and has_ret
+
+
 def _clean_boundary_ins(instrs, start_idx, max_back=CLEAN_RET_LOOKBACK):
     idx = start_idx - 1
     steps = 0
     while idx >= 0 and steps < max_back:
-        mnem = instrs[idx].get("mnemonic", "").lower()
-        if "nop" in mnem or mnem == "xchg":
+        if _is_padding_ins(instrs[idx]):
             idx -= 1
             steps += 1
             continue
@@ -284,6 +340,99 @@ def _is_clean_ret_rescue_candidate(score, feats, instrs, start_idx):
     if any(item.get("mnemonic", "").startswith("jmp") for item in body):
         return False
     if any(item.get("mnemonic", "").startswith("leave") for item in body):
+        return False
+    return True
+
+
+def _is_clean_jmp_rescue_candidate(score, feats, instrs, start_idx, inbound_kinds=None):
+    if score < CLEAN_JMP_RESCUE_FLOOR:
+        return False
+    if not feats.get("align16", 0):
+        return False
+
+    ins = instrs[start_idx]
+    mnem = ins.get("mnemonic", "")
+    if mnem.startswith(("jmp", "ret")) or "nop" in mnem.lower():
+        return False
+
+    boundary = _clean_boundary_ins(instrs, start_idx, max_back=CLEAN_JMP_LOOKBACK)
+    if boundary is None or not boundary.get("mnemonic", "").startswith("jmp"):
+        return False
+    if ins["addr"] - boundary["addr"] > CLEAN_JMP_MAX_GAP_BYTES:
+        return False
+    if inbound_kinds is not None and inbound_kinds.get(ins["addr"], {}).get("call", 0) <= 0:
+        return False
+    if _looks_like_jump_table(instrs, start_idx, feats):
+        return False
+
+    body = instrs[start_idx:min(len(instrs), start_idx + CLEAN_JMP_SCAN_INSTRS)]
+    if any(item.get("mnemonic", "").startswith("leave") for item in body):
+        return False
+    if _looks_like_tiny_leave_stub(instrs, {"features": feats, "idx": start_idx}):
+        return False
+
+    # Rescue only starts that look like a real entry shape rather than a raw block label.
+    if not (
+        feats.get("first_is_mov_like", 0) or
+        feats.get("first_is_cmp_test", 0) or
+        feats.get("early_push", 0)
+    ):
+        return False
+    return True
+
+
+def _preceding_local_fatal_stub(instrs, start_idx, boundary):
+    boundary_idx = start_idx - 1
+    while boundary_idx >= 0 and instrs[boundary_idx]["addr"] != boundary["addr"]:
+        boundary_idx -= 1
+    if boundary_idx < 0:
+        return False
+    lo = max(0, boundary_idx - 3)
+    block = [ins for ins in instrs[lo:boundary_idx + 1] if not _is_padding_ins(ins)]
+    if not block:
+        return False
+    if not block[-1].get("mnemonic", "").startswith("call"):
+        return False
+    if _is_pltish_target(block[-1].get("ops", "")):
+        return False
+    if not any(ins.get("mnemonic", "").startswith("push") and "rbp" in ins.get("ops", "") for ins in block[:-1]):
+        return False
+    if any(ins.get("mnemonic", "").startswith(("j", "ret")) for ins in block[:-1]):
+        return False
+    return True
+
+
+def _is_clean_call_rescue_candidate(score, feats, instrs, start_idx):
+    if score < CLEAN_CALL_RESCUE_FLOOR:
+        return False
+    if not feats.get("align16", 0):
+        return False
+
+    ins = instrs[start_idx]
+    mnem = ins.get("mnemonic", "")
+    if mnem.startswith(("jmp", "ret")) or "nop" in mnem.lower():
+        return False
+
+    boundary = _clean_boundary_ins(instrs, start_idx, max_back=CLEAN_CALL_LOOKBACK)
+    if boundary is None or not boundary.get("mnemonic", "").startswith("call"):
+        return False
+    if ins["addr"] - boundary["addr"] > CLEAN_CALL_MAX_GAP_BYTES:
+        return False
+    if not (_call_looks_noreturnish(boundary) or _preceding_local_fatal_stub(instrs, start_idx, boundary)):
+        return False
+    if _looks_like_jump_table(instrs, start_idx, feats):
+        return False
+
+    body = instrs[start_idx:min(len(instrs), start_idx + CLEAN_CALL_SCAN_INSTRS)]
+    if any(item.get("mnemonic", "").startswith("leave") for item in body):
+        return False
+    if _looks_like_tiny_leave_stub(instrs, {"features": feats, "idx": start_idx}):
+        return False
+    if not (
+        feats.get("first_is_mov_like", 0) or
+        feats.get("first_is_cmp_test", 0) or
+        feats.get("early_push", 0)
+    ):
         return False
     return True
 
@@ -372,6 +521,7 @@ def main():
     instrs = asm["instrs"]
     reachable_set = set(asm.get("reachable_addrs", []))
     addr_to_idx = {ins["addr"]: i for i, ins in enumerate(instrs)}
+    inbound_kinds = _build_inbound_kind_counts(instrs)
     cands = candidate_addresses(asm)
     cand_idxs = [addr_to_idx[a] for a in cands if a in addr_to_idx]
 
@@ -403,9 +553,19 @@ def main():
     aligned_rescued = 0
     reachable_rescued = 0
     clean_ret_rescued = 0
+    clean_jmp_rescued = 0
+    clean_call_rescued = 0
     for addr, p, (feats, idx) in zip(addrs, probs, feats_list):
         if p >= args.threshold:
             pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            continue
+        if _is_clean_jmp_rescue_candidate(float(p), feats, instrs, idx, inbound_kinds=inbound_kinds):
+            pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            clean_jmp_rescued += 1
+            continue
+        if _is_clean_call_rescue_candidate(float(p), feats, instrs, idx):
+            pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
+            clean_call_rescued += 1
             continue
         if _is_clean_ret_rescue_candidate(float(p), feats, instrs, idx):
             pred.append({"start": int(addr), "score": float(p), "features": feats, "idx": idx})
@@ -434,6 +594,7 @@ def main():
 
     removed_padding = 0
     removed_jt = 0
+    removed_leave_stub = 0
     if args.post_filter == "on":
         filtered = []
         for item in pred:
@@ -455,17 +616,24 @@ def main():
             if drop_jt:
                 removed_jt += 1
                 continue
+            if _looks_like_tiny_leave_stub(instrs, item):
+                removed_leave_stub += 1
+                continue
             filtered.append(item)
         pred = filtered
         print(f"Post-filter removed {removed_padding} candidate(s).")
         print(f"jt-filter removed {removed_jt} candidate(s).")
+        print(f"leave-stub filter removed {removed_leave_stub} candidate(s).")
     else:
         print("Post-filter disabled (0 candidates removed).")
         print("jt-filter skipped (post_filter=off).")
+        print("leave-stub filter skipped (post_filter=off).")
     print(f"leaf-rescue added {rescued} candidate(s).")
     print(f"aligned-rescue added {aligned_rescued} candidate(s).")
     print(f"reachable-leaf-rescue added {reachable_rescued} candidate(s).")
     print(f"clean-ret-rescue added {clean_ret_rescued} candidate(s).")
+    print(f"clean-jmp-rescue added {clean_jmp_rescued} candidate(s).")
+    print(f"clean-call-rescue added {clean_call_rescued} candidate(s).")
 
     info = {addr: (float(p), feats, idx) for addr, p, (feats, idx) in zip(addrs, probs, feats_list)}
     wrapper_shifted = 0

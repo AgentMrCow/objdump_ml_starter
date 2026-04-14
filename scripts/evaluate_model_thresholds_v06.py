@@ -9,9 +9,13 @@ from features import candidate_addresses, featurize_point
 from predict_starts import (
     BORDERLINE_ALIGN_RESCUE_SCORE,
     RESCUE_SCORE_FLOOR,
+    _build_inbound_kind_counts,
+    _is_clean_call_rescue_candidate,
+    _is_clean_jmp_rescue_candidate,
     _is_clean_ret_rescue_candidate,
     _is_reachable_leaf_candidate,
     _is_short_leaf_candidate,
+    _looks_like_tiny_leave_stub,
     _looks_like_jump_table,
     _maybe_retarget_ret_stub,
     _maybe_shift_entry_guard,
@@ -67,8 +71,15 @@ def score_model(bundle, feature_keys, feats):
 def apply_prediction_pipeline(instrs, addrs, feats, idxs, probs, threshold, merge_window, post_filter):
     pred = []
     info = {addr: (float(prob), feat, idx) for addr, prob, feat, idx in zip(addrs, probs, feats, idxs)}
+    inbound_kinds = _build_inbound_kind_counts(instrs)
     for addr, prob, feat, idx in zip(addrs, probs, feats, idxs):
         if prob >= threshold:
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if _is_clean_jmp_rescue_candidate(float(prob), feat, instrs, idx, inbound_kinds=inbound_kinds):
+            pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
+            continue
+        if _is_clean_call_rescue_candidate(float(prob), feat, instrs, idx):
             pred.append({'start': addr, 'score': float(prob), 'features': feat, 'idx': idx})
             continue
         if _is_clean_ret_rescue_candidate(float(prob), feat, instrs, idx):
@@ -118,7 +129,8 @@ def apply_prediction_pipeline(instrs, addrs, feats, idxs, probs, threshold, merg
             )
             drop_padding = cond_a and cond_b and cond_c
             drop_jt = False if drop_padding else _looks_like_jump_table(instrs, item['idx'], feat)
-            if drop_padding or drop_jt:
+            drop_leave_stub = False if (drop_padding or drop_jt) else _looks_like_tiny_leave_stub(instrs, item)
+            if drop_padding or drop_jt or drop_leave_stub:
                 continue
             filtered.append(item)
         pred = filtered

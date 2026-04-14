@@ -29,7 +29,7 @@ python src/eval_starts.py --pred functions_pred.json --truth_glob "data/labels/*
 
 - Corpus: ~1.6k real C programs (RosettaCode) built at O0–O3, with DWARF truth, asm JSON, and program-level splits (no cross-program leakage). See `data/program_manifest_v06.json`, `splits/v06.json`, inventory `out/dataset_inventory_v06.tsv`.
 - Models: Logistic Regression, Random Forest, XGBoost; post-filters for padding/jump-table artifacts; threshold sweeps and macro aggregation; optional Ghidra headless exports for agreement checks.
-- Current best validated O3 setup: `models/start_detector_v06h_xgb.joblib` with `THRESH=0.75`, `POST_FILTER=on`, `MERGE_WINDOW=4`, giving macro `P=0.9878 / R=0.9627 / F1=0.9740` on the 149-binary O3 test split.
+- Current best validated O3 setup: `models/start_detector_v06u_xgb.joblib` with `THRESH=0.95`, `POST_FILTER=on`, `MERGE_WINDOW=4`, giving macro `P=0.9945 / R=0.9832 / F1=0.9884` on the 149-binary O3 test split.
 
 Common commands (after `source .venv/bin/activate` and `export PYTHONPATH=src`):
 
@@ -37,8 +37,8 @@ Common commands (after `source .venv/bin/activate` and `export PYTHONPATH=src`):
 # Build/refresh the large dataset (supports --start/--end/--opt_levels)
 python src/build_dataset.py
 
-# Train tuned models on train split -> models/start_detector_v06h_*.joblib
-python scripts/train_models_v06_tuned.py --split splits/v06.json --train_opts O0,O1,O2,O3 --tag v06h --out_dir models
+# Train tuned models on train split -> models/start_detector_v06u_*.joblib
+python scripts/train_models_v06_tuned.py --split splits/v06.json --train_opts O0,O1,O2,O3 --tag v06u --out_dir models
 
 # Optional ablation: retrain without the `reachable` feature
 python scripts/train_models_v06_tuned.py \
@@ -51,15 +51,15 @@ python scripts/train_models_v06_tuned.py \
 # Sweep thresholds on O3 test set
 python scripts/evaluate_model_thresholds_v06.py \
   --bins_list out/binlist_test_O3_stripped.txt \
-  --model models/start_detector_v06h_xgb.joblib \
-  --out_prefix out/v06h_rescue_sweep \
-  --thresholds "0.55,0.60,0.65,0.70,0.75,0.80" \
+  --model models/start_detector_v06u_xgb.joblib \
+  --out_prefix out/v06u_rescue_sweep \
+  --thresholds "0.70,0.75,0.80,0.85,0.90,0.92,0.95" \
   --merge_window 4 \
   --post_filter on
 
 # Batch prediction with the current best settings
-MODEL_PATH=models/start_detector_v06h_xgb.joblib \
-THRESH=0.75 \
+MODEL_PATH=models/start_detector_v06u_xgb.joblib \
+THRESH=0.95 \
 POST_FILTER=on \
 MERGE_WINDOW=4 \
 BIN_LIST=out/binlist_test_O3_stripped.txt \
@@ -76,7 +76,7 @@ streamlit run web/streamlit_app.py  # PYTHONPATH=src, models/ + data/ present
 Key artifacts
 - Data: `data/build/linux/O*/...`, `data/labels/linux/O*/...`, `data/program_manifest_v06.json`
 - Splits: `splits/v06.json` (train/val/test by program)
-- Models: `models/start_detector*.joblib` (`v06h_xgb` is the current best O3 model; `v06i_*` is the no-`reachable` ablation)
+- Models: `models/start_detector*.joblib` (`v06u_xgb` is the current best O3 model; `v06i_*` is the no-`reachable` ablation)
 - Results: sweep TSVs under `out/*sweep*.tsv`, macro tables such as `out/macro_v06_compare.tsv` and `out/macro_v06_current_thresholds.tsv`, batch summaries like `out/summary_v06_best_O3.tsv`, plots under `out/plots_v06/`, Ghidra exports under `out/ghidra/`
 
 ## Project layout
@@ -111,5 +111,6 @@ out/
 ## Notes
 - DWARF truth is the primary reference; Ghidra exports are used for agreement/error analysis.
 - `elf_labels.py` now filters out undefined/imported zero-address symbols, so `functions_truth.json` does not count PLT/import names as fake misses.
+- `predict_starts.py` treats split multi-byte objdump nop decodes (`data16 cs nop`, `cs nop`, etc.) as padding during boundary rescue, and the current O3 path also uses inbound-call-gated clean-jump rescue, noreturn-style clean-call rescue, and leave-stub filtering to recover real aligned starts without reviving jump-block false positives.
 - Start with the starter demo, then move to the v0.6 pipeline for larger-scale experiments.
 - Architecture scope: x86-64 ELF. Extend candidates/features for other ISAs as needed.

@@ -69,6 +69,13 @@ src/run_batch_predict.sh
 scripts/tools_ghidra.sh          # uses bin lists under out/
 python tools/compare_to_ghidra.py --out out/ghidra_compare_v06d_O3.tsv
 
+# Re-score Disa on the same tolerant function-start metric used in this repo
+python tools/eval_disa_function_starts.py
+
+# Generate assets and refresh the template
+python scripts/generate_assets.py
+pdflatex -output-directory the-path-to-main.tex
+
 # Streamlit demo (local)
 streamlit run web/streamlit_app.py  # PYTHONPATH=src, models/ + data/ present
 ```
@@ -78,6 +85,7 @@ Key artifacts
 - Splits: `splits/v06.json` (train/val/test by program)
 - Models: `models/start_detector*.joblib` (`v06u_xgb` is the current best O3 model; `v06i_*` is the no-`reachable` ablation)
 - Results: sweep TSVs under `out/*sweep*.tsv`, macro tables such as `out/macro_v06_compare.tsv` and `out/macro_v06_current_thresholds.tsv`, batch summaries like `out/summary_v06_best_O3.tsv`, plots under `out/plots_v06/`, Ghidra exports under `out/ghidra/`
+- Disa comparison: `out/disa_function_start_o3.tsv`, `out/disa_function_start_o3_summary.tsv`
 
 ## Project layout
 ```
